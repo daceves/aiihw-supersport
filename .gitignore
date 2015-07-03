@@ -2,4 +2,7 @@
 docroot/files
 docroot/sites/*/files
 docroot/sites/*/private
+docroot/sites/supersport.local
+.idea/
+
 
