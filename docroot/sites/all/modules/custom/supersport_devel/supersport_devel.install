@@ -10,5 +10,5 @@
 function supersport_devel_enable() {
   $module_list = array("supersport_taxonomy");
   module_enable($module_list);
-  drupal_set_message($message = t('The Supersport_devel module was successfully enabled.'), $type = 'status');
+  drupal_set_message($message = t('The Supersport development module was successfully enabled.'), $type = 'status');
 }
