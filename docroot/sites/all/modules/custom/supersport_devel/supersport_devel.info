@@ -1,0 +1,5 @@
+name = Supersport Development Module
+description = In charge of assisting, updating, and connecting our group contributed modules.
+core = 7.x
+package = Development
+version = 7.x-1.0
