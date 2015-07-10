@@ -1,0 +1,100 @@
+/*
+Error: Invalid CSS after "...inear-gradient(": expected ")", was ", #34AADC); /* ..."
+        on line 25 of sport-omega.styles.scss
+        from line 5 of sport-omega.no-query.scss
+
+20: @import "abstractions/*";
+21: @import "base/*";
+22: @import "components/*";
+23: 
+24: body{
+25: 	background: -webkit-linear-gradient(, #34AADC); /* For Safari 5.1 to 6.0 *\/
+26: 	background: -o-linear-gradient(#5856D6, #34AADC); /* For Opera 11.1 to 12.0 *\/
+27: 	background: -moz-linear-gradient(#5856D6, #34AADC); /* For Firefox 3.6 to 15 *\/
+28: 	background: linear-gradient(#5856D6, #34AADC); /* Standard syntax *\/
+29: 	    height: 100%;
+30:     margin: 0;
+
+Backtrace:
+sport-omega.styles.scss:25
+sport-omega.no-query.scss:5
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:1164:in `expected'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/lexer.rb:221:in `expected!'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:580:in `assert_tok'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:408:in `funcall'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:387:in `ident'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:246:in `unary_not'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:246:in `unary_div'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:246:in `unary_minus'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:246:in `unary_plus'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:227:in `times_div_or_mod'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:227:in `plus_or_minus'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:227:in `relational'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:227:in `eq_or_neq'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:227:in `and_expr'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:227:in `or_expr'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:361:in `space'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:345:in `interpolation'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:293:in `expr'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:571:in `assert_expr'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/script/parser.rb:62:in `parse'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:1024:in `sass_script'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:877:in `value!'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:750:in `block in try_declaration'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:1138:in `call'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:1138:in `rethrow'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:763:in `try_declaration'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:693:in `declaration_or_ruleset'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:658:in `block_child'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:647:in `block_contents'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:639:in `block'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:633:in `ruleset'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:657:in `block_child'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:650:in `block_contents'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:117:in `stylesheet'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:42:in `parse'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/engine.rb:403:in `_to_tree'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/engine.rb:309:in `to_tree'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:323:in `block in visit_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/stack.rb:88:in `block in with_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/stack.rb:88:in `with_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:209:in `each'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/plugin.rb:82:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/exec/sass_scss.rb:364:in `watch_or_update'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/exec/base.rb:52:in `parse'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/lib/sass/exec/base.rb:19:in `parse!'
+/var/lib/gems/1.9.1/gems/sass-3.4.15/bin/scss:13:in `<top (required)>'
+/usr/local/bin/scss:23:in `load'
+/usr/local/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...inear-gradient(\": expected \")\", was \", #34AADC); /* ...\"\A         on line 25 of sport-omega.styles.scss\A         from line 5 of sport-omega.no-query.scss\A \A 20: @import \"abstractions/*\";\A 21: @import \"base/*\";\A 22: @import \"components/*\";\A 23: \A 24: body{\A 25: 	background: -webkit-linear-gradient(, #34AADC); /* For Safari 5.1 to 6.0 */\A 26: 	background: -o-linear-gradient(#5856D6, #34AADC); /* For Opera 11.1 to 12.0 */\A 27: 	background: -moz-linear-gradient(#5856D6, #34AADC); /* For Firefox 3.6 to 15 */\A 28: 	background: linear-gradient(#5856D6, #34AADC); /* Standard syntax */\A 29: 	    height: 100%;\A 30:     margin: 0;"; }
