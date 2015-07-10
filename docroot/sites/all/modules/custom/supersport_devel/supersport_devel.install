@@ -28,3 +28,19 @@ function supersport_devel_update_7100() {
 
   variable_set('theme_default', 'sport_omega');	
 }
+
+/**
+ * Fine tune our update.
+ */
+function supersport_devel_update_7101() {
+  $enable = array();
+
+  $enable = array(
+    'theme_default' => 'sport_omega',
+    'admin_theme' => 'seven',
+  );
+
+  theme_enable($enable);
+
+  variable_set('theme_default', 'sport_omega');		
+}
