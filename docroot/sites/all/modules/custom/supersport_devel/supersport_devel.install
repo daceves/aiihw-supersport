@@ -44,3 +44,14 @@ function supersport_devel_update_7101() {
 
   variable_set('theme_default', 'sport_omega');		
 }
+
+/**
+ * Implement hook_update_N()
+ * Enables event and video content types
+ */
+
+function supersport_devel_update_7102() {
+  $module_list = array("supersport_content_types");
+  module_enable($module_list);
+}
+
