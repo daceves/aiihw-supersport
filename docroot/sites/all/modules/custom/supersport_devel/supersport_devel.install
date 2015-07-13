@@ -46,10 +46,20 @@ function supersport_devel_update_7101() {
 }
 
 /**
+ * Implement hook_update_N()
+ * Enables event and video content types
+ */
+
+function supersport_devel_update_7102() {
+  $module_list = array("supersport_content_types");
+  module_enable($module_list);
+}
+
+/**
  * Implement hook_update_N().
  * Enables the homepage flexible layout feature.
  */
-function supersport_devel_update_7102() {
+function supersport_devel_update_7104() {
   $module_list = array("homepage_flexible_layout");
   module_enable($module_list);
 }
