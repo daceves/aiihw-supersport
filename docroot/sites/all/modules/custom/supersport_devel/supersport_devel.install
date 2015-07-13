@@ -1,0 +1,57 @@
+<?php
+/**
+ * @file
+ * This is the Supersport development module.
+ */
+
+/**
+* Implement hook_enable()
+*/
+function supersport_devel_enable() {
+  $module_list = array("supersport_taxonomy");
+  module_enable($module_list);
+  drupal_set_message($message = t('The Supersport development module was successfully enabled.'), $type = 'status');
+}
+
+/**
+ * Implement hook_update_N()
+ */
+function supersport_devel_update_7100() {
+  $enable = array();
+
+  $enable = array(
+    'theme_default' => 'sport_omega',
+    'admin_theme' => 'seven',
+  );
+
+  theme_enable($enable);
+
+  variable_set('theme_default', 'sport_omega');	
+}
+
+/**
+ * Fine tune our update.
+ */
+function supersport_devel_update_7101() {
+  $enable = array();
+
+  $enable = array(
+    'theme_default' => 'sport_omega',
+    'admin_theme' => 'seven',
+  );
+
+  theme_enable($enable);
+
+  variable_set('theme_default', 'sport_omega');		
+}
+
+/**
+ * Implement hook_update_N()
+ * Enables event and video content types
+ */
+
+function supersport_devel_update_7102() {
+  $module_list = array("supersport_content_types");
+  module_enable($module_list);
+}
+
