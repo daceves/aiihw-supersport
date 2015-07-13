@@ -17,8 +17,6 @@ function supersport_devel_enable() {
  * Implement hook_update_N()
  */
 function supersport_devel_update_7100() {
-  $enable = array();
-
   $enable = array(
     'theme_default' => 'sport_omega',
     'admin_theme' => 'seven',
@@ -33,8 +31,6 @@ function supersport_devel_update_7100() {
  * Fine tune our update.
  */
 function supersport_devel_update_7101() {
-  $enable = array();
-
   $enable = array(
     'theme_default' => 'sport_omega',
     'admin_theme' => 'seven',
@@ -49,9 +45,17 @@ function supersport_devel_update_7101() {
  * Implement hook_update_N()
  * Enables event and video content types
  */
-
 function supersport_devel_update_7102() {
   $module_list = array("supersport_content_types");
   module_enable($module_list);
 }
 
+/**
+ * Implements hook_update_N()
+ * Enables superfish dropdown menu feature
+ */
+function supersport_devel_update_7103() {
+  $module_list = array('supersport_superfish_menu');
+
+  module_enable($module_list);
+}
