@@ -1,5 +1,5 @@
-name = Supersport Superfish menu
-description = Superfish taxonomy tree menu
+name = Supersport Superfish Menu
+description = Sports taxonomy dropdown menu
 core = 7.x
 package = Features
 version = 7.x-1.0
