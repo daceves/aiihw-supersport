@@ -1,0 +1,9 @@
+name = Homepage flexible layout
+description = This is a flexible layout to be used on the homepage.
+core = 7.x
+package = Features
+dependencies[] = ctools
+dependencies[] = panels
+features[ctools][] = panels:layouts:1
+features[features_api][] = api:2
+features[panels_layout][] = homepage_flexible_layout

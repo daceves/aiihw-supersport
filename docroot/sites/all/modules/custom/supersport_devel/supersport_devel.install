@@ -44,3 +44,12 @@ function supersport_devel_update_7101() {
 
   variable_set('theme_default', 'sport_omega');		
 }
+
+/**
+ * Implement hook_update_N().
+ * Enables the homepage flexible layout feature.
+ */
+function supersport_devel_update_7102() {
+  $module_list = array("homepage_flexible_layout");
+  module_enable($module_list);
+}
