@@ -17,8 +17,6 @@ function supersport_devel_enable() {
  * Implement hook_update_N()
  */
 function supersport_devel_update_7100() {
-  $enable = array();
-
   $enable = array(
     'theme_default' => 'sport_omega',
     'admin_theme' => 'seven',
@@ -33,8 +31,6 @@ function supersport_devel_update_7100() {
  * Fine tune our update.
  */
 function supersport_devel_update_7101() {
-  $enable = array();
-
   $enable = array(
     'theme_default' => 'sport_omega',
     'admin_theme' => 'seven',
