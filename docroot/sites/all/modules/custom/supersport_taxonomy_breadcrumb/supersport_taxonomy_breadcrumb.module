@@ -1,0 +1,98 @@
+<?php
+
+/**
+ * @file
+ * Creates taxonomy breadcrumb to Supersport event nodes
+ */
+
+/**
+ * Implements hook_taxonomy_term_view_alter().
+ */
+function supersport_taxonomy_breadcrumb_taxonomy_term_view_alter($build) {
+
+  // Get tid from current taxonomy term on display
+  $tid = $build['#term']->tid;
+
+  $crumbs = _build_trail($tid);
+  drupal_set_breadcrumb($crumbs);
+}
+
+/**
+ * Builds breadcrumb trail based on taxonomy vocabularies
+ * Trail: Sport > League > Team
+ *
+ * @param $tid_current
+ *  Taxonomy term ID if the currently viewed node
+ * @return array
+ *  Array of breadcrumbs
+ */
+function _build_trail($tid_current) {
+  $term_current = taxonomy_term_load($tid_current);
+
+  // Parse member taxonomy terms
+  $term_league = _term_parse($term_current, 'field_league');
+  $term_sport = _term_parse($term_current, 'field_sport');
+
+  // Fill breadcrumb
+  $crumbs = array();
+
+  _add_to_trail($term_sport, $crumbs);
+  _add_to_trail($term_league, $crumbs);
+  $crumbs[] = t($term_current->name);
+
+  return $crumbs;
+}
+
+/**
+ * Creates term array of member taxonomy term
+ *
+ * @param $term_object
+ *  Taxonomy term object by taxonomy_load_term()
+ * @param $field_name
+ *  Field name of member taxonomy term
+ * @return array
+ *  If member field exists
+ *    Term array with tid, object, path
+ *  Else NULL
+ */
+function _term_parse($term_object, $field_name) {
+  // Checks if member field exists
+  if (!isset($term_object->$field_name)) {
+    // If not, return NULL
+    return NULL;
+  }
+
+  // Parse field tid from term
+  $item = field_get_items('taxonomy_term', $term_object, $field_name);
+
+  $tid = $item[0]['tid'];
+  $object = taxonomy_term_load($tid);
+  $path = taxonomy_term_uri($object)['path'];
+
+  $term = array(
+    'tid' => $tid,
+    'object' => $object,
+    'path' => $path,
+  );
+
+  return $term;
+}
+
+/**
+ * Fills breadcrumb trails with member/parent fields
+ *
+ * @param $term_array
+ *  Term array to be inserted into breadcrumb
+ *  Created by _term_parse()
+ * @param $crumbs
+ *  Reference to crumbs to be inserted into breadcrumbs
+ */
+function _add_to_trail($term_array, &$crumbs) {
+  // Term array exists
+  if (isset($term_array)) {
+    $crumbs[] = l(
+      t($term_array['object']->name),
+      $term_array['path']
+    );
+  }
+}
