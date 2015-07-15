@@ -5,6 +5,7 @@
  * Creates taxonomy breadcrumb to Supersport event nodes
  */
 
+// Block constants
 define('SS_BREADCRUMB', 'ss_breadcrumb');
 
 // Remove breadcrumbs from all non specified pages
