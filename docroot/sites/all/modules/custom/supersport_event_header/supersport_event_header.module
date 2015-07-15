@@ -51,20 +51,13 @@ function theme_th_event_info() {
   //If we are looking at an event node, display the event header
   if (isset($node)) {
     $wrapper = entity_metadata_wrapper('node', $node);
-    dpm($node);
 
     $title = $wrapper->title->value();
     $output .= $title;
 
     $date = field_get_items('node', $node, 'field_date');
     $start_date = $date[0]['value'];
-
-    /*foreach ($wrapper->field_date->getIterator() as $delta => $date_wrapper) {
-      $date = $date_wrapper->value();
-      $output .= gmdate("j M ", $date);
-    }*/
     $output .= $start_date;
-    //$output .= gmdate("j M", $start_date);
   }
 
   //Otherwise don't show the header
