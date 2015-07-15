@@ -5,6 +5,64 @@
  * Creates taxonomy breadcrumb to Supersport event nodes
  */
 
+define('SS_BREADCRUMB', 'ss_breadcrumb');
+
+// Remove breadcrumbs from all non specified pages
+drupal_set_breadcrumb(array());
+
+/**
+ * Implements hook_block_info().
+ */
+function supersport_taxonomy_breadcrumb_block_info() {
+  $blocks[SS_BREADCRUMB] = array(
+    'info' => t('Supersport Taxonomy Breadcrumb'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function supersport_taxonomy_breadcrumb_block_view($delta = '') {
+  $block = array();
+
+  switch($delta) {
+    case SS_BREADCRUMB:
+      $block['subject'] = NULL;
+      $block['content'] = array(
+        '#theme' => 'baker',
+      );
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function supersport_taxonomy_breadcrumb_theme() {
+  return array(
+    'baker' => array(
+      'variables' => menu_get_item(),
+    ),
+  );
+}
+
+/**
+ * Theme hook for breadcrumbs
+ */
+function theme_baker($variables) {
+  //dpm($variables);
+
+  // TODO
+  // $type = node
+  $node = menu_get_object();
+
+  return '<h3 style="color:white">Theme function called</h3>';
+}
+
 /**
  * Implements hook_taxonomy_term_view_alter().
  */
@@ -15,6 +73,14 @@ function supersport_taxonomy_breadcrumb_taxonomy_term_view_alter($build) {
 
   $crumbs = _build_trail($tid);
   drupal_set_breadcrumb($crumbs);
+}
+
+/**
+ * Implements hook_node_view_alter().
+ */
+function supersport_taxonomy_breadcrumb_node_view_alter(&$build) {
+
+  dpm($build);
 }
 
 /**
@@ -38,7 +104,7 @@ function _build_trail($tid_current) {
 
   _add_to_trail($term_sport, $crumbs);
   _add_to_trail($term_league, $crumbs);
-  $crumbs[] = t($term_current->name);
+  $crumbs[] = drupal_get_title();
 
   return $crumbs;
 }
