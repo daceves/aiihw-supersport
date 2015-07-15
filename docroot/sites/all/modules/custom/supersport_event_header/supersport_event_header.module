@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * Implements hook_info().
+ */
+function supersport_event_header_block_info() {
+  $blocks['event_info'] = array(
+    'info' => t('Event Information'),
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function supersport_event_header_block_view($delta = '') {
+  $block = array();
+
+  switch($delta) {
+    case 'event_info':
+      $block['subject'] = t('Event Information');
+      $block['content'] = array(
+        '#theme' => 'th_event_info',
+      );
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function supersport_event_header_theme() {
+  return array(
+    'th_event_info' => array(
+      'variables' => array('var_name' => NULL),
+    )
+  );
+}
+
+/**
+ * Implements theme_hook().
+ */
+function theme_th_event_info() {
+  $output = '';
+  $node = menu_get_object();
+
+  //If we are looking at an event node, display the event header
+  if (isset($node)) {
+    $wrapper = entity_metadata_wrapper('node', $node);
+    dpm($node);
+
+    $title = $wrapper->title->value();
+    $output .= $title;
+
+    $date = field_get_items('node', $node, 'field_date');
+    $start_date = $date[0]['value'];
+
+    /*foreach ($wrapper->field_date->getIterator() as $delta => $date_wrapper) {
+      $date = $date_wrapper->value();
+      $output .= gmdate("j M ", $date);
+    }*/
+    $output .= $start_date;
+    //$output .= gmdate("j M", $start_date);
+  }
+
+  //Otherwise don't show the header
+  else {
+    $output = '';
+  }
+
+  return $output;
+}
