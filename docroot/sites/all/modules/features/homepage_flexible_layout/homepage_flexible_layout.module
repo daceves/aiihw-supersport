@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Homepage flexible layout feature.
+ */
+
+include_once 'homepage_flexible_layout.features.inc';

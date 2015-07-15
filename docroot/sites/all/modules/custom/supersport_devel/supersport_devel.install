@@ -51,11 +51,20 @@ function supersport_devel_update_7102() {
 }
 
 /**
- * Implements hook_update_N()
- * Enables superfish dropdown menu feature
- */
+* Implements hook_update_N()
+* Enables superfish dropdown menu feature
+*/
 function supersport_devel_update_7103() {
   $module_list = array('supersport_superfish_menu');
-
   module_enable($module_list);
 }
+
+/**
+ * Implement hook_update_N().
+ * Enables the homepage flexible layout feature
+ */
+function supersport_devel_update_7104() {
+  $module_list = array("homepage_flexible_layout");
+  module_enable($module_list);
+}
+
