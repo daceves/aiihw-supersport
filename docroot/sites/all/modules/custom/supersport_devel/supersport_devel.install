@@ -76,4 +76,3 @@ function supersport_devel_update_7105() {
   $module_list = array("supersport_ajax");
   module_enable($module_list);
 }
-
