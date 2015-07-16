@@ -1,8 +1,102 @@
 <?php
+
 /**
  * @file
  * This is the Supersport development module.
  */
+function supersport_devel_form_alter(&$form, &$form_state, $form_id) {
 
+	switch($form_id) {
+		case 'event_node_form':
 
+			$lang = $form['field_sport']['#language'];
+			$sport = $form['field_sport'][$lang]['#options'];
 
+			$form['field_sport'][$lang]['#ajax'] = array(
+				'callback' => 'supersport_devel_sportleague_callback',
+				'wrapper' => 'edit-field-league',
+				'method' => 'replace',
+				'effect' => 'fade',
+			);
+
+			$default = !empty($form_state['values']['howmany_select']) ? $form_state['values']['howmany_select'] : 3;
+
+			$form['howmany_select'] = array(
+				'#title' => t('How many checkboxes do you want?'),
+				'#type' => 'select',
+				'#options' => array(1 => 1, 2 => 2, 3 => 3, 4 => 4),
+				'#default_value' => $default,
+				'#ajax' => array(
+					'callback' => 'supersport_devel_autocheckboxes_callback',
+					// picked through id
+					'wrapper' => 'checkboxes-div',
+					'method' => 'replace',
+					'effect' => 'fade',
+				),
+			);
+
+			$form['checkboxes_fieldset'] = array(
+				'#title' => t("Generated Checkboxes"),
+				// The prefix/suffix provide the div that we're replacing, named by
+				// #ajax['wrapper'] above.
+				'#prefix' => '<div id="checkboxes-div">',
+				'#suffix' => '</div>',
+				'#type' => 'fieldset',
+				'#description' => t('This is where we get automatically generated checkboxes'),
+			);
+
+			$num_checkboxes = !empty($form_state['values']['howmany_select']) ? $form_state['values']['howmany_select'] : 1;
+
+			for ($i = 1; $i <= $num_checkboxes; $i++) {
+				$form['checkboxes_fieldset']["checkbox$i"] = array(
+				'#type' => 'checkbox',
+				'#title' => "Checkbox $i",
+				);
+			}
+			
+			dpm($form);
+
+			break;
+	}
+}
+
+/**
+ * Callback element needs only select the portion of the form to be updated.
+ * Since #ajax['callback'] return can be HTML or a renderable array (or an
+ * array of commands), we can just return a piece of the form.
+ */
+function supersport_devel_autocheckboxes_callback($form, $form_state) {
+
+  return $form['checkboxes_fieldset'];
+}
+
+/**
+ *
+ *
+ */
+function supersport_devel_sportleague_callback($form, $form_state) {
+	$lang = $form['field_sport']['#language'];
+	
+	$field_sport_key = $form['field_sport'][$lang]['#value'];
+	$field_sport = $form['field_sport'][$lang]['#options'][$field_sport_key];
+
+	$vocabulary = taxonomy_vocabulary_machine_name_load('league');
+	$terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));	
+
+	$league_options = array();
+	$league_options['_none'] = '- Select a value -';
+
+	foreach ($terms as $key => $value) {
+
+		if($value->field_sport[$lang][0]['tid'] == $field_sport_key) {
+
+			$league_options[$key] = $value->name;
+		}	
+	}	
+
+	dpm($league_options);
+
+	$form['field_league'][$lang]['#options'] = $league_options;
+
+	return $form['field_league'];
+}
