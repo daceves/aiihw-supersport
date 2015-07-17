@@ -62,8 +62,7 @@ function theme_event_header($variables = NULL) {
   // Get currently displayed event node
   $node = menu_get_object();
 
-  // TODO No inline CSS, debug only!
-  $output = '<div class="supersport-event-header" style="color:white">';
+  $output = '<div class="supersport-event-header">';
 
   // If we are looking at an event node, display the event header
   if (isset($node) && ($node->type == 'event')) {
@@ -71,9 +70,6 @@ function theme_event_header($variables = NULL) {
     // Create breadcrumb from current event node's team field
     $tid_teams = field_get_items('node', $node, 'field_teams')[0]['tid'];
     $output .= _markup_breadcrumb($tid_teams) . '<br>';
-
-    // TODO Debug only!
-    dpm($node);
 
     // Parse date from node
     $field_date = field_get_items('node', $node, 'field_date');
