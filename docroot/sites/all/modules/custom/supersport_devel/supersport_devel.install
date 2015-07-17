@@ -67,4 +67,3 @@ function supersport_devel_update_7104() {
   $module_list = array("homepage_flexible_layout");
   module_enable($module_list);
 }
-
