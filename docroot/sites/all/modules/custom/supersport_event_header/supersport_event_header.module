@@ -13,6 +13,8 @@ define('DATE_PRE', 0);
 define('DATE_LIVE', 1);
 define('DATE_POST', 2);
 
+// TODO Currently in PHP 5.3
+
 /**
  * Implements hook_info().
  */
@@ -62,13 +64,16 @@ function theme_event_header($variables = NULL) {
   // Get currently displayed event node
   $node = menu_get_object();
 
-  $output = '<div class="supersport-event-header">';
+  $output = '<div class="supersport-event-header" style="color:white">';
 
   // If we are looking at an event node, display the event header
   if (isset($node) && ($node->type == 'event')) {
 
     // Create breadcrumb from current event node's team field
-    $tid_teams = field_get_items('node', $node, 'field_teams')[0]['tid'];
+    $tid_teams = field_get_items('node', $node, 'field_teams'); //[0]['tid'];
+    $tid_teams = $tid_teams[0];
+    $tid_teams = $tid_teams['tid'];
+
     $output .= _supersport_markup_breadcrumb($tid_teams) . '<br>';
 
     // Parse date from node
@@ -129,9 +134,12 @@ function _supersport_term_parse($term_object, $field_name) {
   // Parse field tid from term
   $item = field_get_items('taxonomy_term', $term_object, $field_name);
 
-  $tid = $item[0]['tid'];
+  $tid = $item[0];
+  $tid = $tid['tid'];
+
   $object = taxonomy_term_load($tid);
-  $path = taxonomy_term_uri($object)['path'];
+  $path = taxonomy_term_uri($object);
+  $path = $path['path'];
 
   $term = array(
     'tid' => $tid,
@@ -280,8 +288,14 @@ function _supersport_date_parse($field_date) {
 
   // field_date is stored in Date ISO format
   // Translate Date ISO to UNIX timestamp
-  $date['start'] = strtotime($field_date[0]['value']);
-  $date['end'] = strtotime($field_date[0]['value2']);
+
+  //$date['start'] = strtotime($field_date[0]['value']);
+  $temp = $field_date[0];
+  $date['start'] = strtotime($temp['value']);
+
+  //$date['end'] = strtotime($field_date[0]['value2']);
+  $temp = $field_date[0];
+  $date['end'] = strtotime($temp['value2']);
 
   $date['today'] = time();
 
