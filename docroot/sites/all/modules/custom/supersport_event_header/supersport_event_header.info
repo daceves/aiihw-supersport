@@ -1,3 +1,7 @@
 name = Supersport Event Header
-description = Contains event info and taxonomy breadcrumbs to be displayed on the event node page.
+description = Provides navigational guide to users through taxonomy breadcrumbs + event information
 core = 7.x
+package = Header
+version = 7.x-1.0
+
+dependencies[] = entity
