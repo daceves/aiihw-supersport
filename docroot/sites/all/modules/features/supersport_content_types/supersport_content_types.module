@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Supersport Content Types feature.
- */
-
-include_once 'supersport_content_types.features.inc';
