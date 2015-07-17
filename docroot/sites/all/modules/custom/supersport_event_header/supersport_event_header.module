@@ -69,11 +69,11 @@ function theme_event_header($variables = NULL) {
 
     // Create breadcrumb from current event node's team field
     $tid_teams = field_get_items('node', $node, 'field_teams')[0]['tid'];
-    $output .= _markup_breadcrumb($tid_teams) . '<br>';
+    $output .= _supersport_markup_breadcrumb($tid_teams) . '<br>';
 
     // Parse date from node
     $field_date = field_get_items('node', $node, 'field_date');
-    $date = _markup_date($field_date);
+    $date = _supersport_markup_date($field_date);
 
     $output .= $date['date'] . '<br>' . $date['status'];
   }
@@ -95,8 +95,8 @@ function theme_event_header($variables = NULL) {
  * @return string
  *  HTML formatted breadcrumb string
  */
-function _markup_breadcrumb($tid) {
-  $breadcrumb = _build_trail($tid);
+function _supersport_markup_breadcrumb($tid) {
+  $breadcrumb = _supersport_build_trail($tid);
   foreach ($breadcrumb as &$crumb) {
     $crumb = '<span class="supersport-breadcrumb-crumb">' . $crumb . '</span>';
   }
@@ -119,7 +119,7 @@ function _markup_breadcrumb($tid) {
  *    Term array with tid, object, path
  *  Else NULL
  */
-function _term_parse($term_object, $field_name) {
+function _supersport_term_parse($term_object, $field_name) {
   // Checks if member field exists
   if (!isset($term_object->$field_name)) {
     // If not, return NULL
@@ -151,7 +151,7 @@ function _term_parse($term_object, $field_name) {
  * @param $crumbs
  *  Reference to crumbs to be inserted into breadcrumbs
  */
-function _add_to_trail($term_array, &$crumbs) {
+function _supersport_add_to_trail($term_array, &$crumbs) {
   // Term array exists
   if (isset($term_array)) {
     $crumbs[] = l(
@@ -170,18 +170,18 @@ function _add_to_trail($term_array, &$crumbs) {
  * @return array
  *  Array of breadcrumbs
  */
-function _build_trail($tid_current) {
+function _supersport_build_trail($tid_current) {
   $term_current = taxonomy_term_load($tid_current);
 
   // Parse member taxonomy terms
-  $term_league = _term_parse($term_current, 'field_league');
-  $term_sport = _term_parse($term_current, 'field_sport');
+  $term_league = _supersport_term_parse($term_current, 'field_league');
+  $term_sport = _supersport_term_parse($term_current, 'field_sport');
 
   // Fill breadcrumb
   $crumbs = array();
 
-  _add_to_trail($term_sport, $crumbs);
-  _add_to_trail($term_league, $crumbs);
+  _supersport_add_to_trail($term_sport, $crumbs);
+  _supersport_add_to_trail($term_league, $crumbs);
   $crumbs[] = drupal_get_title();
 
   return $crumbs;
@@ -197,13 +197,13 @@ function _build_trail($tid_current) {
  *    'date' of the event
  *    'status' - upcoming, live or replay (past)
  */
-function _markup_date($field_date) {
+function _supersport_markup_date($field_date) {
   $markup = array();
 
-  $date = _date_parse($field_date);
+  $date = _supersport_date_parse($field_date);
 
   // Date status array: 'code', 'string'
-  $status = _date_status($date);
+  $status = _supersport_date_status($date);
 
   // Text formats
   $pre = 'd M';
@@ -237,7 +237,7 @@ function _markup_date($field_date) {
  *    'code' - status code using constants DATE_PRE, DATE_LIVE, DATE_POST
  *    'string' - formatted string of the date
  */
-function _date_status($date) {
+function _supersport_date_status($date) {
   // Get dates
   $start = $date['start'];
   $today = $date['today'];
@@ -275,7 +275,7 @@ function _date_status($date) {
  * @return array
  *  Array of UNIX timestamps with keys: 'start', 'today', 'end'
  */
-function _date_parse($field_date) {
+function _supersport_date_parse($field_date) {
   $date = array();
 
   // field_date is stored in Date ISO format
