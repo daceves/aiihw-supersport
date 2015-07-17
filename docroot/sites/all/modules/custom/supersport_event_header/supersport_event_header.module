@@ -3,6 +3,8 @@
 /**
  * @file
  * Creates taxonomy breadcrumb to Supersport event nodes
+ *
+ * Written in PHP 5.3
  */
 
 // Block constants
@@ -12,8 +14,6 @@ define('SS_HEADER', 'ss_header');
 define('DATE_PRE', 0);
 define('DATE_LIVE', 1);
 define('DATE_POST', 2);
-
-// TODO Currently in PHP 5.3
 
 /**
  * Implements hook_info().
@@ -70,7 +70,7 @@ function theme_event_header($variables = NULL) {
   if (isset($node) && ($node->type == 'event')) {
 
     // Create breadcrumb from current event node's team field
-    $tid_teams = field_get_items('node', $node, 'field_teams'); //[0]['tid'];
+    $tid_teams = field_get_items('node', $node, 'field_teams');
     $tid_teams = $tid_teams[0];
     $tid_teams = $tid_teams['tid'];
 
@@ -288,12 +288,9 @@ function _supersport_date_parse($field_date) {
 
   // field_date is stored in Date ISO format
   // Translate Date ISO to UNIX timestamp
-
-  //$date['start'] = strtotime($field_date[0]['value']);
   $temp = $field_date[0];
   $date['start'] = strtotime($temp['value']);
 
-  //$date['end'] = strtotime($field_date[0]['value2']);
   $temp = $field_date[0];
   $date['end'] = strtotime($temp['value2']);
 
