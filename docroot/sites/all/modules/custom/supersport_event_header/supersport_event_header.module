@@ -218,6 +218,8 @@ function _supersport_markup_date($field_date) {
   $live = 'd M';
   $post = 'd M h:iA T';
 
+  $date_content = '';
+
   // Date format logic based on date status
   switch ($status['code']) {
     case DATE_PRE:
