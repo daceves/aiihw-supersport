@@ -64,7 +64,7 @@ function theme_event_header($variables = NULL) {
   // Get currently displayed event node
   $node = menu_get_object();
 
-  $output = '<div class="supersport-event-header" style="color:white">';
+  $output = '<div class="supersport-event-header">';
 
   // If we are looking at an event node, display the event header
   if (isset($node) && ($node->type == 'event')) {
