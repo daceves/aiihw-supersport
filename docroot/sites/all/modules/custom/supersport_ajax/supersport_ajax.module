@@ -1,0 +1,132 @@
+<?php
+
+/**
+ * @file
+ * This is the Supersport development module.
+ */
+
+/**
+ * Impements the hook_ajax_form_alter().
+ */
+function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
+
+	switch($form_id) {
+		case 'event_node_form':
+
+			// Get the language value in order to have 
+		  // deeper access in the array 
+			$lang = $form['field_sport']['#language'];
+
+			// Surround the league menu and teams menu 
+			// with a div and id in order to use 
+			// the id as a wrapper
+			$form['field_league']['#prefix'] = '<div id="league-options">';
+			$form['field_league']['#suffix'] = '</div>';
+
+			$form['field_teams']['#prefix'] = '<div id="teams-options">';
+			$form['field_teams']['#suffix'] = '</div>';
+
+			// Modify the menus to be AJAX enabled
+			$form['field_sport'][$lang]['#ajax'] = array(
+				'callback' => 'supersport_ajax_sportleague_callback',
+				'wrapper' => 'league-options',
+				'method' => 'replace',
+				'effect' => 'fade',
+			);
+
+			$form['field_league'][$lang]['#ajax'] = array(
+				'callback' => 'supersport_ajax_sportteams_callback',
+				'wrapper' => 'teams-options',
+				'method' => 'replace',
+				'effect' => 'fade',
+			);
+
+			break;
+	}
+}
+
+/**
+ * Implements the callback function for the 
+ * sports menu
+ *
+ * Get the current value after selecting an item 
+ * in sport menu to update the league menu with 
+ * leagues only within that sport
+ *
+ * @return $form['field_league']
+ * 	The league menu modified with leagues 
+ *  under the selected sport
+ */
+function supersport_ajax_sportleague_callback($form, $form_state) {
+	// Get the language value in order to have 
+	// deeper access in the array 
+	$lang = $form['field_sport']['#language'];
+	
+	// Access the selected value
+	$field_sport_key = $form['field_sport'][$lang]['#value'];
+
+	// Load the terms for leagues and filter out league not 
+	// associated with the current value of the sport
+	$vocabulary = taxonomy_vocabulary_machine_name_load('league');
+	$terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));	
+
+	// Store the leagues that go with the selected sport
+	$league_options = array();
+	$league_options['_none'] = '- Select a value -';
+
+	// Sift through the terms and keep those that 
+	// fit with the selected sport
+	foreach ($terms as $key => $value) {
+		if($value->field_sport[$lang][0]['tid'] == $field_sport_key) {
+			$league_options[$key] = $value->name;
+		}	
+	}	
+
+	// Modify the league menu
+	$form['field_league'][$lang]['#options'] = $league_options;
+
+	return $form['field_league'];
+}
+
+/**
+ * Implements the callback function for the 
+ * league menu
+ *
+ * Get the current value after selecting an item 
+ * in league menu to update the team menu with 
+ * teams only within that league
+ *
+ * @return $form['field_teams']
+ * 	The teams menu modified with teams 
+ *  under the selected league
+ */
+function supersport_ajax_sportteams_callback($form, $form_state) {
+	// Get the language value in order to have 
+	// deeper access in the array 
+	$lang = $form['field_league']['#language'];
+
+	// Access the selected value
+	$field_league_key = $form['field_league'][$lang]['#value'];
+	$field_league = $form['field_league'][$lang]['#options'][$field_league_key];
+
+	// Load the terms for leagues and filter out league not 
+	// associated with the current value of the sport
+	$vocabulary = taxonomy_vocabulary_machine_name_load('teams');
+	$terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));	
+
+	// Store the leagues that go with the selected sport
+	$team_options = array();
+	$team_options['_none'] = '- Select a value -';
+
+	// Sift through the terms and keep those that 
+	// fit with the selected sport
+	foreach ($terms as $key => $value) {
+		if($value->field_league[$lang][0]['tid'] == $field_league_key) {
+			$team_options[$key] = $value->name;
+		}	
+	}	
+
+	$form['field_teams'][$lang]['#options'] = $team_options;
+
+	return $form['field_teams'];
+}

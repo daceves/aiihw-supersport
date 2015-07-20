@@ -68,7 +68,7 @@ function supersport_devel_update_7104() {
   module_enable($module_list);
 }
 
-/**
+/*
  * Implement hook_update_N().
  * Enables 'Event' content-type header block
  */
@@ -84,6 +84,4 @@ function supersport_devel_update_7106() {
   $module_list = array("supersport_content_types");
   module_enable($module_list);
 }
-
-
 
