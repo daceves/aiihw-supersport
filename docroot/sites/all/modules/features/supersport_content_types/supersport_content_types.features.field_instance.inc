@@ -602,8 +602,12 @@ function supersport_content_types_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
@@ -634,35 +638,48 @@ function supersport_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_video'
-  $field_instances['node-video-field_video'] = array(
+  // Exported field_instance: 'node-video-field_sportvideo'
+  $field_instances['node-video-field_sportvideo'] = array(
     'bundle' => 'video',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
+        'module' => 'mediaelement',
+        'settings' => array(
+          'controls' => 1,
+          'download_link' => 0,
+          'download_text' => 'Download',
+          'height' => 320,
+          'width' => 500,
+        ),
+        'type' => 'mediaelement_video',
         'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'mediaelement',
+        'settings' => array(
+          'controls' => 1,
+          'download_link' => 0,
+          'download_text' => 'Download',
+          'height' => 230,
+          'width' => 380,
+        ),
+        'type' => 'mediaelement_video',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_video',
-    'label' => 'Video',
+    'field_name' => 'field_sportvideo',
+    'label' => 'sportvideo',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
       'file_directory' => '',
-      'file_extensions' => 'txt',
-      'max_filesize' => '100 MB',
+      'file_extensions' => 'mp4 m4v mov flv wnv',
+      'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -688,8 +705,8 @@ function supersport_content_types_field_default_field_instances() {
   t('Pre-live-video');
   t('Sport');
   t('Teams');
-  t('Video');
   t('post-live-video');
+  t('sportvideo');
 
   return $field_instances;
 }
