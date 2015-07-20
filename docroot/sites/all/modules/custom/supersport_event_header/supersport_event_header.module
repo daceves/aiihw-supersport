@@ -1,11 +1,26 @@
 <?php
 
 /**
+ * @file
+ * Creates taxonomy breadcrumb to Supersport event nodes
+ *
+ * Written in PHP 5.3
+ */
+
+// Block constants
+define('SS_HEADER', 'ss_header');
+
+// Date status constants
+define('DATE_PRE', 0);
+define('DATE_LIVE', 1);
+define('DATE_POST', 2);
+
+/**
  * Implements hook_info().
  */
 function supersport_event_header_block_info() {
-  $blocks['event_info'] = array(
-    'info' => t('Event Information'),
+  $blocks[SS_HEADER] = array(
+    'info' => t('Event Header'),
     'cache' => DRUPAL_CACHE_PER_ROLE,
   );
 
@@ -19,10 +34,10 @@ function supersport_event_header_block_view($delta = '') {
   $block = array();
 
   switch($delta) {
-    case 'event_info':
-      $block['subject'] = t('Event Information');
+    case SS_HEADER:
+      $block['subject'] = NULL;
       $block['content'] = array(
-        '#theme' => 'th_event_info',
+        '#theme' => 'event_header',
       );
       break;
   }
@@ -35,8 +50,8 @@ function supersport_event_header_block_view($delta = '') {
  */
 function supersport_event_header_theme() {
   return array(
-    'th_event_info' => array(
-      'variables' => array('var_name' => NULL),
+    'event_header' => array(
+      'variables' => array('items' => NULL),
     )
   );
 }
@@ -44,26 +59,243 @@ function supersport_event_header_theme() {
 /**
  * Implements theme_hook().
  */
-function theme_th_event_info() {
-  $output = '';
+function theme_event_header($variables = NULL) {
+
+  // Get currently displayed event node
   $node = menu_get_object();
 
-  //If we are looking at an event node, display the event header
-  if (isset($node)) {
-    $wrapper = entity_metadata_wrapper('node', $node);
+  $output = '<div class="supersport-event-header">';
 
-    $title = $wrapper->title->value();
-    $output .= $title;
+  // If we are looking at an event node, display the event header
+  if (isset($node) && ($node->type == 'event')) {
 
-    $date = field_get_items('node', $node, 'field_date');
-    $start_date = $date[0]['value'];
-    $output .= $start_date;
+    // Create breadcrumb from current event node's team field
+    $tid_teams = field_get_items('node', $node, 'field_teams');
+    $tid_teams = $tid_teams[0];
+    $tid_teams = $tid_teams['tid'];
+
+    $output .= _supersport_markup_breadcrumb($tid_teams) . '<br>';
+
+    // Parse date from node
+    $field_date = field_get_items('node', $node, 'field_date');
+    $date = _supersport_markup_date($field_date);
+
+    $output .= $date['date'] . '<br>' . $date['status'];
   }
-
-  //Otherwise don't show the header
+  // Otherwise don't show the header
   else {
-    $output = '';
+    $output .= '';
   }
+
+  $output .= '</div>';
 
   return $output;
 }
+
+/**
+ * Build + format breadcrumbs from taxonomy term ID (tid)
+ *
+ * @param $tid
+ *  Taxonomy term ID of the currently viewed node
+ * @return string
+ *  HTML formatted breadcrumb string
+ */
+function _supersport_markup_breadcrumb($tid) {
+  $breadcrumb = _supersport_build_trail($tid);
+  foreach ($breadcrumb as &$crumb) {
+    $crumb = '<span class="supersport-breadcrumb-crumb">' . $crumb . '</span>';
+  }
+
+  $arrow = ' &#9654 ';
+  $separator = '<span class="supersport-breadcrumb-separator">' . $arrow . '</span>';
+
+  return implode($separator, $breadcrumb);
+}
+
+/**
+ * Creates term array of member taxonomy term
+ *
+ * @param $term_object
+ *  Taxonomy term object by taxonomy_load_term()
+ * @param $field_name
+ *  Field name of member taxonomy term
+ * @return array
+ *  If member field exists
+ *    Term array with tid, object, path
+ *  Else NULL
+ */
+function _supersport_term_parse($term_object, $field_name) {
+  // Checks if member field exists
+  if (!isset($term_object->$field_name)) {
+    // If not, return NULL
+    return NULL;
+  }
+
+  // Parse field tid from term
+  $item = field_get_items('taxonomy_term', $term_object, $field_name);
+
+  $tid = $item[0];
+  $tid = $tid['tid'];
+
+  $object = taxonomy_term_load($tid);
+  $path = taxonomy_term_uri($object);
+  $path = $path['path'];
+
+  $term = array(
+    'tid' => $tid,
+    'object' => $object,
+    'path' => $path,
+  );
+
+  return $term;
+}
+
+/**
+ * Fills breadcrumb trails with member/parent fields
+ *
+ * @param $term_array
+ *  Term array to be inserted into breadcrumb
+ *  Created by _term_parse()
+ * @param $crumbs
+ *  Reference to crumbs to be inserted into breadcrumbs
+ */
+function _supersport_add_to_trail($term_array, &$crumbs) {
+  // Term array exists
+  if (isset($term_array)) {
+    $crumbs[] = l(
+      t($term_array['object']->name),
+      $term_array['path']
+    );
+  }
+}
+
+/**
+ * Builds breadcrumb trail based on taxonomy vocabularies
+ * Trail: Sport > League > Team
+ *
+ * @param $tid_current
+ *  Taxonomy term ID of the currently viewed node
+ * @return array
+ *  Array of breadcrumbs
+ */
+function _supersport_build_trail($tid_current) {
+  $term_current = taxonomy_term_load($tid_current);
+
+  // Parse member taxonomy terms
+  $term_league = _supersport_term_parse($term_current, 'field_league');
+  $term_sport = _supersport_term_parse($term_current, 'field_sport');
+
+  // Fill breadcrumb
+  $crumbs = array();
+
+  _supersport_add_to_trail($term_sport, $crumbs);
+  _supersport_add_to_trail($term_league, $crumbs);
+  $crumbs[] = drupal_get_title();
+
+  return $crumbs;
+}
+
+/**
+ * Formats date + event status (upcoming, live, replay)
+ *
+ * @param $field_date
+ *  Date array from field_get_items()
+ * @return array
+ *  Formatted array of date information
+ *    'date' of the event
+ *    'status' - upcoming, live or replay (past)
+ */
+function _supersport_markup_date($field_date) {
+  $markup = array();
+
+  $date = _supersport_date_parse($field_date);
+
+  // Date status array: 'code', 'string'
+  $status = _supersport_date_status($date);
+
+  // Text formats
+  $pre = 'd M';
+  $live = 'd M';
+  $post = 'd M h:iA T';
+
+  // Date format logic based on date status
+  switch ($status['code']) {
+    case DATE_PRE:
+      $date_content = date($pre, $date['start']);
+      break;
+    case DATE_LIVE;
+      $date_content = date($live, $date['start']) . ' - ' . date($live, $date['end']);
+      break;
+    case DATE_POST;
+      $date_content = date($post, $date['start']);
+      break;
+  }
+
+  $markup['date'] = '<span class="supersport-date">' . $date_content . '</span>';
+  $markup['status'] = '<span class="supersport-date-status">' . $status['string'] . '</span>';
+
+  return $markup;
+}
+
+/**
+ * @param $date
+ *  Date array _date_parse()
+ * @return array
+ *  Status information of the date
+ *    'code' - status code using constants DATE_PRE, DATE_LIVE, DATE_POST
+ *    'string' - formatted string of the date
+ */
+function _supersport_date_status($date) {
+  // Get dates
+  $start = $date['start'];
+  $today = $date['today'];
+  $end = $date['end'];
+
+  // Texts
+  $pre = 'upcoming';
+  $live = 'live';
+  $post = 'replay';
+
+  $status = array();
+
+  // Date status logic
+  if ($today < $start) {
+    $status['code'] = DATE_PRE;
+    $status['string'] = $pre;
+  }
+  else if ($today > $end) {
+    $status['code'] = DATE_POST;
+    $status['string'] = $post;
+  }
+  else {
+    $status['code'] = DATE_LIVE;
+    $status['string'] = $live;
+  }
+
+  return $status;
+}
+
+/**
+ * Creates date array from current date + node's field_date timestamps
+ *
+ * @param $field_date
+ *  Date array from field_get_items()
+ * @return array
+ *  Array of UNIX timestamps with keys: 'start', 'today', 'end'
+ */
+function _supersport_date_parse($field_date) {
+  $date = array();
+
+  // field_date is stored in Date ISO format
+  // Translate Date ISO to UNIX timestamp
+  $temp = $field_date[0];
+  $date['start'] = strtotime($temp['value']);
+
+  $temp = $field_date[0];
+  $date['end'] = strtotime($temp['value2']);
+
+  $date['today'] = time();
+
+  return $date;
+}
+
