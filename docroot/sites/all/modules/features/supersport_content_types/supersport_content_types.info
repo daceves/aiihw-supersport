@@ -12,6 +12,7 @@ dependencies[] = file
 dependencies[] = image
 dependencies[] = inline_entity_form
 dependencies[] = location_cck
+dependencies[] = mediaelement
 dependencies[] = options
 dependencies[] = strongarm
 dependencies[] = supersport_taxonomy
