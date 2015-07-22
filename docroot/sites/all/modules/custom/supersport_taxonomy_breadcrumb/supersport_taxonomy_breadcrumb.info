@@ -1,7 +1,0 @@
-name = Supersport Event Node Breadcrumb
-description = Provides navigational guide to users through taxonomy breadcrumbs
-core = 7.x
-package = Breadcrumb
-version = 7.x-1.0
-
-dependencies[] = entity
