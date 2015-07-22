@@ -41,6 +41,9 @@ function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
 				'effect' => 'fade',
 			);
 
+			dpm($form);
+			dpm($form['field_league'][$lang]['#default_value']);
+
 			break;
 	}
 }
@@ -107,7 +110,6 @@ function supersport_ajax_sportteams_callback($form, $form_state) {
 
 	// Access the selected value
 	$field_league_key = $form['field_league'][$lang]['#value'];
-	$field_league = $form['field_league'][$lang]['#options'][$field_league_key];
 
 	// Load the terms for leagues and filter out league not 
 	// associated with the current value of the sport
