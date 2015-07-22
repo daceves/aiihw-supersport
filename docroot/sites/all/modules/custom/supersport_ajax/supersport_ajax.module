@@ -14,7 +14,7 @@ function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
 		case 'event_node_form':
 
 			// Get the language value in order to have 
-		  // deeper access in the array 
+		  	// deeper access in the array 
 			$lang = $form['field_sport']['#language'];
 
 			// Surround the league menu and teams menu 
@@ -41,8 +41,13 @@ function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
 				'effect' => 'fade',
 			);
 
+			// Modify the options of our $form so that no teams or
+			// leagues are shown until a sport has been selected
+			$league_options = array();
+			$league_options['_none'] = '- Select a value -';
+			dpm($form['field_league'][$lang]['#options']);
+
 			dpm($form);
-			dpm($form['field_league'][$lang]['#default_value']);
 
 			break;
 	}
