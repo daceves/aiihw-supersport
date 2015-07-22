@@ -192,12 +192,13 @@ function supersport_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => TRUE,
+          'view_mode' => 'default',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 10,
       ),
       'full' => array(
@@ -246,7 +247,7 @@ function supersport_content_types_field_default_field_instances() {
           'override_labels' => 0,
         ),
       ),
-      'type' => 'inline_entity_form_single',
+      'type' => 'inline_entity_form',
       'weight' => 12,
     ),
   );
@@ -370,12 +371,13 @@ function supersport_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => TRUE,
+          'view_mode' => 'default',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 12,
       ),
       'full' => array(
@@ -424,7 +426,7 @@ function supersport_content_types_field_default_field_instances() {
           'override_labels' => 1,
         ),
       ),
-      'type' => 'inline_entity_form_single',
+      'type' => 'inline_entity_form',
       'weight' => 13,
     ),
   );
@@ -436,12 +438,13 @@ function supersport_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => TRUE,
+          'view_mode' => 'default',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 11,
       ),
       'full' => array(
@@ -490,7 +493,7 @@ function supersport_content_types_field_default_field_instances() {
           'override_labels' => 0,
         ),
       ),
-      'type' => 'inline_entity_form_single',
+      'type' => 'inline_entity_form',
       'weight' => 11,
     ),
   );
