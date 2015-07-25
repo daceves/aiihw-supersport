@@ -1,1 +1,74 @@
 <?php
+
+/**
+ * @file
+ * Code for the Supersport Event Logic Module.
+ */
+
+/**
+ * Implements hook_node_view().
+ */
+function supersport_event_logic_node_view($node, $view_mode, $langcode) {
+  /*$node->content['field_pre_live_video'] = array();
+  return $node; */
+  switch ($node->type) {
+    case 'event':
+      $current_node = menu_get_object();
+      //check whether the nodes are identical: if they are, perform logic
+      if ($current_node == $node) {
+        _supersport_event_logic_parse_time($node);
+      }
+      break;
+  }
+}
+
+/**
+ * @param $content renderable array containing fields from event content type
+ * This function is only called by event content type
+ */
+function _supersport_event_logic_parse_time(&$node) {
+  $post_game_flag = field_get_items('node', $node, 'field_post_game_flag');
+  //if post game flag is on, display the post-live video
+  if ($post_game_flag[0]['value'] == 1) {
+    $node->content['field_pre_live_video'] = array();
+    $node->content['field_live_video'] = array();
+    _supersport_event_logic_display_image($node->content['field_post_live_video'][0]['node']);
+  }
+  //check to see if event has passed or not.
+  else {
+    $current_time = time();
+    $event_start_time = field_get_items('node', $node, 'field_date');
+    $event_end_time = $event_start_time[0]['value2'];
+    $event_start_time = $event_start_time[0]['value'];
+    if ($event_start_time > $current_time) {
+      $node->content['field_live_video'] = array();
+      $node->content['field_post_live_video'] = array();
+      _supersport_event_logic_display_image($node->content['field_pre_live_video'][0]['node']);
+    }
+
+    else if ($event_end_time < $current_time) {
+      $node->content['field_pre_live_video'] = array();
+      $node->content['field_live_video'] = array();
+      _supersport_event_logic_display_image($node->content['field_post_live_video'][0]['node']);
+    }
+    //show the live event
+    else {
+      $node->content['field_pre_live_video'] = array();
+      $node->content['field_post_live_video'] = array();
+      _supersport_event_logic_display_image($node->content['field_live_video'][0]['node']);
+    }
+  }
+}
+
+/**
+ * @param $video_content renderable array containing fields from event content type
+ * This function is used to hide the sportvideo field in a given state
+ */
+function _supersport_event_logic_display_image(&$video_content) {
+  //use foreach loop to search for video field in "37" and "Sorted" arrays
+  foreach ($video_content as &$video) {
+    if (isset($video['#bundle']) && $video['#bundle'] == 'video') {
+      $video['field_sportvideo'] = array();
+    }
+  }
+}
