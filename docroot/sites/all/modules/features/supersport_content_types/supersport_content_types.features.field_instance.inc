@@ -64,6 +64,7 @@ function supersport_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_date'
   $field_instances['node-event-field_date'] = array(
     'bundle' => 'event',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -134,7 +135,7 @@ function supersport_content_types_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_popup',
+      'type' => 'date_select',
       'weight' => 2,
     ),
   );
@@ -191,12 +192,13 @@ function supersport_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => TRUE,
+          'view_mode' => 'default',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 10,
       ),
       'full' => array(
@@ -245,7 +247,7 @@ function supersport_content_types_field_default_field_instances() {
           'override_labels' => 0,
         ),
       ),
-      'type' => 'inline_entity_form_single',
+      'type' => 'inline_entity_form',
       'weight' => 12,
     ),
   );
@@ -369,12 +371,13 @@ function supersport_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => TRUE,
+          'view_mode' => 'default',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 12,
       ),
       'full' => array(
@@ -423,7 +426,7 @@ function supersport_content_types_field_default_field_instances() {
           'override_labels' => 1,
         ),
       ),
-      'type' => 'inline_entity_form_single',
+      'type' => 'inline_entity_form',
       'weight' => 13,
     ),
   );
@@ -435,12 +438,13 @@ function supersport_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => TRUE,
+          'view_mode' => 'default',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 11,
       ),
       'full' => array(
@@ -489,7 +493,7 @@ function supersport_content_types_field_default_field_instances() {
           'override_labels' => 0,
         ),
       ),
-      'type' => 'inline_entity_form_single',
+      'type' => 'inline_entity_form',
       'weight' => 11,
     ),
   );
@@ -584,6 +588,50 @@ function supersport_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-video-body'
+  $field_instances['node-video-body'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => FALSE,
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-video-field_image'
   $field_instances['node-video-field_image'] = array(
     'bundle' => 'video',
@@ -602,8 +650,12 @@ function supersport_content_types_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
@@ -634,35 +686,48 @@ function supersport_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_video'
-  $field_instances['node-video-field_video'] = array(
+  // Exported field_instance: 'node-video-field_sportvideo'
+  $field_instances['node-video-field_sportvideo'] = array(
     'bundle' => 'video',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
+        'module' => 'mediaelement',
+        'settings' => array(
+          'controls' => 1,
+          'download_link' => 0,
+          'download_text' => 'Download',
+          'height' => 320,
+          'width' => 500,
+        ),
+        'type' => 'mediaelement_video',
         'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'mediaelement',
+        'settings' => array(
+          'controls' => 1,
+          'download_link' => 0,
+          'download_text' => 'Download',
+          'height' => 230,
+          'width' => 380,
+        ),
+        'type' => 'mediaelement_video',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_video',
-    'label' => 'Video',
+    'field_name' => 'field_sportvideo',
+    'label' => 'sportvideo',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
       'file_directory' => '',
-      'file_extensions' => 'txt',
-      'max_filesize' => '100 MB',
+      'file_extensions' => 'mp4 m4v mov flv wnv',
+      'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -688,8 +753,8 @@ function supersport_content_types_field_default_field_instances() {
   t('Pre-live-video');
   t('Sport');
   t('Teams');
-  t('Video');
   t('post-live-video');
+  t('sportvideo');
 
   return $field_instances;
 }
