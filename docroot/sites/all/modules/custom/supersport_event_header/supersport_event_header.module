@@ -71,8 +71,7 @@ function theme_event_header($variables = NULL) {
 
     // Create breadcrumb from current event node's team field
     $tid_teams = field_get_items('node', $node, 'field_teams');
-    $tid_teams = $tid_teams[0];
-    $tid_teams = $tid_teams['tid'];
+    $tid_teams = $tid_teams[0]['tid'];
 
     $output .= _supersport_markup_breadcrumb($tid_teams) . '<br>';
 
@@ -132,10 +131,8 @@ function _supersport_term_parse($term_object, $field_name) {
   }
 
   // Parse field tid from term
-  $item = field_get_items('taxonomy_term', $term_object, $field_name);
-
-  $tid = $item[0];
-  $tid = $tid['tid'];
+  $temp = field_get_items('taxonomy_term', $term_object, $field_name);
+  $tid = $temp[0]['tid'];
 
   $object = taxonomy_term_load($tid);
   $path = taxonomy_term_uri($object);
@@ -218,6 +215,8 @@ function _supersport_markup_date($field_date) {
   $live = 'd M';
   $post = 'd M h:iA T';
 
+  $date_content = '';
+
   // Date format logic based on date status
   switch ($status['code']) {
     case DATE_PRE:
@@ -288,12 +287,8 @@ function _supersport_date_parse($field_date) {
 
   // field_date is stored in Date ISO format
   // Translate Date ISO to UNIX timestamp
-  $temp = $field_date[0];
-  $date['start'] = strtotime($temp['value']);
-
-  $temp = $field_date[0];
-  $date['end'] = strtotime($temp['value2']);
-
+  $date['start'] = strtotime($field_date[0]['value']);
+  $date['end'] = strtotime($field_date[0]['value2']);
   $date['today'] = time();
 
   return $date;

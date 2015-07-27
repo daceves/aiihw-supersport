@@ -78,6 +78,12 @@ function supersport_devel_update_7105() {
 }
 
 /**
+ *
+ * Dummy update, previous 7106 was used and some has it updated
+ */
+function supersport_devel_update_7106() {}
+
+/**
  * Implement the hook_update_N().
  * Enables the AJAX menus on event creation
  */

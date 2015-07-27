@@ -6,7 +6,7 @@
  */
 
 /**
- * Impements the hook_ajax_form_alter().
+ * Impements the hook_form_alter().
  */
 function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
 
@@ -41,13 +41,15 @@ function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
 				'effect' => 'fade',
 			);
 
-			// Modify the options of our $form so that no teams or
-			// leagues are shown until a sport has been selected
-			$league_options = array();
-			$league_options['_none'] = '- Select a value -';
-			dpm($form['field_league'][$lang]['#options']);
+      // Modify the options of our $form so that no teams or
+		  // leagues are shown until a sport has been selected
+		  $default_option = array();
+		  $default_option['_none'] = '- Select a value -';
 
-			dpm($form);
+		  if(empty($form_state['input'])) {
+		  	$form['field_league'][$lang]['#options'] = $default_option;
+		  	$form['field_teams'][$lang]['#options'] = $default_option;
+		  }
 
 			break;
 	}
@@ -65,7 +67,7 @@ function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
  * 	The league menu modified with leagues 
  *  under the selected sport
  */
-function supersport_ajax_sportleague_callback($form, $form_state) {
+function supersport_ajax_sportleague_callback(&$form, &$form_state) {
 	// Get the language value in order to have 
 	// deeper access in the array 
 	$lang = $form['field_sport']['#language'];
@@ -93,6 +95,7 @@ function supersport_ajax_sportleague_callback($form, $form_state) {
 	// Modify the league menu
 	$form['field_league'][$lang]['#options'] = $league_options;
 
+
 	return $form['field_league'];
 }
 
@@ -108,7 +111,7 @@ function supersport_ajax_sportleague_callback($form, $form_state) {
  * 	The teams menu modified with teams 
  *  under the selected league
  */
-function supersport_ajax_sportteams_callback($form, $form_state) {
+function supersport_ajax_sportteams_callback(&$form, &$form_state) {
 	// Get the language value in order to have 
 	// deeper access in the array 
 	$lang = $form['field_league']['#language'];
@@ -133,7 +136,9 @@ function supersport_ajax_sportteams_callback($form, $form_state) {
 		}	
 	}	
 
+  // Replace the options with the teams that 
+  // best go with the league. 
 	$form['field_teams'][$lang]['#options'] = $team_options;
 
-	return $form['field_teams'];
+ 	return $form['field_teams'];
 }
