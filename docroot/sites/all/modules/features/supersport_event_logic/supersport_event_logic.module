@@ -37,12 +37,10 @@ function _supersport_event_logic_select_event(&$event, $home_page_flag) {
     $event->content['field_pre_live_video'] = array();
     $event->content['field_live_video'] = array();
     if ($home_page_flag == TRUE) {
-      _supersport_event_logic_display_image($event->content
-      ['field_post_live_video'][0]['node']);
+      _supersport_event_logic_display_image($event->content['field_post_live_video'][0]['node']);
     }
     else if (!$home_page_flag) {
-      _supersport_event_logic_display_video($event->content
-      ['field_post_live_video'][0]['node']);
+      _supersport_event_logic_display_video($event->content['field_post_live_video'][0]['node']);
     }
   }
   //check to see if event has passed or not.
@@ -55,12 +53,10 @@ function _supersport_event_logic_select_event(&$event, $home_page_flag) {
       $event->content['field_live_video'] = array();
       $event->content['field_post_live_video'] = array();
       if ($home_page_flag) {
-        _supersport_event_logic_display_image($event->content
-        ['field_pre_live_video'][0]['node']);
+        _supersport_event_logic_display_image($event->content['field_pre_live_video'][0]['node']);
       }
       else if (!$home_page_flag) {
-        _supersport_event_logic_display_video($event->content
-        ['field_pre_live_video'][0]['node']);
+        _supersport_event_logic_display_video($event->content['field_pre_live_video'][0]['node']);
       }
     }
     else {
@@ -68,12 +64,10 @@ function _supersport_event_logic_select_event(&$event, $home_page_flag) {
         $event->content['field_pre_live_video'] = array();
         $event->content['field_live_video'] = array();
         if ($home_page_flag) {
-          _supersport_event_logic_display_image($event->content
-          ['field_post_live_video'][0]['node']);
+          _supersport_event_logic_display_image($event->content['field_post_live_video'][0]['node']);
         }
         else if (!$home_page_flag) {
-          _supersport_event_logic_display_video($event->content
-          ['field_pre_live_video'][0]['node']);
+          _supersport_event_logic_display_video($event->content['field_post_live_video'][0]['node']);
         }
       }
       //show the live event
@@ -81,12 +75,10 @@ function _supersport_event_logic_select_event(&$event, $home_page_flag) {
         $event->content['field_pre_live_video'] = array();
         $event->content['field_post_live_video'] = array();
         if ($home_page_flag) {
-          _supersport_event_logic_display_image($event->content
-          ['field_live_video'][0]['node']);
+          _supersport_event_logic_display_image($event->content['field_live_video'][0]['node']);
         }
         else if (!$home_page_flag) {
-          _supersport_event_logic_display_video($event->content
-          ['field_live_video'][0]['node']);
+          _supersport_event_logic_display_video($event->content['field_live_video'][0]['node']);
         }
       }
     }
