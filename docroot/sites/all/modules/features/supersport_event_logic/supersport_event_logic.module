@@ -1,0 +1,120 @@
+<?php
+
+/**
+ * @file
+ * Code for the Supersport Event Logic Module.
+ */
+
+/**
+ * Implements hook_node_view().
+ */
+function supersport_event_logic_node_view($node, $view_mode, $langcode) {
+  switch ($node->type) {
+    case 'event':
+      $current_node = menu_get_object();
+      //check for event page
+      if ($current_node == $node) {
+        $home_page_flag = FALSE;
+      }
+      //check for home page.
+      else {
+        $home_page_flag = TRUE;
+      }
+      _supersport_event_logic_select_event($node, $home_page_flag);
+      break;
+  }
+}
+/**
+ * Displays an image on home page, and a video on the event page.
+ *
+ * @param array $event
+ *   A renderable array containing fields from event content type.
+ */
+function _supersport_event_logic_select_event(&$event, $home_page_flag) {
+  $post_game_flag = field_get_items('node', $event, 'field_post_game_flag');
+  //if post game flag is on, and we are on the home page, display image
+  if (($post_game_flag[0]['value'] == 1)) {
+    $event->content['field_pre_live_video'] = array();
+    $event->content['field_live_video'] = array();
+    if ($home_page_flag == TRUE) {
+      _supersport_event_logic_display_image($event->content
+      ['field_post_live_video'][0]['node']);
+    }
+    else if (!$home_page_flag) {
+      _supersport_event_logic_display_video($event->content
+      ['field_post_live_video'][0]['node']);
+    }
+  }
+  //check to see if event has passed or not.
+  else {
+    $current_time = time();
+    $event_start_time = field_get_items('node', $event, 'field_date');
+    $event_end_time = $event_start_time[0]['value2'];
+    $event_start_time = $event_start_time[0]['value'];
+    if ($event_start_time > $current_time) {
+      $event->content['field_live_video'] = array();
+      $event->content['field_post_live_video'] = array();
+      if ($home_page_flag) {
+        _supersport_event_logic_display_image($event->content
+        ['field_pre_live_video'][0]['node']);
+      }
+      else if (!$home_page_flag) {
+        _supersport_event_logic_display_video($event->content
+        ['field_pre_live_video'][0]['node']);
+      }
+    }
+    else {
+      if ($event_end_time < $current_time) {
+        $event->content['field_pre_live_video'] = array();
+        $event->content['field_live_video'] = array();
+        if ($home_page_flag) {
+          _supersport_event_logic_display_image($event->content
+          ['field_post_live_video'][0]['node']);
+        }
+        else if (!$home_page_flag) {
+          _supersport_event_logic_display_video($event->content
+          ['field_pre_live_video'][0]['node']);
+        }
+      }
+      //show the live event
+      else {
+        $event->content['field_pre_live_video'] = array();
+        $event->content['field_post_live_video'] = array();
+        if ($home_page_flag) {
+          _supersport_event_logic_display_image($event->content
+          ['field_live_video'][0]['node']);
+        }
+        else if (!$home_page_flag) {
+          _supersport_event_logic_display_video($event->content
+          ['field_live_video'][0]['node']);
+        }
+      }
+    }
+  }
+}
+/**
+ * Hides the Sport Video field.
+ * @param $image_content renderable array containing fields from event content
+ * type
+ */
+function _supersport_event_logic_display_image(&$image_content) {
+  //use foreach loop to search for video field in "37" and "Sorted" arrays
+  foreach ($image_content as &$image) {
+    if (isset($image['#bundle']) && $image['#bundle'] == 'video') {
+      $image['field_sportvideo'] = array();
+    }
+  }
+}
+/**
+ * Hides the image field.
+ * @param $video_content renderable array containing fields from event content
+ * type
+ */
+function _supersport_event_logic_display_video(&$video_content) {
+  //use foreach loop to search for video field in "37" and "Sorted" arrays
+  foreach ($video_content as &$video) {
+    if (isset($video['#bundle']) && $video['#bundle'] == 'video') {
+      $video['field_image'] = array();
+    }
+  }
+}
