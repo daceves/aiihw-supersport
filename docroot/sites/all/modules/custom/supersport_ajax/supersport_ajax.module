@@ -14,7 +14,7 @@ define('SUPERSPORT_AJAX_LEAGUE_SELECT', 'supersport_ajax_sportteams_callback');
 define('SUPERSPORT_AJAX_SPORTS_SELECT', 'supersport_ajax_sportleague_callback');
 
 /**
- * Impements the hook_form_alter().
+ * Implements the hook_form_alter().
  */
 function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
 
