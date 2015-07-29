@@ -12,6 +12,7 @@ function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
 
 	switch($form_id) {
 		case 'event_node_form':
+
 			// Get the language value in order to have 
 		  // deeper access in the array 
 			$lang = $form['field_sport']['#language'];
