@@ -172,10 +172,13 @@ function _supersport_ajax_default_options(&$form, $form_state, $language) {
 
   $default_option = _supersport_ajax_default_option();
 
-  // A callback has been called
-  if (!isset($form_state['triggering_element']['#ajax']['callback'])) {
-    $form['field_league'][$language]['#options'] = $default_option;
-    $form['field_teams'][$language]['#options'] = $default_option;
+  // Check if this node exists, ie: EDIT hit
+  if (!isset($form['nid']['#value'])) {
+    // A callback has been called
+    if (!isset($form_state['triggering_element']['#ajax']['callback'])) {
+      $form['field_league'][$language]['#options'] = $default_option;
+      $form['field_teams'][$language]['#options'] = $default_option;
+    }
   }
 }
 
