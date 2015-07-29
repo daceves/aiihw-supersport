@@ -302,7 +302,7 @@ function supersport_content_types_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => array(
       0 => array(
-        'value' => 1,
+        'value' => 0,
       ),
     ),
     'deleted' => 0,
@@ -721,7 +721,7 @@ function supersport_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_sportvideo',
-    'label' => 'sportvideo',
+    'label' => 'Sport Video',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -752,9 +752,9 @@ function supersport_content_types_field_default_field_instances() {
   t('Post-game Flag');
   t('Pre-live-video');
   t('Sport');
+  t('Sport Video');
   t('Teams');
   t('post-live-video');
-  t('sportvideo');
 
   return $field_instances;
 }
