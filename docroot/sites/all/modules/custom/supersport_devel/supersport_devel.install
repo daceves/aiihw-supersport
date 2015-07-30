@@ -118,3 +118,12 @@ function supersport_devel_update_7110() {
   module_enable($module_list);
 }
 
+/**
+ * Implement hook_update_N().
+ * Enables the date_views module for the supersport homepage feature
+ */
+function supersport_devel_update_7111() {
+  $module_list = array("date_views");
+  module_enable($module_list);
+}
+
