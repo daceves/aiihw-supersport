@@ -108,3 +108,13 @@ function supersport_devel_update_7109() {
   $module_list = array("supersport_popular_events_view");
   module_enable($module_list);
 }
+
+/**
+ * Implement hook_update_N().
+ * Enables the supersport homepage feature
+ */
+function supersport_devel_update_7110() {
+  $module_list = array("supersport_homepage_feature");
+  module_enable($module_list);
+}
+
