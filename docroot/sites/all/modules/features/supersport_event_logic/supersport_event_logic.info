@@ -1,0 +1,5 @@
+name = Supersport Event Logic
+description = Determines which event video to display.
+core = 7.x
+package = Features
+version = 7.x-1.0
