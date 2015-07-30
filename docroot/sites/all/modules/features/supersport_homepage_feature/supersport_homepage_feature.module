@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Supersport Homepage Feature feature.
+ */
+
+include_once 'supersport_homepage_feature.features.inc';

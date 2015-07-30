@@ -110,19 +110,23 @@ function supersport_devel_update_7109() {
 }
 
 /**
- * Implement hook_update_N().
- * Enables the nodequeue
+ *
+ * Enables the supersport homepage feature
  */
 function supersport_devel_update_7110() {
-  $module_list = array("nodequeue");
+  $module_list = array("supersport_homepage_feature");
   module_enable($module_list);
 }
 
 /**
  * Implement hook_update_N().
+ * Enable the node queue
  * Programitcally create nodequeue
  */
 function supersport_devel_update_7111() {
+  $module_list = array("nodequeue");
+  module_enable($module_list);
+
   $nodequeue = new stdClass;
   $nodequeue->api_version = 2;
   $nodequeue->name = 'Popular View';
