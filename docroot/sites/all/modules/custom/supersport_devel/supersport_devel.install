@@ -108,3 +108,43 @@ function supersport_devel_update_7109() {
   $module_list = array("supersport_popular_events_view");
   module_enable($module_list);
 }
+
+/**
+ * Implement hook_update_N().
+ * Enables the nodequeue
+ */
+function supersport_devel_update_7110() {
+  $module_list = array("nodequeue");
+  module_enable($module_list);
+}
+
+/**
+ * Implement hook_update_N().
+ * Programitcally create nodequeue
+ */
+function supersport_devel_update_7111() {
+  $nodequeue = new stdClass;
+  $nodequeue->api_version = 2;
+  $nodequeue->name = 'Popular View';
+  $nodequeue->title = 'Popular Sport Events';
+  $nodequeue->subqueue_title = '';
+  $nodequeue->size = 5;
+  $nodequeue->link = 'Add to Popular View';
+  $nodequeue->link_remove = 'Remove from Popular View';
+  $nodequeue->owner = 'nodequeue';
+  $nodequeue->show_in_ui = 1;
+  $nodequeue->show_in_tab = 1;
+  $nodequeue->show_in_links = 1;
+  $nodequeue->reference = '0';
+  $nodequeue->reverse = 0;
+  $nodequeue->i18n = 0;
+  $nodequeue->roles = array();
+  $nodequeue->types = array(
+    0 => 'event',
+  );
+  $nodequeue->add_subqueue = array(
+    1 => 'Popular Sport Events',
+  );
+
+  nodequeue_save($nodequeue);
+}
