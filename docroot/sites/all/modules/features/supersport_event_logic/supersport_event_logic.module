@@ -40,6 +40,7 @@ function _supersport_event_logic_select_event(&$event, $home_page_flag) {
       _supersport_event_logic_display_image($event->content['field_post_live_video'][0]['node']);
     }
     else if (!$home_page_flag) {
+      dpm($event,"event");
       _supersport_event_logic_display_video($event->content['field_post_live_video'][0]['node']);
     }
   }
@@ -91,9 +92,11 @@ function _supersport_event_logic_select_event(&$event, $home_page_flag) {
  */
 function _supersport_event_logic_display_image(&$image_content) {
   //use foreach loop to search for video field in "37" and "Sorted" arrays
-  foreach ($image_content as &$image) {
-    if (isset($image['#bundle']) && $image['#bundle'] == 'video') {
-      $image['field_sportvideo'] = array();
+  if (isset($image_content)) {
+    foreach ($image_content as &$image) {
+      if (isset($image['#bundle']) && $image['#bundle'] == 'video') {
+        $image['field_sportvideo'] = array();
+      }
     }
   }
 }
