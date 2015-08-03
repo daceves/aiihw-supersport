@@ -1,0 +1,65 @@
+.supersport-event-header {
+}
+
+.supersport-event-header-left {
+  float: left;
+}
+
+.supersport-event-header-right {
+  float: right;
+}
+
+.supersport-event-header-breadcrumb {
+}
+
+.supersport-event-header-breadcrumb-crumb {
+
+  a {
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 115%;
+  }
+
+  a:hover {
+    color: darkorange;
+    text-decoration: underline;
+  }
+}
+
+.supersport-event-header-breadcrumb-separator {
+  color: white;
+
+  border-right: 1px solid white;
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.supersport-event-header-title {
+  color: white;
+
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.supersport-event-header-date {
+  float: right;
+  margin-top: 5px;
+
+  font-weight: bold;
+  color: royalblue;
+}
+
+.supersport-event-header-date-status {
+
+  float: right;
+
+  // Font options
+  text-transform: uppercase;
+  color: white;
+
+  // Box look
+  padding: 5px 25px 5px 25px;
+  background-color: orange;
+}

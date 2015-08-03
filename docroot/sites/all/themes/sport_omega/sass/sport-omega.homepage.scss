@@ -1,9 +1,17 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color: white;
+$secondary-color: #f7970b;
 
-div {
-  h2 {
+h1 {
+  a{
     text-decoration: none;
-    color: #ffffff;
+    color: $primary-color;
+  }
+}
+
+h2 {
+  a {
+    text-decoration: none;
+    color: $secondary-color;
   }
 }
