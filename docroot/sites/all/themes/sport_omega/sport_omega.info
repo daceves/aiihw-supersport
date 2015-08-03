@@ -12,6 +12,7 @@ stylesheets[all][] = css/sport-omega.normalize.css
 stylesheets[all][] = css/sport-omega.hacks.css
 stylesheets[all][] = css/sport-omega.styles.css
 stylesheets[all][] = css/sport-omega.no-query.css
+stylesheets[all][] = css/sport-omega.homepage.css
 
 ; ========================================
 ; Scripts
