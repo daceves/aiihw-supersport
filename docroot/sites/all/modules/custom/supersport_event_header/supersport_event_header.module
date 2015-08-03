@@ -73,13 +73,27 @@ function theme_event_header($variables = NULL) {
     $tid_teams = field_get_items('node', $node, 'field_teams');
     $tid_teams = $tid_teams[0]['tid'];
 
-    $output .= _supersport_markup_breadcrumb($tid_teams) . '<br>';
+    $breadcrumb = _supersport_markup_breadcrumb($tid_teams);
+    $title = drupal_get_title();
 
     // Parse date from node
     $field_date = field_get_items('node', $node, 'field_date');
     $date = _supersport_markup_date($field_date);
 
-    $output .= $date['date'] . '<br>' . $date['status'];
+    $output .= '<div class="supersport-event-header-left">';
+    $output .= $breadcrumb;
+    $output .= '<br>';
+    $output .= '<span class="supersport-event-header-title">' . $title . '</span>';
+    $output .= '</div>';
+
+    $output .= '<div class="supersport-event-header-right">';
+    $output .= $date['status'];
+    $output .= '<br>';
+    $output .= $date['date'];
+    $output .= '</div>';
+    $output .= '<br>';
+    $output .= '<br>';
+    $output .= '<br>';
   }
   // Otherwise don't show the header
   else {
@@ -102,11 +116,10 @@ function theme_event_header($variables = NULL) {
 function _supersport_markup_breadcrumb($tid) {
   $breadcrumb = _supersport_build_trail($tid);
   foreach ($breadcrumb as &$crumb) {
-    $crumb = '<span class="supersport-breadcrumb-crumb">' . $crumb . '</span>';
+    $crumb = '<span class="supersport-event-header-breadcrumb-crumb">' . $crumb . '</span>';
   }
 
-  $arrow = ' &#9654 ';
-  $separator = '<span class="supersport-breadcrumb-separator">' . $arrow . '</span>';
+  $separator = '<span class="supersport-event-header-breadcrumb-separator">' . '</span>';
 
   return implode($separator, $breadcrumb);
 }
@@ -187,7 +200,6 @@ function _supersport_build_trail($tid_current) {
 
   _supersport_add_to_trail($term_sport, $crumbs);
   _supersport_add_to_trail($term_league, $crumbs);
-  $crumbs[] = drupal_get_title();
 
   return $crumbs;
 }
@@ -230,8 +242,8 @@ function _supersport_markup_date($field_date) {
       break;
   }
 
-  $markup['date'] = '<span class="supersport-date">' . $date_content . '</span>';
-  $markup['status'] = '<span class="supersport-date-status">' . $status['string'] . '</span>';
+  $markup['date'] = '<span class="supersport-event-header-date">' . $date_content . '</span>';
+  $markup['status'] = '<span class="supersport-event-header-date-status">' . $status['string'] . '</span>';
 
   return $markup;
 }
