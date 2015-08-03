@@ -23,7 +23,7 @@ function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
 
 	  // Get the language value in order to have
 	  // deeper access in the array
-	  $lang = $form['field_sport']['#language'];
+	  $language = $form['field_sport']['#language'];
 
       // Wrap whole form
       $form['#prefix'] = '<div id="' . SUPERSPORT_AJAX_FORM_WRAPPER . '">';
@@ -33,14 +33,14 @@ function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
       $form['#validate'][] = '_supersport_ajax_form_validate';
 
 	  // Modify the menus to be AJAX enabled
-	  $form['field_sport'][$lang]['#ajax'] = array(
+	  $form['field_sport'][$language]['#ajax'] = array(
 		'callback' => SUPERSPORT_AJAX_SPORTS_SELECT,
 		'wrapper' => SUPERSPORT_AJAX_FORM_WRAPPER,
 		'method' => 'replace',
 		'effect' => 'fade',
 	  );
 
-	  $form['field_league'][$lang]['#ajax'] = array(
+	  $form['field_league'][$language]['#ajax'] = array(
 		'callback' => SUPERSPORT_AJAX_LEAGUE_SELECT,
 		'wrapper' => SUPERSPORT_AJAX_FORM_WRAPPER,
 		'method' => 'replace',
@@ -48,7 +48,7 @@ function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
 	  );
 
       // Dictate default options
-      _supersport_ajax_default_options($form, $form_state, $lang);
+      _supersport_ajax_default_options($form, $form_state, $language);
 	  break;
   }
 }
@@ -66,22 +66,24 @@ function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
  *  under the selected sport
  */
 function supersport_ajax_sportleague_callback(&$form, &$form_state) {
+
   $parent_field = 'field_sport';
 
   // Get the language value in order to have
   // deeper access in the array
   $lang = $form[$parent_field]['#language'];
 
+  // // Modify taxonomy
+  // League
   // Access the selected value
   $sport_tid = $form[$parent_field][$lang]['#value'];
-
-  // Modify the league menu
   $options = _supersport_ajax_get_options('league', $parent_field, $sport_tid, $lang);
   $form['field_league'][$lang]['#options'] = $options;
 
+  // Teams
   // Clear teams list when sport is changed
   $form['field_teams'][$lang]['#options'] = _supersport_ajax_default_option();
-
+  
   return $form;
 }
 
@@ -98,19 +100,25 @@ function supersport_ajax_sportleague_callback(&$form, &$form_state) {
  *  under the selected league
  */
 function supersport_ajax_sportteams_callback(&$form, &$form_state) {
+
   $parent_field = 'field_league';
+  $sport_field = 'field_sport';
 
   // Get the language value in order to have
   // deeper access in the array
   $lang = $form[$parent_field]['#language'];
 
+  // // Modify taxonomy
+  // League
+  // Enforce league options
+  $sport_tid = $form[$sport_field][$lang]['#value'];
+  $options = _supersport_ajax_get_options('league', $sport_field, $sport_tid, $lang);
+  $form['field_league'][$lang]['#options'] = $options;
+
+  // Teams
   // Access the selected value
   $league_tid = $form[$parent_field][$lang]['#value'];
-
   $options = _supersport_ajax_get_options('teams', $parent_field, $league_tid, $lang);
-
-  // Replace the options with the teams that 
-  // best go with the league.
   $form['field_teams'][$lang]['#options'] = $options;
 
   return $form;
@@ -135,12 +143,13 @@ function supersport_ajax_sportteams_callback(&$form, &$form_state) {
  *    Values - Name of taxonomy
  */
 function _supersport_ajax_get_options($taxonomy_name, $parent_field, $parent_tid, $language) {
+
   // Load the terms for leagues and filter out league not
   // associated with the current value of the sport
   $vocabulary = taxonomy_vocabulary_machine_name_load($taxonomy_name);
   $terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
 
-  // Store the leagues that go with the selected sport
+  // Add default option: '_none'
   $options = _supersport_ajax_default_option();
 
   // Sift through the terms and keep those that
@@ -173,9 +182,24 @@ function _supersport_ajax_default_options(&$form, $form_state, $language) {
   $default_option = _supersport_ajax_default_option();
 
   // Check if this node exists, ie: EDIT hit
-  if (!isset($form['nid']['#value'])) {
-    // A callback has been called
+  if (isset($form['nid']['#value'])) {
+
     if (!isset($form_state['triggering_element']['#ajax']['callback'])) {
+      $value = $form['field_sport'][$language]['#default_value'][0];
+      $options = _supersport_ajax_get_options('league', 'field_sport', $value, $language);
+      $form['field_league'][$language]['#options'] = $options;
+
+      $value = $form['field_league'][$language]['#default_value'][0];
+      $options = _supersport_ajax_get_options('teams', 'field_league', $value, $language);
+      $form['field_teams'][$language]['#options'] = $options;
+    }
+  }
+  else {
+    // Node doesn't exist, @ node creation
+
+    // A callback hasn't been called
+    if (!isset($form_state['triggering_element']['#ajax']['callback'])) {
+
       $form['field_league'][$language]['#options'] = $default_option;
       $form['field_teams'][$language]['#options'] = $default_option;
     }

@@ -119,11 +119,19 @@ function supersport_devel_update_7110() {
 }
 
 /**
+ * Enables the date_views module for the supersport homepage feature
+ */
+function supersport_devel_update_7111() {
+  $module_list = array("date_views");
+  module_enable($module_list);
+}
+
+/**
  * Implement hook_update_N().
  * Enable the node queue
  * Programitcally create nodequeue
  */
-function supersport_devel_update_7111() {
+function supersport_devel_update_7112() {
   $module_list = array("nodequeue");
   module_enable($module_list);
 
