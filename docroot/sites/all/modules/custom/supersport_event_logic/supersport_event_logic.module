@@ -50,6 +50,7 @@ function _supersport_event_logic_select_event(&$event, $home_page_flag) {
     $event_time = field_get_items('node', $event, 'field_date');
     $event_end_time = strtotime($event_time[0]['value2']);
     $event_start_time = strtotime($event_time[0]['value']);
+    // Upcoming events
     if ($event_start_time > $current_time) {
       $event->content['field_live_video'] = array();
       $event->content['field_post_live_video'] = array();
@@ -60,6 +61,7 @@ function _supersport_event_logic_select_event(&$event, $home_page_flag) {
         _supersport_event_logic_display_video($event->content['field_pre_live_video'][0]['node']);
       }
     }
+    // Replay events
     else if ($event_end_time < $current_time) {
       $event->content['field_pre_live_video'] = array();
       $event->content['field_live_video'] = array();
