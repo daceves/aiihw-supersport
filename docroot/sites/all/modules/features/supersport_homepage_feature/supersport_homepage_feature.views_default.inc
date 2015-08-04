@@ -145,9 +145,7 @@ function supersport_homepage_feature_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'full';
-  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -155,6 +153,17 @@ function supersport_homepage_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Pre-live-video */
+  $handler->display->display_options['fields']['field_pre_live_video']['id'] = 'field_pre_live_video';
+  $handler->display->display_options['fields']['field_pre_live_video']['table'] = 'field_data_field_pre_live_video';
+  $handler->display->display_options['fields']['field_pre_live_video']['field'] = 'field_pre_live_video';
+  $handler->display->display_options['fields']['field_pre_live_video']['label'] = '';
+  $handler->display->display_options['fields']['field_pre_live_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pre_live_video']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_pre_live_video']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 0,
+  );
   /* Sort criterion: Content: Date -  start date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';

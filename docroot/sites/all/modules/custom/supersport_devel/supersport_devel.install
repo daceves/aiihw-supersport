@@ -110,7 +110,7 @@ function supersport_devel_update_7109() {
 }
 
 /**
- * Implement hook_update_N().
+ *
  * Enables the supersport homepage feature
  */
 function supersport_devel_update_7110() {
@@ -118,3 +118,45 @@ function supersport_devel_update_7110() {
   module_enable($module_list);
 }
 
+/**
+ * Enables the date_views module for the supersport homepage feature
+ */
+function supersport_devel_update_7111() {
+  $module_list = array("date_views");
+  module_enable($module_list);
+}
+
+/**
+ * Implement hook_update_N().
+ * Enable the node queue
+ * Programitcally create nodequeue
+ */
+function supersport_devel_update_7112() {
+  $module_list = array("nodequeue");
+  module_enable($module_list);
+
+  $nodequeue = new stdClass;
+  $nodequeue->api_version = 2;
+  $nodequeue->name = 'Popular View';
+  $nodequeue->title = 'Popular Sport Events';
+  $nodequeue->subqueue_title = '';
+  $nodequeue->size = 5;
+  $nodequeue->link = 'Add to Popular View';
+  $nodequeue->link_remove = 'Remove from Popular View';
+  $nodequeue->owner = 'nodequeue';
+  $nodequeue->show_in_ui = 1;
+  $nodequeue->show_in_tab = 1;
+  $nodequeue->show_in_links = 1;
+  $nodequeue->reference = '0';
+  $nodequeue->reverse = 0;
+  $nodequeue->i18n = 0;
+  $nodequeue->roles = array();
+  $nodequeue->types = array(
+    0 => 'event',
+  );
+  $nodequeue->add_subqueue = array(
+    1 => 'Popular Sport Events',
+  );
+
+  nodequeue_save($nodequeue);
+}
