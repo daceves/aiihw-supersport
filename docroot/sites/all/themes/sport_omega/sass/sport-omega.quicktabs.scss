@@ -2,6 +2,7 @@
 #quicktabs-upcoming_archived_quicktabs {
 
   $main_color: #003366;
+  $orange: #f7970b;
 
   // Quicktabs tabs
   ul {
@@ -56,7 +57,7 @@
 
     span.field-content {
       a {
-        color: orange;
+        color: $orange;
         font-weight: bold;
         font-size: 80%;
 
