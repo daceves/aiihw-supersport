@@ -1,5 +1,22 @@
-h1 a {
-  color: #f7970b;
+
+#supersport-event-node-page{
+
+h1 {
+  a {
+    color: #f7970b;
+  }
+}
+
+h2 {
+  a {
+    color: #f7970b;
+  }
+}
+
+.l-content{
+  h1{
+  display:none;
+  }
 }
 
 footer {
@@ -9,21 +26,10 @@ footer {
 }
 
 p {
+  a {
+    color: #f7970b;
+  }
   display:none;
-}
-.node__title a {
-  display:none;
-}
-
-.l-content h1 {
-  display:none;
-}
-h2 a {
-  color: #f7970b;
-}
-
-p a {
-  color: #f7970b;
 }
 
 .field-content {
@@ -37,71 +43,50 @@ p a {
   a {
     color: #f7970b;
   }
-  .field--name-field-date{
-
-
-      display:none;
-    }
-
-  .field--name-field-sport{
-
-
-    display:none;
-  }
-
-  .field--name-field-league{
-
-
-    display:none;
-  }
-
-  .field--name-field-post-game-flag{
-
-
-    display:none;
-  }
-
-  .field--name-field-teams{
-
-
-    display:none;
-  }
-
-
-
-
-
-  .field--name-field-location{
-
-
-    display:none;
-  }
-
+  .field--name-field-date,
+  .field--name-field-sport,
+  .field--name-field-league,
+  .field--name-field-post-game-flag,
+  .field--name-field-teams,
+  .field--name-field-location,
   .field__label{
-
-
     display:none;
   }
-
+  .field--type-entityreference{
+    .field__items{
+      .node__title{
+        display:none;
+      }
+    }
+  }
 }
 
-
-.links a {
-  color: #f7970b;
-
+.links {
+  a {
+    color: #f7970b;
+  }
 }
 
-.block__content span a {
-  color: #f7970b;
-
+.block__content {
+  span a {
+    color: #f7970b;
+  }
 }
 
-.breadcrumb a {
-  display:none;
+.breadcrumb {
+  a {
+    display: none;
+  }
 }
 
-.menu a {
-  color: #f7970b;
-
+.menu {
+  a {
+    color: #f7970b;
+  }
 }
 
+.supersport-event-header{
+  background-color: #151825;
+}
+
+}
