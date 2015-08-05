@@ -1,7 +1,108 @@
+// Main hero container
 .view-id-main_feature_hero {
 
   .node__title {
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .node__submitted {
     display: none;
   }
 
+  .node__content {
+    .field--name-field-post-game-flag,
+    .field--name-body {
+      display: none;
+    }
+
+    .field--name-field-sport,
+    .field--name-field-league,
+    .field--name-field-teams,
+    .field--name-field-location {
+      .field__label {
+        display: none;
+      }
+
+      a {
+        color: white;
+
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .field--name-field-date {
+      .field__label {
+        display: none;
+      }
+
+      span {
+        color: #f7970b;
+
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Video entity styling
+  .field--type-entityreference {
+    .field__label {
+      display: none;
+    }
+
+    article.node {
+      header {
+        display: none;
+      }
+    }
+  }
+
+  // Specific video entity styling
+  .field--name-field-pre-live-video:after {
+    content: "upcoming";
+
+    float: right;
+
+    text-transform: uppercase;
+    color: white;
+
+    // Box look
+    padding: 5px 25px 5px 25px;
+    background-color: #f7970b;
+  }
+
+  .field--name-field-post-live-video:after {
+    content: "re-play";
+
+    float: right;
+
+    text-transform: uppercase;
+    color: white;
+
+    // Box look
+    padding: 5px 25px 5px 25px;
+    background-color: #f7970b;
+  }
+
+  .field--name-field-live-video:after {
+    content: "live";
+
+    float: right;
+
+    text-transform: uppercase;
+    color: white;
+
+    // Box look
+    padding: 5px 25px 5px 25px;
+    background-color: #f7970b;
+  }
 }

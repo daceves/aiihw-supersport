@@ -1,0 +1,72 @@
+/* line 5, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .node__title a {
+  color: white;
+  text-decoration: none; }
+/* line 11, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .node__submitted {
+  display: none; }
+/* line 16, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .node__content .field--name-field-post-game-flag,
+.view-id-main_feature_hero .node__content .field--name-body {
+  display: none; }
+/* line 25, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .node__content .field--name-field-sport .field__label,
+.view-id-main_feature_hero .node__content .field--name-field-league .field__label,
+.view-id-main_feature_hero .node__content .field--name-field-teams .field__label,
+.view-id-main_feature_hero .node__content .field--name-field-location .field__label {
+  display: none; }
+/* line 29, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .node__content .field--name-field-sport a,
+.view-id-main_feature_hero .node__content .field--name-field-league a,
+.view-id-main_feature_hero .node__content .field--name-field-teams a,
+.view-id-main_feature_hero .node__content .field--name-field-location a {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none; }
+/* line 37, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .node__content .field--name-field-sport a:hover,
+.view-id-main_feature_hero .node__content .field--name-field-league a:hover,
+.view-id-main_feature_hero .node__content .field--name-field-teams a:hover,
+.view-id-main_feature_hero .node__content .field--name-field-location a:hover {
+  text-decoration: underline; }
+/* line 43, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .node__content .field--name-field-date .field__label {
+  display: none; }
+/* line 47, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .node__content .field--name-field-date span {
+  color: #f7970b;
+  font-weight: bold;
+  text-decoration: none; }
+/* line 58, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .field--type-entityreference .field__label {
+  display: none; }
+/* line 63, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .field--type-entityreference article.node header {
+  display: none; }
+/* line 70, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .field--name-field-pre-live-video:after {
+  content: "upcoming";
+  float: right;
+  text-transform: uppercase;
+  color: white;
+  padding: 5px 25px 5px 25px;
+  background-color: #f7970b; }
+/* line 83, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .field--name-field-post-live-video:after {
+  content: "re-play";
+  float: right;
+  text-transform: uppercase;
+  color: white;
+  padding: 5px 25px 5px 25px;
+  background-color: #f7970b; }
+/* line 96, ../sass/sport-omega.main-content.scss */
+.view-id-main_feature_hero .field--name-field-live-video:after {
+  content: "live";
+  float: right;
+  text-transform: uppercase;
+  color: white;
+  padding: 5px 25px 5px 25px;
+  background-color: #f7970b; }
+
+/*# sourceMappingURL=sport-omega.main-content.css.map */
