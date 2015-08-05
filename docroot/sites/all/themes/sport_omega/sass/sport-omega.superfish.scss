@@ -1,0 +1,24 @@
+#superfish-1 {
+
+  $color_blue: #003366;
+  $color_orange: #f7970b;
+
+  a,
+  span {
+    text-transform: uppercase;
+    text-decoration: none;
+
+    background-color: $color_blue;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: $color_orange;
+  }
+
+  span:hover {
+    color: white;
+
+    background: black;
+  }
+}

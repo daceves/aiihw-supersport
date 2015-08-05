@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": ";AAKE,IAAC;EACC,eAAe,EAAE,IAAI;EACrB,KAAK,EANO,KAAK;;;AAWnB,IAAE;EACA,eAAe,EAAE,IAAI;EACrB,KAAK,EAZS,OAAO",
-"sources": ["../sass/sport-omega.homepage.scss"],
-"names": [],
-"file": "sport-omega.homepage.css"
-}
