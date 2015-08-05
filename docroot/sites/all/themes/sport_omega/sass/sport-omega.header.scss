@@ -1,5 +1,4 @@
-.supersport-event-header {
-}
+$orange: #f7970b;
 
 .supersport-event-header-left {
   float: left;
@@ -9,13 +8,10 @@
   float: right;
 }
 
-.supersport-event-header-breadcrumb {
-}
-
 .supersport-event-header-breadcrumb-crumb {
 
   a {
-    color: orange;
+    color: $orange;
     font-weight: bold;
     text-decoration: none;
     font-size: 115%;
@@ -48,7 +44,7 @@
   margin-top: 5px;
 
   font-weight: bold;
-  color: royalblue;
+  color: #003366;
 }
 
 .supersport-event-header-date-status {
@@ -61,5 +57,5 @@
 
   // Box look
   padding: 5px 25px 5px 25px;
-  background-color: orange;
+  background-color: $orange;
 }

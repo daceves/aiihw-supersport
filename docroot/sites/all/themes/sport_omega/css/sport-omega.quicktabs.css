@@ -1,0 +1,47 @@
+/* line 8, ../sass/sport-omega.quicktabs.scss */
+#quicktabs-upcoming_archived_quicktabs ul {
+  padding: 0 0 1em 0;
+  margin: 0; }
+  /* line 14, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs ul li #quicktabs-tab-upcoming_archived_quicktabs-0 {
+    float: left; }
+  /* line 18, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs ul li #quicktabs-tab-upcoming_archived_quicktabs-1 {
+    float: right; }
+  /* line 22, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs ul li a {
+    display: block;
+    height: 100%;
+    width: 48.5%;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none; }
+  /* line 39, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs ul li a:hover {
+    text-decoration: underline; }
+  /* line 45, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs ul li.active a {
+    background-color: #003366; }
+/* line 52, ../sass/sport-omega.quicktabs.scss */
+#quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs {
+  padding: 0 1em 0 1em;
+  background: #003366; }
+  /* line 59, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs span.field-content a {
+    color: #f7970b;
+    font-weight: bold;
+    font-size: 80%;
+    text-transform: uppercase;
+    text-decoration: none; }
+  /* line 69, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs span.field-content a:hover {
+    color: darkorange;
+    text-decoration: underline; }
+  /* line 75, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .view-content .views-row {
+    padding-bottom: 1em; }
+
+/*# sourceMappingURL=sport-omega.quicktabs.css.map */
