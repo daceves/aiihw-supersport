@@ -26,6 +26,7 @@
         display: none;
       }
 
+      .locality,
       a {
         color: white;
 
@@ -33,7 +34,7 @@
         text-transform: uppercase;
         text-decoration: none;
       }
-      
+
       a:hover {
         text-decoration: underline;
       }
@@ -66,10 +67,7 @@
     }
   }
 
-  // Specific video entity styling
-  .field--name-field-pre-live-video:after {
-    content: "upcoming";
-
+  .field--type-entityreference:after {
     float: right;
 
     text-transform: uppercase;
@@ -80,29 +78,16 @@
     background-color: #f7970b;
   }
 
+  // Specific video entity styling
+  .field--name-field-pre-live-video:after {
+    content: "upcoming";
+  }
+
   .field--name-field-post-live-video:after {
-    content: "re-play";
-
-    float: right;
-
-    text-transform: uppercase;
-    color: white;
-
-    // Box look
-    padding: 5px 25px 5px 25px;
-    background-color: #f7970b;
+    content: "replay";
   }
 
   .field--name-field-live-video:after {
     content: "live";
-
-    float: right;
-
-    text-transform: uppercase;
-    color: white;
-
-    // Box look
-    padding: 5px 25px 5px 25px;
-    background-color: #f7970b;
   }
 }
