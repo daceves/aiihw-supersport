@@ -15,6 +15,7 @@ stylesheets[all][] = css/sport-omega.no-query.css
 stylesheets[all][] = css/sport-omega.header.css
 stylesheets[all][] = css/sport-omega.quicktabs.css
 stylesheets[all][] = css/sport-omega.main-content.css
+stylesheets[all][] = css/sport-omega.homepage.css
 
 ; ========================================
 ; Scripts
@@ -30,8 +31,6 @@ regions[navigation] = Navigation
 regions[highlighted] = Highlighted
 regions[help] = Help
 regions[content] = Content
-regions[sidebar_first] = First Sidebar
-regions[sidebar_second] = Second Sidebar
 regions[footer] = Footer
 
 ; ========================================

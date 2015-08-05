@@ -63,7 +63,7 @@ function homepage_flexible_layout_default_panels_layout() {
       ),
       8 => array(
         'type' => 'column',
-        'width' => 50,
+        'width' => '25.00174538986116',
         'width_type' => '%',
         'parent' => '7',
         'children' => array(
@@ -74,7 +74,7 @@ function homepage_flexible_layout_default_panels_layout() {
       ),
       9 => array(
         'type' => 'column',
-        'width' => 50,
+        'width' => '74.99825461013884',
         'width_type' => '%',
         'parent' => '7',
         'children' => array(
