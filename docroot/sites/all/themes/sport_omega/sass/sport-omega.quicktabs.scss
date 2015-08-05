@@ -1,0 +1,78 @@
+// Quicktabs selector
+#quicktabs-upcoming_archived_quicktabs {
+
+  $main_color: #003366;
+
+  // Quicktabs tabs
+  ul {
+
+    padding: 0 0 1em 0;
+    margin: 0;
+
+    li {
+      #quicktabs-tab-upcoming_archived_quicktabs-0 {
+        float: left;
+      }
+
+      #quicktabs-tab-upcoming_archived_quicktabs-1 {
+        float: right;
+      }
+
+      a {
+        $tab_height: 0.7em;
+
+        display: block;
+        height: 100%;
+        // Hack to make them side by side
+        width: 48.5%;
+        padding-top: $tab_height;
+        padding-bottom: $tab_height;
+
+        color: white;
+
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+
+    li.active {
+      a {
+        background-color: $main_color;
+      }
+    }
+  }
+
+  // Quicktabs content
+  #quicktabs-container-upcoming_archived_quicktabs {
+
+    padding: 0 1em 0 1em;
+
+    background: $main_color;
+
+    span.field-content {
+      a {
+        color: orange;
+        font-weight: bold;
+        font-size: 80%;
+
+        text-transform: uppercase;
+
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: darkorange;
+        text-decoration: underline;
+      }
+    }
+
+    .view-content .views-row {
+      padding-bottom: 1em;
+    }
+  }
+}

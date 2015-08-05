@@ -1,0 +1,47 @@
+/* line 7, ../sass/sport-omega.quicktabs.scss */
+#quicktabs-upcoming_archived_quicktabs ul {
+  padding: 0 0 1em 0;
+  margin: 0; }
+  /* line 13, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs ul li #quicktabs-tab-upcoming_archived_quicktabs-0 {
+    float: left; }
+  /* line 17, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs ul li #quicktabs-tab-upcoming_archived_quicktabs-1 {
+    float: right; }
+  /* line 21, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs ul li a {
+    display: block;
+    height: 100%;
+    width: 48.5%;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none; }
+  /* line 38, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs ul li a:hover {
+    text-decoration: underline; }
+  /* line 44, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs ul li.active a {
+    background-color: #003366; }
+/* line 51, ../sass/sport-omega.quicktabs.scss */
+#quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs {
+  padding: 0 1em 0 1em;
+  background: #003366; }
+  /* line 58, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs span.field-content a {
+    color: orange;
+    font-weight: bold;
+    font-size: 80%;
+    text-transform: uppercase;
+    text-decoration: none; }
+  /* line 68, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs span.field-content a:hover {
+    color: darkorange;
+    text-decoration: underline; }
+  /* line 74, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .view-content .views-row {
+    padding-bottom: 1em; }
+
+/*# sourceMappingURL=sport-omega.quicktabs.css.map */
