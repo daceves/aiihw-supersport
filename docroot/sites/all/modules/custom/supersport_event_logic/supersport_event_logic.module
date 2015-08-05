@@ -118,3 +118,4 @@ function _supersport_event_logic_display_video(&$video_content) {
     _supersport_event_logic_display_image($video_content);
   }
 }
+
