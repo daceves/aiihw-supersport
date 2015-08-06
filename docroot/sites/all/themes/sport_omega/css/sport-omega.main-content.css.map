@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAEE,uCAAa;EACX,OAAO,EAAE,IAAI",
+"sources": ["../sass/sport-omega.main-content.scss"],
+"names": [],
+"file": "sport-omega.main-content.css"
+}
