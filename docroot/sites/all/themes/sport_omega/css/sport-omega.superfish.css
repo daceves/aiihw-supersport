@@ -1,0 +1,16 @@
+/* line 6, ../sass/sport-omega.superfish.scss */
+#superfish-1 a,
+#superfish-1 span {
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #003366; }
+/* line 14, ../sass/sport-omega.superfish.scss */
+#superfish-1 a:hover {
+  text-decoration: underline;
+  color: #f7970b; }
+/* line 19, ../sass/sport-omega.superfish.scss */
+#superfish-1 span:hover {
+  color: white;
+  background: black; }
+
+/*# sourceMappingURL=sport-omega.superfish.css.map */
