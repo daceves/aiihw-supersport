@@ -2,6 +2,7 @@ name = SuperSport Popular Events View
 description = A view of all the popular events in queue chosen by the user discretion.
 core = 7.x
 package = Features
+dependencies[] = ctools
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = popular_sport_event_views
