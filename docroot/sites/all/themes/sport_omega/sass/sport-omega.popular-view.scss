@@ -1,61 +1,24 @@
 // Everything under popular view
 .pane-popular-sport-event-views {
 
+  $content-font-size: 0.8em;
+
   .pane-title {
     text-transform: uppercase;
   }
 
   .view-content {
 
-    /* Templates
-    flex
-    -webkit-flex
-    -ms-flex
-    -moz-flex
-    */
-
-    display: flex;
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: -moz-flex;
-
-    $direction: row;
-    flex-direction: $direction;
-    -webkit-flex-direction: $direction;
-    -ms-flex-direction: $direction;
-    -moz-flex-direction: $direction;
-
     .views-row  {
       // 4 events on nodequeue at all times
       width: 25%;
       height: auto;
 
-      display: flex;
-      display: -webkit-flex;
-      display: -ms-flex;
-      display: -moz-flex;
-
-      $direction: column;
-      flex-direction: $direction;
-      -webkit-flex-direction: $direction;
-      -ms-flex-direction: $direction;
-      -moz-flex-direction: $direction;
-
-      $wrap: wrap;
-      flex-wrap: $wrap;
-      -webkit-flex-wrap: $wrap;
-      -ms-flex-wrap: $wrap;
-      -moz-flex-wrap: $wrap;
+      display: inline-block;
 
       .node__title {
 
-        $order: 4;
-        order: $order;
-        -webkit-order: $order;
-        -ms-order: $order;
-        -moz-order: $order;
-
-        font-size: 1em;
+        font-size: $content-font-size;
 
         padding: 0;
         margin: 0;
@@ -63,6 +26,8 @@
         a {
           color: white;
           text-decoration: none;
+
+          text-transform: uppercase;
         }
       }
 
@@ -85,11 +50,13 @@
           }
 
           a {
-            color: white;
+            color: #f7970b;
 
             font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
+
+            font-size: $content-font-size;
           }
 
           a:hover {
@@ -102,23 +69,28 @@
             display: none;
           }
 
+          // Remove " to " whenever there's an end date
+          visibility: collapse;
+
           span {
-            color: #f7970b;
+            visibility: visible;
 
             font-weight: bold;
             text-decoration: none;
+            text-transform: uppercase;
+
+            font-size: $content-font-size;
+          }
+
+          // Remove end date from showing
+          .date-display-end {
+            display: none;
           }
         }
       }
 
       // Video entity styling
       .field--type-entityreference {
-
-        $order: 4;
-        order: $order;
-        -webkit-order: $order;
-        -ms-order: $order;
-        -moz-order: $order;
 
         .field__label {
           display: none;
