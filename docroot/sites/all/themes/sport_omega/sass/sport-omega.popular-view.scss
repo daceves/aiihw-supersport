@@ -14,6 +14,10 @@
       width: 25%;
       height: auto;
 
+      float: left;
+
+      padding: 0 0.5em 0 0.5em;
+
       display: inline-block;
 
       .node__title {
@@ -74,6 +78,8 @@
 
           span {
             visibility: visible;
+
+            color: white;
 
             font-weight: bold;
             text-decoration: none;
