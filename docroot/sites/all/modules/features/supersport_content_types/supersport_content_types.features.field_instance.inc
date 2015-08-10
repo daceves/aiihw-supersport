@@ -57,7 +57,7 @@ function supersport_content_types_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -136,7 +136,7 @@ function supersport_content_types_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_select',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -181,7 +181,7 @@ function supersport_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
@@ -222,7 +222,7 @@ function supersport_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_live_video',
-    'label' => 'Live-video',
+    'label' => 'Live Video',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -238,7 +238,7 @@ function supersport_content_types_field_default_field_instances() {
       'settings' => array(
         'fields' => array(),
         'type_settings' => array(
-          'allow_existing' => FALSE,
+          'allow_existing' => 0,
           'allow_new' => 1,
           'delete_references' => 0,
           'label_plural' => 'nodes',
@@ -293,7 +293,7 @@ function supersport_content_types_field_default_field_instances() {
       'module' => 'location_cck',
       'settings' => array(),
       'type' => 'location',
-      'weight' => 7,
+      'weight' => 3,
     ),
   );
 
@@ -360,7 +360,7 @@ function supersport_content_types_field_default_field_instances() {
       'module' => 'boolean',
       'settings' => array(),
       'type' => 'boolean_checkbox',
-      'weight' => 10,
+      'weight' => 5,
     ),
   );
 
@@ -401,7 +401,7 @@ function supersport_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_post_live_video',
-    'label' => 'post-live-video',
+    'label' => 'Post-live Video',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -468,7 +468,7 @@ function supersport_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_pre_live_video',
-    'label' => 'Pre-live-video',
+    'label' => 'Pre-live Video',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -539,7 +539,7 @@ function supersport_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -584,7 +584,7 @@ function supersport_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -747,14 +747,14 @@ function supersport_content_types_field_default_field_instances() {
   t('Date');
   t('Image');
   t('League');
-  t('Live-video');
+  t('Live Video');
   t('Location');
   t('Post-game Flag');
-  t('Pre-live-video');
+  t('Post-live Video');
+  t('Pre-live Video');
   t('Sport');
   t('Sport Video');
   t('Teams');
-  t('post-live-video');
 
   return $field_instances;
 }

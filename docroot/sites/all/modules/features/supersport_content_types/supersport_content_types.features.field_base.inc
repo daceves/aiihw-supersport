@@ -79,9 +79,6 @@ function supersport_content_types_field_default_field_bases() {
       'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
-          'test_field_behavior' => array(
-            'status' => 0,
-          ),
           'views-select-list' => array(
             'status' => 1,
           ),
@@ -218,9 +215,6 @@ function supersport_content_types_field_default_field_bases() {
       'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
-          'test_field_behavior' => array(
-            'status' => 0,
-          ),
           'views-select-list' => array(
             'status' => 0,
           ),
@@ -256,9 +250,6 @@ function supersport_content_types_field_default_field_bases() {
       'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
-          'test_field_behavior' => array(
-            'status' => 0,
-          ),
           'views-select-list' => array(
             'status' => 0,
           ),
