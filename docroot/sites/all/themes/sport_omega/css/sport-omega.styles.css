@@ -3,25 +3,12 @@
 img, media {
   max-width: 100%; }
 
-/* Gradient background following the eversport.tv theme */
 /* line 25, ../sass/sport-omega.styles.scss */
-body {
-  /* For Safari 5.1 to 6.0 */
-  background: -webkit-linear-gradient(black, #353e66);
-  /* For Opera 11.1 to 12.0 */
-  background: -o-linear-gradient(black, #353e66);
-  /* For Firefox 3.6 to 15 */
-  background: -moz-linear-gradient(black, #353e66);
-  /* Standard syntax */
-  background: linear-gradient(#000000, #353e66);
-  height: 100%;
-  margin: 0;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  color: white; }
-
-/* line 46, ../sass/sport-omega.styles.scss */
 .breadcrumb {
   display: none; }
+
+/* line 30, ../sass/sport-omega.styles.scss */
+li {
+  display: inline-block; }
 
 /*# sourceMappingURL=sport-omega.styles.css.map */
