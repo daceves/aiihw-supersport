@@ -40,6 +40,27 @@
       }
     }
 
+    .field--name-field-location {
+      position: absolute;
+      top: 2em;
+    }
+
+    // Make them a single line
+    .field--name-field-sport,
+    .field--name-field-league,
+    .field--name-field-teams {
+      display: inline-block;
+    }
+
+    // Make dividers
+    .field--name-field-league {
+      border-left: 1px solid;
+      border-right: 1px solid;
+
+      padding: 0 0.5em 0 0.5em;
+      margin: 0 0.5em 0 0.5em;
+    }
+
     .field--name-field-date {
       .field__label {
         display: none;
@@ -68,14 +89,16 @@
   }
 
   .field--type-entityreference:after {
-    float: right;
-
     text-transform: uppercase;
     color: white;
 
     // Box look
     padding: 5px 25px 5px 25px;
     background-color: #f7970b;
+
+    position: relative;
+    top: -2.5em;
+    left: 0.5em;
   }
 
   // Specific video entity styling

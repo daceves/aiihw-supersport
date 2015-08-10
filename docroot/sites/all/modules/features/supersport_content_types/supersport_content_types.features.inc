@@ -26,7 +26,7 @@ function supersport_content_types_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Event Name'),
       'help' => '',
     ),
     'video' => array(

@@ -1,0 +1,161 @@
+// Everything under popular view
+.pane-popular-sport-event-views {
+
+  .pane-title {
+    text-transform: uppercase;
+  }
+
+  .view-content {
+
+    /* Templates
+    flex
+    -webkit-flex
+    -ms-flex
+    -moz-flex
+    */
+
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+
+    $direction: row;
+    flex-direction: $direction;
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+
+    .views-row  {
+      // 4 events on nodequeue at all times
+      width: 25%;
+      height: auto;
+
+      display: flex;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: -moz-flex;
+
+      $direction: column;
+      flex-direction: $direction;
+      -webkit-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+      -moz-flex-direction: $direction;
+
+      $wrap: wrap;
+      flex-wrap: $wrap;
+      -webkit-flex-wrap: $wrap;
+      -ms-flex-wrap: $wrap;
+      -moz-flex-wrap: $wrap;
+
+      .node__title {
+
+        $order: 4;
+        order: $order;
+        -webkit-order: $order;
+        -ms-order: $order;
+        -moz-order: $order;
+
+        font-size: 1em;
+
+        padding: 0;
+        margin: 0;
+
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+
+      .node__submitted {
+        display: none;
+      }
+
+      .node__content {
+        .field--name-field-post-game-flag,
+        .field--name-body,
+        .field--name-field-location,
+        .field--name-field-teams {
+          display: none;
+        }
+
+        .field--name-field-sport,
+        .field--name-field-league {
+          .field__label {
+            display: none;
+          }
+
+          a {
+            color: white;
+
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+          }
+
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .field--name-field-date {
+          .field__label {
+            display: none;
+          }
+
+          span {
+            color: #f7970b;
+
+            font-weight: bold;
+            text-decoration: none;
+          }
+        }
+      }
+
+      // Video entity styling
+      .field--type-entityreference {
+
+        $order: 4;
+        order: $order;
+        -webkit-order: $order;
+        -ms-order: $order;
+        -moz-order: $order;
+
+        .field__label {
+          display: none;
+        }
+
+        article.node {
+          header {
+            display: none;
+          }
+        }
+      }
+
+      .field--type-entityreference:after {
+        text-transform: uppercase;
+        color: white;
+
+        // Box look
+        padding: 5px 25px 5px 25px;
+        background-color: #f7970b;
+
+        position: relative;
+        top: -2.5em;
+        left: 0.5em;
+      }
+
+      // Specific video entity styling
+      .field--name-field-pre-live-video:after {
+        content: "upcoming";
+      }
+
+      .field--name-field-post-live-video:after {
+        content: "replay";
+      }
+
+      .field--name-field-live-video:after {
+        content: "live";
+      }
+    }
+  }
+}
