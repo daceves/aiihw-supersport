@@ -24,19 +24,14 @@
 
   .node__content {
 
-    .field--name-field-date,
-    .field--name-field-location {
+    .field--name-field-date {
+      float: right;
+
       span {
         color: white;
 
         font-size: 0.85em;
         text-transform: uppercase;
-      }
-    }
-
-    .field--name-field-location {
-      span {
-        font-weight: bold;
       }
     }
 

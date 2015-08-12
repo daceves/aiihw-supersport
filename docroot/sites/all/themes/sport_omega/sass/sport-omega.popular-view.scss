@@ -1,5 +1,15 @@
 // Requires teaser view mode
 
+// Background color
+.panels-flexible-homepage_flexible_layout {
+  .panels-flexible-region-homepage_flexible_layout-bottom_region,
+  .panels-flexible-column-first {
+    background: #003366;
+
+    padding: 1em;
+  }
+}
+
 // Everything under popular view
 .pane-popular-sport-event-views {
 
@@ -7,6 +17,9 @@
 
   .pane-title {
     text-transform: uppercase;
+
+    padding: 0;
+    margin: 0;
   }
 
   .view-content {
