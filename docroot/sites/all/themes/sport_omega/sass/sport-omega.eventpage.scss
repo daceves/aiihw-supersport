@@ -1,5 +1,17 @@
+.field--name-field-sportvideo {
+  .mediaelement-video {
+
+    video {
+      width: 640px;
+      height: 360px;
+      alignment: center;
+      background: #151825;
+    }
+  }
+}
 
 #supersport-event-node-page{
+
 
 h1 {
   a {
@@ -21,7 +33,7 @@ h2 {
 
 footer {
   .node__submitted {
-    dislplay: none;
+    display: none;
   }
 }
 
@@ -55,9 +67,19 @@ p {
   .field--type-entityreference{
     .field__items{
       .node__title{
-        display:none;
+        display: none;
       }
     }
+  }
+  .field--name-field-sportvideo {
+    //.mediaelement-video {
+      //video {
+        //width: 100%;
+        //margin: 3em;
+        //padding-left: 1em;
+        display: none;
+      //}
+    //}
   }
 }
 
@@ -88,5 +110,4 @@ p {
 .supersport-event-header{
   background-color: #151825;
 }
-
 }
