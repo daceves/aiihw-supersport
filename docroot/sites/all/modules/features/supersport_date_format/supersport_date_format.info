@@ -1,0 +1,12 @@
+name = Supersport Date Format
+description = SS Specific Date Format
+core = 7.x
+package = Features
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = date
+dependencies[] = date_api
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = date_format_supersport_short_date

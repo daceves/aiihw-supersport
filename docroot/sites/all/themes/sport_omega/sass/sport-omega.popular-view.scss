@@ -33,6 +33,10 @@
 
           text-transform: uppercase;
         }
+
+        a:hover {
+          text-decoration: underline;
+        }
       }
 
       .node__submitted {
