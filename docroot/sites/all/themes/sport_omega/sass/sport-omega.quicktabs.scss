@@ -55,13 +55,13 @@
 
     background: $main_color;
 
-    span.field-content {
+    .field-content {
+      font-size: 85%;
+      text-transform: uppercase;
+
       a {
         color: $orange;
         font-weight: bold;
-        font-size: 80%;
-
-        text-transform: uppercase;
 
         text-decoration: none;
       }

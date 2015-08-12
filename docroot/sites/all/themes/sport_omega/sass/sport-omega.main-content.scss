@@ -24,21 +24,24 @@
 
   .node__content {
 
-    .field--name-field-sport,
-    .field--name-field-league,
+    .field--name-field-date,
     .field--name-field-location {
-      .field__label {
-        display: none;
-      }
-
-      .locality {
+      span {
         color: white;
 
-        font-weight: bold;
+        font-size: 0.85em;
         text-transform: uppercase;
-        text-decoration: none;
       }
+    }
 
+    .field--name-field-location {
+      span {
+        font-weight: bold;
+      }
+    }
+
+    .field--name-field-sport,
+    .field--name-field-league {
       a {
         color: #f7970b;
 
@@ -64,19 +67,6 @@
 
       padding: 0 0.5em 0 0.5em;
       margin: 0 0.5em 0 0.5em;
-    }
-
-    .field--name-field-date {
-      .field__label {
-        display: none;
-      }
-
-      span {
-        color: white;
-
-        font-weight: bold;
-        text-decoration: none;
-      }
     }
   }
 
