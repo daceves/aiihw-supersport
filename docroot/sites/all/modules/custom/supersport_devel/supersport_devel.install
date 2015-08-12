@@ -183,3 +183,13 @@ function supersport_devel_update_7114() {
   );
   module_disable($module_list);
 }
+
+/**
+ * Add "Event" content-type display dependency
+ */
+function supersport_devel_update_7116() {
+  $module_list = array(
+    'supersport_date_format',
+  );
+  module_enable($module_list);
+}
