@@ -1,58 +1,66 @@
-/* line 6, ../sass/sport-omega.popular-view.scss */
+/* line 8, ../sass/sport-omega.popular-view.scss */
 .pane-popular-sport-event-views .pane-title {
   text-transform: uppercase; }
-/* line 12, ../sass/sport-omega.popular-view.scss */
+/* line 14, ../sass/sport-omega.popular-view.scss */
 .pane-popular-sport-event-views .view-content .views-row {
   width: 25%;
   height: auto;
   float: left;
   padding: 0 0.5em 0 0.5em;
   display: inline-block; }
-  /* line 23, ../sass/sport-omega.popular-view.scss */
+  /* line 25, ../sass/sport-omega.popular-view.scss */
   .pane-popular-sport-event-views .view-content .views-row .node__title {
     font-size: 0.8em;
     padding: 0;
     margin: 0; }
-    /* line 30, ../sass/sport-omega.popular-view.scss */
+    /* line 32, ../sass/sport-omega.popular-view.scss */
     .pane-popular-sport-event-views .view-content .views-row .node__title a {
       color: white;
       text-decoration: none;
       text-transform: uppercase; }
-    /* line 37, ../sass/sport-omega.popular-view.scss */
+    /* line 39, ../sass/sport-omega.popular-view.scss */
     .pane-popular-sport-event-views .view-content .views-row .node__title a:hover {
       text-decoration: underline; }
-  /* line 42, ../sass/sport-omega.popular-view.scss */
-  .pane-popular-sport-event-views .view-content .views-row .node__submitted {
+  /* line 44, ../sass/sport-omega.popular-view.scss */
+  .pane-popular-sport-event-views .view-content .views-row .node__submitted,
+  .pane-popular-sport-event-views .view-content .views-row .node-readmore {
     display: none; }
-  /* line 47, ../sass/sport-omega.popular-view.scss */
-  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-post-game-flag,
+  /* line 50, ../sass/sport-omega.popular-view.scss */
   .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-body,
-  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-location,
-  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-teams {
+  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-location {
     display: none; }
-  /* line 56, ../sass/sport-omega.popular-view.scss */
-  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-sport .field__label,
-  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-league .field__label {
-    display: none; }
-  /* line 60, ../sass/sport-omega.popular-view.scss */
-  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-sport a,
-  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-league a {
-    color: #f7970b;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 0.8em; }
-  /* line 70, ../sass/sport-omega.popular-view.scss */
-  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-sport a:hover,
-  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-league a:hover {
-    text-decoration: underline; }
-  /* line 75, ../sass/sport-omega.popular-view.scss */
+  /* line 55, ../sass/sport-omega.popular-view.scss */
+  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-sport,
+  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-league {
+    display: inline-block; }
+    /* line 60, ../sass/sport-omega.popular-view.scss */
+    .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-sport .field__label,
+    .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-league .field__label {
+      display: none; }
+    /* line 64, ../sass/sport-omega.popular-view.scss */
+    .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-sport a,
+    .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-league a {
+      color: #f7970b;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 0.8em; }
+    /* line 74, ../sass/sport-omega.popular-view.scss */
+    .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-sport a:hover,
+    .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-league a:hover {
+      text-decoration: underline; }
+  /* line 80, ../sass/sport-omega.popular-view.scss */
+  .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-league {
+    border-left: 1px solid;
+    padding: 0 0.5em 0 0.5em;
+    margin: 0 0.5em 0 0.5em; }
+  /* line 88, ../sass/sport-omega.popular-view.scss */
   .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-date {
     visibility: collapse; }
-    /* line 76, ../sass/sport-omega.popular-view.scss */
+    /* line 89, ../sass/sport-omega.popular-view.scss */
     .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-date .field__label {
       display: none; }
-    /* line 83, ../sass/sport-omega.popular-view.scss */
+    /* line 96, ../sass/sport-omega.popular-view.scss */
     .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-date span {
       visibility: visible;
       color: white;
@@ -60,16 +68,16 @@
       text-decoration: none;
       text-transform: uppercase;
       font-size: 0.8em; }
-    /* line 96, ../sass/sport-omega.popular-view.scss */
+    /* line 109, ../sass/sport-omega.popular-view.scss */
     .pane-popular-sport-event-views .view-content .views-row .node__content .field--name-field-date .date-display-end {
       display: none; }
-  /* line 105, ../sass/sport-omega.popular-view.scss */
+  /* line 118, ../sass/sport-omega.popular-view.scss */
   .pane-popular-sport-event-views .view-content .views-row .field--type-entityreference .field__label {
     display: none; }
-  /* line 110, ../sass/sport-omega.popular-view.scss */
+  /* line 123, ../sass/sport-omega.popular-view.scss */
   .pane-popular-sport-event-views .view-content .views-row .field--type-entityreference article.node header {
     display: none; }
-  /* line 116, ../sass/sport-omega.popular-view.scss */
+  /* line 129, ../sass/sport-omega.popular-view.scss */
   .pane-popular-sport-event-views .view-content .views-row .field--type-entityreference:after {
     text-transform: uppercase;
     color: white;
@@ -78,13 +86,13 @@
     position: relative;
     top: -2.5em;
     left: 0.5em; }
-  /* line 130, ../sass/sport-omega.popular-view.scss */
+  /* line 143, ../sass/sport-omega.popular-view.scss */
   .pane-popular-sport-event-views .view-content .views-row .field--name-field-pre-live-video:after {
     content: "upcoming"; }
-  /* line 134, ../sass/sport-omega.popular-view.scss */
+  /* line 147, ../sass/sport-omega.popular-view.scss */
   .pane-popular-sport-event-views .view-content .views-row .field--name-field-post-live-video:after {
     content: "replay"; }
-  /* line 138, ../sass/sport-omega.popular-view.scss */
+  /* line 151, ../sass/sport-omega.popular-view.scss */
   .pane-popular-sport-event-views .view-content .views-row .field--name-field-live-video:after {
     content: "live"; }
 

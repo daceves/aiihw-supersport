@@ -39,19 +39,7 @@ function supersport_popular_events_view_views_default_views() {
   $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
   $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
   $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-    'popular_events' => 'popular_events',
-    'test' => 0,
-    'sport_queue' => 0,
-  );
-  /* Relationship: Nodequeue: Queue */
-  $handler->display->display_options['relationships']['nodequeue_rel_1']['id'] = 'nodequeue_rel_1';
-  $handler->display->display_options['relationships']['nodequeue_rel_1']['table'] = 'node';
-  $handler->display->display_options['relationships']['nodequeue_rel_1']['field'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel_1']['limit'] = 1;
-  $handler->display->display_options['relationships']['nodequeue_rel_1']['names'] = array(
-    'popular_events' => 'popular_events',
-    'test' => 0,
-    'sport_queue' => 0,
+    'Popular View' => 'Popular View',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -71,7 +59,6 @@ function supersport_popular_events_view_views_default_views() {
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['exposed'] = TRUE;
   $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
   $handler->display->display_options['filters']['status']['expose']['label'] = 'Published';
   $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';

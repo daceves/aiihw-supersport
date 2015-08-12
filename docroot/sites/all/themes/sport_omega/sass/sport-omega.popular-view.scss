@@ -1,3 +1,5 @@
+// Requires teaser view mode
+
 // Everything under popular view
 .pane-popular-sport-event-views {
 
@@ -39,20 +41,22 @@
         }
       }
 
-      .node__submitted {
+      .node__submitted,
+      .node-readmore {
         display: none;
       }
 
       .node__content {
-        .field--name-field-post-game-flag,
         .field--name-body,
-        .field--name-field-location,
-        .field--name-field-teams {
+        .field--name-field-location {
           display: none;
         }
 
         .field--name-field-sport,
         .field--name-field-league {
+
+          display: inline-block;
+
           .field__label {
             display: none;
           }
@@ -71,6 +75,15 @@
             text-decoration: underline;
           }
         }
+
+        // Make dividers
+        .field--name-field-league {
+          border-left: 1px solid;
+
+          padding: 0 0.5em 0 0.5em;
+          margin: 0 0.5em 0 0.5em;
+        }
+
 
         .field--name-field-date {
           .field__label {
