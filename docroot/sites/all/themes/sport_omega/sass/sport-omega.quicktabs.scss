@@ -59,6 +59,10 @@
       font-size: 85%;
       text-transform: uppercase;
 
+      span {
+        color: white;
+      }
+
       a {
         color: $orange;
         font-weight: bold;
@@ -74,6 +78,12 @@
 
     .view-content .views-row {
       padding-bottom: 1em;
+
+      color: white;
+
+      span {
+        color: white;
+      }
     }
   }
 }

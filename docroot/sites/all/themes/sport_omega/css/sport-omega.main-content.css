@@ -43,7 +43,7 @@
   display: inline-block; }
 /* line 69, ../sass/sport-omega.main-content.scss */
 .view-id-main_feature_hero .node__content .field--name-field-league {
-  border-left: 1px solid;
+  border-left: 1px solid white;
   padding: 0 0.5em 0 0.5em;
   margin: 0 0.5em 0 0.5em; }
 /* line 80, ../sass/sport-omega.main-content.scss */
@@ -70,6 +70,5 @@
 /* line 113, ../sass/sport-omega.main-content.scss */
 .view-id-main_feature_hero .field--name-field-live-video:after {
   content: "live"; }
->>>>>>> upstream/develop
 
 /*# sourceMappingURL=sport-omega.main-content.css.map */
