@@ -1,11 +1,13 @@
 // Requires teaser view mode
 
+@import 'sport-omega.includes';
+
 // Background color
 .panels-flexible-homepage_flexible_layout {
-  .panels-flexible-region-homepage_flexible_layout-bottom_region {
-    background: #003366;
+  .panels-flexible-column-first {
+    background: $color-background;
 
-    padding: 1em;
+    padding: $container-padding 0 $container-padding $container-padding;
   }
 }
 
@@ -13,17 +15,17 @@
 .view-id-main_feature_hero {
 
   .node__title {
+
+    margin: 0 0 1em 0;
+
     a {
-      color: white;
+      color: $color-font;
       text-decoration: none;
     }
 
     a:hover {
       text-decoration: underline;
     }
-
-    margin-top: 0;
-    padding: 0;
   }
 
   .node__submitted,
@@ -37,7 +39,7 @@
       float: right;
 
       span {
-        color: white;
+        color: $color-font;
 
         font-size: 0.85em;
         text-transform: uppercase;
@@ -47,7 +49,7 @@
     .field--name-field-sport,
     .field--name-field-league {
       a {
-        color: #f7970b;
+        color: $color-link;
 
         font-weight: bold;
         text-transform: uppercase;
@@ -67,10 +69,10 @@
 
     // Make dividers
     .field--name-field-league {
-      border-left: 1px solid white;
+      border-left: 1px solid $color-font;
 
-      padding: 0 0.5em 0 0.5em;
-      margin: 0 0.5em 0 0.5em;
+      padding-left: 0.5em;
+      margin-left: 0.5em;
     }
   }
 
@@ -89,13 +91,10 @@
   }
 
   .field--type-entityreference:after {
-    text-transform: uppercase;
-    color: white;
 
-    // Box look
-    padding: 5px 25px 5px 25px;
-    background-color: #f7970b;
+    @include date-status-box();
 
+    // Positioning
     position: relative;
     top: -2.5em;
     left: 0.5em;
