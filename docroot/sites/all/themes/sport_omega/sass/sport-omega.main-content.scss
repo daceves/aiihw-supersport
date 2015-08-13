@@ -1,3 +1,14 @@
+// Requires teaser view mode
+
+// Background color
+.panels-flexible-homepage_flexible_layout {
+  .panels-flexible-region-homepage_flexible_layout-bottom_region {
+    background: #003366;
+
+    padding: 1em;
+  }
+}
+
 // Main hero container
 .view-id-main_feature_hero {
 
@@ -6,29 +17,37 @@
       color: white;
       text-decoration: none;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    margin-top: 0;
+    padding: 0;
   }
 
-  .node__submitted {
+  .node__submitted,
+  .node-readmore {
     display: none;
   }
 
   .node__content {
-    .field--name-field-post-game-flag,
-    .field--name-body {
-      display: none;
+
+    .field--name-field-date {
+      float: right;
+
+      span {
+        color: white;
+
+        font-size: 0.85em;
+        text-transform: uppercase;
+      }
     }
 
     .field--name-field-sport,
-    .field--name-field-league,
-    .field--name-field-teams,
-    .field--name-field-location {
-      .field__label {
-        display: none;
-      }
-
-      .locality,
+    .field--name-field-league {
       a {
-        color: white;
+        color: #f7970b;
 
         font-weight: bold;
         text-transform: uppercase;
@@ -40,43 +59,24 @@
       }
     }
 
-    .field--name-field-location {
-      position: absolute;
-      top: 2em;
-    }
-
     // Make them a single line
     .field--name-field-sport,
-    .field--name-field-league,
-    .field--name-field-teams {
+    .field--name-field-league {
       display: inline-block;
     }
 
     // Make dividers
     .field--name-field-league {
-      border-left: 1px solid;
-      border-right: 1px solid;
+      border-left: 1px solid white;
 
       padding: 0 0.5em 0 0.5em;
       margin: 0 0.5em 0 0.5em;
-    }
-
-    .field--name-field-date {
-      .field__label {
-        display: none;
-      }
-
-      span {
-        color: #f7970b;
-
-        font-weight: bold;
-        text-decoration: none;
-      }
     }
   }
 
   // Video entity styling
   .field--type-entityreference {
+
     .field__label {
       display: none;
     }
