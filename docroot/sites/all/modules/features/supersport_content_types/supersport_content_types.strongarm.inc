@@ -139,13 +139,10 @@ function supersport_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '5',
+          'weight' => '1',
         ),
         'title' => array(
-          'weight' => '1',
-        ),
-        'path' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
       ),
       'display' => array(),
@@ -188,9 +185,6 @@ function supersport_content_types_strongarm() {
         ),
         'title' => array(
           'weight' => '-5',
-        ),
-        'path' => array(
-          'weight' => '30',
         ),
       ),
       'display' => array(),

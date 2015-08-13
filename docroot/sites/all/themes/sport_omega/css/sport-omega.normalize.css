@@ -243,16 +243,4 @@ video {
   max-width: 100%;
   height: auto; }
 
-/* line 10, ../sass/sport-omega.normalize.scss */
-.panel-pane.pane-views.pane-popular-sport-event-views {
-  background-color: navy; }
-
-/* line 14, ../sass/sport-omega.normalize.scss */
-li {
-  display: inline-block; }
-
-/* line 18, ../sass/sport-omega.normalize.scss */
-#text {
-  font-size: 12px; }
-
 /*# sourceMappingURL=sport-omega.normalize.css.map */

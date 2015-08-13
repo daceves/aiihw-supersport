@@ -29,19 +29,28 @@
 #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs {
   padding: 0 1em 0 1em;
   background: #003366; }
-  /* line 59, ../sass/sport-omega.quicktabs.scss */
-  #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs span.field-content a {
-    color: #f7970b;
-    font-weight: bold;
-    font-size: 80%;
-    text-transform: uppercase;
-    text-decoration: none; }
-  /* line 69, ../sass/sport-omega.quicktabs.scss */
-  #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs span.field-content a:hover {
-    color: darkorange;
-    text-decoration: underline; }
-  /* line 75, ../sass/sport-omega.quicktabs.scss */
+  /* line 58, ../sass/sport-omega.quicktabs.scss */
+  #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .field-content {
+    font-size: 85%;
+    text-transform: uppercase; }
+    /* line 62, ../sass/sport-omega.quicktabs.scss */
+    #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .field-content span {
+      color: white; }
+    /* line 66, ../sass/sport-omega.quicktabs.scss */
+    #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .field-content a {
+      color: #f7970b;
+      font-weight: bold;
+      text-decoration: none; }
+    /* line 73, ../sass/sport-omega.quicktabs.scss */
+    #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .field-content a:hover {
+      color: darkorange;
+      text-decoration: underline; }
+  /* line 79, ../sass/sport-omega.quicktabs.scss */
   #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .view-content .views-row {
-    padding-bottom: 1em; }
+    padding-bottom: 1em;
+    color: white; }
+    /* line 84, ../sass/sport-omega.quicktabs.scss */
+    #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .view-content .views-row span {
+      color: white; }
 
 /*# sourceMappingURL=sport-omega.quicktabs.css.map */

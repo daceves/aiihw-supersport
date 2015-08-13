@@ -274,7 +274,7 @@ function _supersport_date_status($date) {
     $status['code'] = DATE_PRE;
     $status['string'] = $pre;
   }
-  else if ($today > $end) {
+  else if ($start != $end and $today > $end) {
     $status['code'] = DATE_POST;
     $status['string'] = $post;
   }

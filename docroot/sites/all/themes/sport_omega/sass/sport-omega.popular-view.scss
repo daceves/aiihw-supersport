@@ -1,10 +1,26 @@
+// Requires teaser view mode
+
+// Background color
+.panels-flexible-homepage_flexible_layout {
+  .panels-flexible-column-first {
+    background: #003366;
+
+    padding: 1em;
+  }
+}
+
 // Everything under popular view
 .pane-popular-sport-event-views {
 
-  $content-font-size: 0.8em;
+  $content-font-size: 0.85em;
 
   .pane-title {
     text-transform: uppercase;
+
+    color: white;
+
+    padding: 0;
+    margin: 0;
   }
 
   .view-content {
@@ -13,6 +29,10 @@
       // 4 events on nodequeue at all times
       width: 25%;
       height: auto;
+
+      float: left;
+
+      padding: 0 0.5em 0 0.5em;
 
       display: inline-block;
 
@@ -29,22 +49,28 @@
 
           text-transform: uppercase;
         }
+
+        a:hover {
+          text-decoration: underline;
+        }
       }
 
-      .node__submitted {
+      .node__submitted,
+      .node-readmore {
         display: none;
       }
 
       .node__content {
-        .field--name-field-post-game-flag,
         .field--name-body,
-        .field--name-field-location,
-        .field--name-field-teams {
+        .field--name-field-location {
           display: none;
         }
 
         .field--name-field-sport,
         .field--name-field-league {
+
+          display: inline-block;
+
           .field__label {
             display: none;
           }
@@ -64,6 +90,15 @@
           }
         }
 
+        // Make dividers
+        .field--name-field-league {
+          border-left: 1px solid white;
+
+          padding: 0 0.5em 0 0.5em;
+          margin: 0 0.5em 0 0.5em;
+        }
+
+
         .field--name-field-date {
           .field__label {
             display: none;
@@ -75,7 +110,8 @@
           span {
             visibility: visible;
 
-            font-weight: bold;
+            color: white;
+
             text-decoration: none;
             text-transform: uppercase;
 

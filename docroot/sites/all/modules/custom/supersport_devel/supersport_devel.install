@@ -194,6 +194,16 @@ function supersport_devel_update_7115() {
   module_disable($module_list);
   module_enable($module_list);
 }
+/**
+ * Add "Event" content-type display dependency
+ */
+function supersport_devel_update_7116() {
+  $module_list = array(
+    'supersport_date_format',
+  );
+  module_enable($module_list);
+}
+}
 
 /**
  * Enables the exclude_node_title module for styling home and event pages.
