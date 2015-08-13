@@ -22,8 +22,7 @@ function supersport_popular_events_view_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Popular Events';
-  $handler->display->display_options['css_class'] = 'popular-sport-view';
+  $handler->display->display_options['title'] = 'Popular on Supersport';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -33,8 +32,6 @@ function supersport_popular_events_view_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'full';
-  $handler->display->display_options['row_options']['links'] = FALSE;
   /* Relationship: Nodequeue: Queue */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
   $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
@@ -49,40 +46,8 @@ function supersport_popular_events_view_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Live-video */
-  $handler->display->display_options['fields']['field_live_video']['id'] = 'field_live_video';
-  $handler->display->display_options['fields']['field_live_video']['table'] = 'field_data_field_live_video';
-  $handler->display->display_options['fields']['field_live_video']['field'] = 'field_live_video';
-  $handler->display->display_options['fields']['field_live_video']['label'] = '';
-  $handler->display->display_options['fields']['field_live_video']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_live_video']['settings'] = array(
-    'link' => 0,
-  );
-  /* Field: Content: post-live-video */
-  $handler->display->display_options['fields']['field_post_live_video']['id'] = 'field_post_live_video';
-  $handler->display->display_options['fields']['field_post_live_video']['table'] = 'field_data_field_post_live_video';
-  $handler->display->display_options['fields']['field_post_live_video']['field'] = 'field_post_live_video';
-  $handler->display->display_options['fields']['field_post_live_video']['label'] = '';
-  $handler->display->display_options['fields']['field_post_live_video']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_post_live_video']['settings'] = array(
-    'link' => 0,
-  );
-  /* Field: Content: Pre-live-video */
-  $handler->display->display_options['fields']['field_pre_live_video']['id'] = 'field_pre_live_video';
-  $handler->display->display_options['fields']['field_pre_live_video']['table'] = 'field_data_field_pre_live_video';
-  $handler->display->display_options['fields']['field_pre_live_video']['field'] = 'field_pre_live_video';
-  $handler->display->display_options['fields']['field_pre_live_video']['label'] = '';
-  $handler->display->display_options['fields']['field_pre_live_video']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_pre_live_video']['settings'] = array(
-    'link' => 0,
-  );
-  /* Field: Field: Sport */
-  $handler->display->display_options['fields']['field_sport']['id'] = 'field_sport';
-  $handler->display->display_options['fields']['field_sport']['table'] = 'field_data_field_sport';
-  $handler->display->display_options['fields']['field_sport']['field'] = 'field_sport';
-  $handler->display->display_options['fields']['field_sport']['label'] = '';
-  $handler->display->display_options['fields']['field_sport']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
