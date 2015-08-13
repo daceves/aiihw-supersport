@@ -1,5 +1,5 @@
 /* line 5, ../sass/sport-omega.popular-view.scss */
-.panels-flexible-homepage_flexible_layout .panels-flexible-column-first {
+.panels-flexible-homepage_flexible_layout .panels-flexible-region-homepage_flexible_layout-bottom_region {
   background: #003366;
   padding: 1em; }
 
@@ -7,7 +7,7 @@
 .pane-popular-sport-event-views .pane-title {
   text-transform: uppercase;
   color: white;
-  padding: 0;
+  padding: 0 0 0.2em 0;
   margin: 0; }
 /* line 28, ../sass/sport-omega.popular-view.scss */
 .pane-popular-sport-event-views .view-content .views-row {

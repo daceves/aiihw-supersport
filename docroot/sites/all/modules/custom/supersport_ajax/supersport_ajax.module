@@ -21,7 +21,7 @@ function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
   switch($form_id) {
 	case 'event_node_form':
 
-	  // Get the language value in order to have
+      // Get the language value in order to have
 	  // deeper access in the array
 	  $language = $form['field_sport']['#language'];
 
@@ -49,6 +49,7 @@ function supersport_ajax_form_alter(&$form, &$form_state, $form_id) {
 
       // Dictate default options
       _supersport_ajax_default_options($form, $form_state, $language);
+
 	  break;
   }
 }
@@ -83,7 +84,7 @@ function supersport_ajax_sportleague_callback(&$form, &$form_state) {
   // Teams
   // Clear teams list when sport is changed
   $form['field_teams'][$lang]['#options'] = _supersport_ajax_default_option();
-  
+
   return $form;
 }
 
@@ -184,6 +185,7 @@ function _supersport_ajax_default_options(&$form, $form_state, $language) {
   // Check if this node exists, ie: EDIT hit
   if (isset($form['nid']['#value'])) {
 
+    // Fill select options with saved values
     if (!isset($form_state['triggering_element']['#ajax']['callback'])) {
       $value = $form['field_sport'][$language]['#default_value'][0];
       $options = _supersport_ajax_get_options('league', 'field_sport', $value, $language);
@@ -197,11 +199,21 @@ function _supersport_ajax_default_options(&$form, $form_state, $language) {
   else {
     // Node doesn't exist, @ node creation
 
+    // No triggers
+    if (!isset($form_state['triggering_element'])) {
+      $form['field_league'][$language]['#options'] = $default_option;
+      $form['field_teams'][$language]['#options'] = $default_option;
+    }
+
     // A callback hasn't been called
     if (!isset($form_state['triggering_element']['#ajax']['callback'])) {
 
-      $form['field_league'][$language]['#options'] = $default_option;
-      $form['field_teams'][$language]['#options'] = $default_option;
+      // Fixing issue where uploading or removing Video content type causes
+      // Illegal action due to form reset
+      if(isset($form_state['triggering_element']) and $form_state['triggering_element']['#type'] != 'submit') {
+        $form['field_league'][$language]['#options'] = $default_option;
+        $form['field_teams'][$language]['#options'] = $default_option;
+      }
     }
   }
 }
