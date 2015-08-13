@@ -1,70 +1,70 @@
-/* line 5, ../sass/sport-omega.eventpage.scss */
-#supersport-event-node-page h1 a {
-  color: #f7970b; }
-/* line 11, ../sass/sport-omega.eventpage.scss */
-#supersport-event-node-page h2 a {
-  color: #f7970b; }
-/* line 17, ../sass/sport-omega.eventpage.scss */
-#supersport-event-node-page .l-content h1 {
-  display: none; }
-/* line 23, ../sass/sport-omega.eventpage.scss */
-#supersport-event-node-page footer .node__submitted {
-  dislplay: none; }
-/* line 28, ../sass/sport-omega.eventpage.scss */
-#supersport-event-node-page p {
-  display: none; }
-  /* line 29, ../sass/sport-omega.eventpage.scss */
-  #supersport-event-node-page p a {
-    color: #f7970b; }
-/* line 36, ../sass/sport-omega.eventpage.scss */
-#supersport-event-node-page .field-content a {
-  color: #f7970b; }
-/* line 42, ../sass/sport-omega.eventpage.scss */
-#supersport-event-node-page .node__content {
-  display: -webkit-flex;
-  -webkit-flex-direction: column;
-  -webkit-flex-wrap: wrap; }
-  /* line 43, ../sass/sport-omega.eventpage.scss */
-  #supersport-event-node-page .node__content a {
-    color: #f7970b; }
-  /* line 50, ../sass/sport-omega.eventpage.scss */
-  #supersport-event-node-page .node__content .field-image {
-    -webkit-order: 1; }
-  /* line 53, ../sass/sport-omega.eventpage.scss */
-  #supersport-event-node-page .node__content .field-location {
-    -webkit-order: 3; }
-  /* line 56, ../sass/sport-omega.eventpage.scss */
-  #supersport-event-node-page .node__content .field-teams {
-    -webkit-order: 2; }
-  /* line 60, ../sass/sport-omega.eventpage.scss */
-  #supersport-event-node-page .node__content .field--name-field-date,
-  #supersport-event-node-page .node__content .field--name-field-sport,
-  #supersport-event-node-page .node__content .field--name-field-league,
-  #supersport-event-node-page .node__content .field--name-field-post-game-flag {
+/* line 22, ../sass/sport-omega.eventpage.scss */
+#supersport-event-node-page {
+  padding: 1em;
+  background: #003366; }
+  /* line 26, ../sass/sport-omega.eventpage.scss */
+  #supersport-event-node-page p {
     display: none; }
-  /* line 69, ../sass/sport-omega.eventpage.scss */
-  #supersport-event-node-page .node__content .field--name-field-image .field__label {
-    display: none; }
-  /* line 75, ../sass/sport-omega.eventpage.scss */
-  #supersport-event-node-page .node__content .field--type-entityreference .field__label {
-    display: none; }
-  /* line 78, ../sass/sport-omega.eventpage.scss */
-  #supersport-event-node-page .node__content .field--type-entityreference .node__title {
-    display: none; }
-/* line 88, ../sass/sport-omega.eventpage.scss */
-#supersport-event-node-page .links a {
-  color: #f7970b; }
-/* line 94, ../sass/sport-omega.eventpage.scss */
-#supersport-event-node-page .block__content span a {
-  color: #f7970b; }
-/* line 100, ../sass/sport-omega.eventpage.scss */
-#supersport-event-node-page .breadcrumb a {
-  display: none; }
-/* line 106, ../sass/sport-omega.eventpage.scss */
-#supersport-event-node-page .menu a {
-  color: #f7970b; }
-/* line 111, ../sass/sport-omega.eventpage.scss */
-#supersport-event-node-page .supersport-event-header {
-  background-color: #151825; }
+  /* line 31, ../sass/sport-omega.eventpage.scss */
+  #supersport-event-node-page .node__content {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between; }
+    /* line 43, ../sass/sport-omega.eventpage.scss */
+    #supersport-event-node-page .node__content a {
+      color: #f7970b; }
+    /* line 48, ../sass/sport-omega.eventpage.scss */
+    #supersport-event-node-page .node__content .field--type-entityreference {
+      width: 100%;
+      margin-bottom: 1em; }
+      /* line 51, ../sass/sport-omega.eventpage.scss */
+      #supersport-event-node-page .node__content .field--type-entityreference .field__label {
+        display: none; }
+      /* line 54, ../sass/sport-omega.eventpage.scss */
+      #supersport-event-node-page .node__content .field--type-entityreference .node__title {
+        display: none; }
+    /* line 59, ../sass/sport-omega.eventpage.scss */
+    #supersport-event-node-page .node__content .field--name-field-date,
+    #supersport-event-node-page .node__content .field--name-field-sport,
+    #supersport-event-node-page .node__content .field--name-field-league,
+    #supersport-event-node-page .node__content .field--name-field-post-game-flag {
+      display: none; }
+    /* line 69, ../sass/sport-omega.eventpage.scss */
+    #supersport-event-node-page .node__content .field--name-field-location .locality,
+    #supersport-event-node-page .node__content .field--name-field-teams .locality {
+      font-weight: bold;
+      color: white; }
+    /* line 73, ../sass/sport-omega.eventpage.scss */
+    #supersport-event-node-page .node__content .field--name-field-location .field__label,
+    #supersport-event-node-page .node__content .field--name-field-teams .field__label {
+      font-weight: normal;
+      color: #ffffff;
+      text-transform: uppercase; }
+    /* line 79, ../sass/sport-omega.eventpage.scss */
+    #supersport-event-node-page .node__content .field--name-field-location a,
+    #supersport-event-node-page .node__content .field--name-field-teams a {
+      font-weight: bold;
+      text-decoration: none; }
+    /* line 86, ../sass/sport-omega.eventpage.scss */
+    #supersport-event-node-page .node__content .field--name-field-image .field__label {
+      display: none; }
 
 /*# sourceMappingURL=sport-omega.eventpage.css.map */
