@@ -194,3 +194,11 @@ function supersport_devel_update_7115() {
   module_disable($module_list);
   module_enable($module_list);
 }
+
+/**
+ * Enables the exclude_node_title module for styling home and event pages.
+ */
+function supersport_devel_update_7117() {
+  $module = array('exclude_node_title');
+  module_enable($module);
+}
