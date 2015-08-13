@@ -203,7 +203,6 @@ function supersport_devel_update_7116() {
   );
   module_enable($module_list);
 }
-}
 
 /**
  * Enables the exclude_node_title module for styling home and event pages.
