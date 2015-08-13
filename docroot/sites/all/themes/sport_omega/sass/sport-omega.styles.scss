@@ -21,13 +21,20 @@
 @import "base/*";
 @import "components/*";
 
+
+.breadcrumb {
+  // Remove base theme breadcrumbs
+  display: none;
+}
+
+
 /* Gradient background following the eversport.tv theme */
 body{
   /* For Safari 5.1 to 6.0 */
   background: 
     -webkit-linear-gradient(black, #353e66);
   /* For Opera 11.1 to 12.0 */
-	background:
+	background: 
     -o-linear-gradient(black, #353e66);
 	/* For Firefox 3.6 to 15 */
   background: 
@@ -39,12 +46,4 @@ body{
       margin: 0;
   background-attachment: fixed;
   background-repeat: no-repeat;
-
-  color: white;
 }
-
-.breadcrumb {
-  // Remove base theme breadcrumbs
-  display: none;
-}
-    

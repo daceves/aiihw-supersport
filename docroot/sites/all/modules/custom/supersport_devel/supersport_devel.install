@@ -185,6 +185,16 @@ function supersport_devel_update_7114() {
 }
 
 /**
+ * Fix the bug inside popular views 
+ * by changing the number of nodequeue
+ * in relations from two to one
+ */
+function supersport_devel_update_7115() {
+  $module_list = array('supersport_popular_events_view');
+  module_disable($module_list);
+  module_enable($module_list);
+}
+/**
  * Add "Event" content-type display dependency
  */
 function supersport_devel_update_7116() {
