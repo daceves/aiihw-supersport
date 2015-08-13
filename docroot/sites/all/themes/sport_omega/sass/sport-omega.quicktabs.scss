@@ -1,8 +1,7 @@
+@import 'sport-omega.includes';
+
 // Quicktabs selector
 #quicktabs-upcoming_archived_quicktabs {
-
-  $main_color: #003366;
-  $orange: #f7970b;
 
   // Quicktabs tabs
   ul {
@@ -29,7 +28,7 @@
         padding-top: $tab_height;
         padding-bottom: $tab_height;
 
-        color: white;
+        color: $color-font;
 
         text-align: center;
         text-transform: uppercase;
@@ -43,7 +42,7 @@
 
     li.active {
       a {
-        background-color: $main_color;
+        background-color: $color-background;
       }
     }
   }
@@ -51,27 +50,27 @@
   // Quicktabs content
   #quicktabs-container-upcoming_archived_quicktabs {
 
-    padding: 0 1em 0 1em;
+    padding: 0 $container-padding 0 $container-padding;
 
-    background: $main_color;
+    background: $color-background;
 
     .field-content {
       font-size: 85%;
       text-transform: uppercase;
 
       span {
-        color: white;
+        color: $color-font;
       }
 
       a {
-        color: $orange;
+        color: $color-link;
         font-weight: bold;
 
         text-decoration: none;
       }
 
       a:hover {
-        color: darkorange;
+        color: $color-link-hover;
         text-decoration: underline;
       }
     }
@@ -79,10 +78,10 @@
     .view-content .views-row {
       padding-bottom: 1em;
 
-      color: white;
+      color: $color-font;
 
       span {
-        color: white;
+        color: $color-font;
       }
     }
   }

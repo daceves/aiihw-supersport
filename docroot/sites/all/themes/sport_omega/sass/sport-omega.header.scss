@@ -1,61 +1,63 @@
-$orange: #f7970b;
+@import 'sport-omega.includes';
 
-.supersport-event-header-left {
-  float: left;
-}
+.supersport-event-header {
 
-.supersport-event-header-right {
-  float: right;
-}
+  padding: $container-padding;
+  background: $color-background;
 
-.supersport-event-header-breadcrumb-crumb {
+  .supersport-event-header-left {
+    float: left;
+  }
 
-  a {
-    color: $orange;
+  .supersport-event-header-right {
+    float: right;
+  }
+
+  .supersport-event-header-breadcrumb-crumb {
+
+    a {
+      color: $color-link;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 115%;
+    }
+
+    a:hover {
+      color: $color-link-hover;
+      text-decoration: underline;
+    }
+  }
+
+  .supersport-event-header-breadcrumb-separator {
+    color: $color-font;
+
+    // Divider
+    border-right: 1px solid $color-font;
+
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .supersport-event-header-title {
+    color: $color-font;
+
+    font-size: 150%;
     font-weight: bold;
-    text-decoration: none;
-    font-size: 115%;
   }
 
-  a:hover {
-    color: darkorange;
-    text-decoration: underline;
+  .supersport-event-header-date {
+    float: right;
+    margin-top: 5px;
+
+    color: $color-font;
+
+    text-transform: uppercase;
   }
-}
 
-.supersport-event-header-breadcrumb-separator {
-  color: white;
+  .supersport-event-header-date-status {
 
-  border-right: 1px solid white;
+    float: right;
 
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.supersport-event-header-title {
-  color: white;
-
-  font-size: 150%;
-  font-weight: bold;
-}
-
-.supersport-event-header-date {
-  float: right;
-  margin-top: 5px;
-
-  font-weight: bold;
-  color: #003366;
-}
-
-.supersport-event-header-date-status {
-
-  float: right;
-
-  // Font options
-  text-transform: uppercase;
-  color: white;
-
-  // Box look
-  padding: 5px 25px 5px 25px;
-  background-color: $orange;
+    @include date-status-box();
+  }
 }

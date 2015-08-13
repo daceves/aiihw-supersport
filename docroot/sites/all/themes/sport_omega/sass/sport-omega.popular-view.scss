@@ -1,11 +1,13 @@
 // Requires teaser view mode
 
+@import 'sport-omega.includes';
+
 // Background color
 .panels-flexible-homepage_flexible_layout {
   .panels-flexible-region-homepage_flexible_layout-bottom_region {
-    background: #003366;
+    background: $color-background;
 
-    padding: 1em;
+    padding: $container-padding;
   }
 }
 
@@ -17,7 +19,9 @@
   .pane-title {
     text-transform: uppercase;
 
-    color: white;
+    font-size: 1.2em;
+
+    color: $color-font;
 
     padding: 0 0 0.2em 0;
     margin: 0;
@@ -44,7 +48,7 @@
         margin: 0;
 
         a {
-          color: white;
+          color: $color-font;
           text-decoration: none;
 
           text-transform: uppercase;
@@ -76,7 +80,7 @@
           }
 
           a {
-            color: #f7970b;
+            color: $color-link;
 
             font-weight: bold;
             text-transform: uppercase;
@@ -92,7 +96,7 @@
 
         // Make dividers
         .field--name-field-league {
-          border-left: 1px solid white;
+          border-left: 1px solid $color-font;
 
           padding: 0 0.5em 0 0.5em;
           margin: 0 0.5em 0 0.5em;
@@ -110,7 +114,7 @@
           span {
             visibility: visible;
 
-            color: white;
+            color: $color-font;
 
             text-decoration: none;
             text-transform: uppercase;
@@ -140,12 +144,8 @@
       }
 
       .field--type-entityreference:after {
-        text-transform: uppercase;
-        color: white;
 
-        // Box look
-        padding: 5px 25px 5px 25px;
-        background-color: #f7970b;
+        @include date-status-box();
 
         position: relative;
         top: -2.5em;
