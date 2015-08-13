@@ -1,0 +1,16 @@
+name = Supersport Image Styles
+description = Provides image styling throughout Supersport.
+core = 7.x
+package = Features
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = file_styles
+dependencies[] = iek
+dependencies[] = image
+dependencies[] = strongarm
+dependencies[] = styles
+dependencies[] = styles_ui
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[image][] = event_node_page_image
+features[variable][] = image_toolkit

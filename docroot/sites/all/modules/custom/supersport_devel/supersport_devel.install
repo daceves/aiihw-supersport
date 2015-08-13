@@ -203,3 +203,13 @@ function supersport_devel_update_7116() {
   );
   module_enable($module_list);
 }
+
+/**
+ * Applies supersport image styles
+ */
+function supersport_devel_update_7117() {
+  $module_list = array(
+    'supersport_image_styles',
+  );
+  module_enable($module_list);
+}
