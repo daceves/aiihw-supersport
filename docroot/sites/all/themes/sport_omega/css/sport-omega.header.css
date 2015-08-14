@@ -1,48 +1,46 @@
 /* line 3, ../sass/sport-omega.header.scss */
-.supersport-event-header-left {
-  float: left; }
-
-/* line 7, ../sass/sport-omega.header.scss */
-.supersport-event-header-right {
-  float: right; }
-
-/* line 13, ../sass/sport-omega.header.scss */
-.supersport-event-header-breadcrumb-crumb a {
-  color: #f7970b;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 115%; }
-/* line 20, ../sass/sport-omega.header.scss */
-.supersport-event-header-breadcrumb-crumb a:hover {
-  color: darkorange;
-  text-decoration: underline; }
-
-/* line 26, ../sass/sport-omega.header.scss */
-.supersport-event-header-breadcrumb-separator {
-  color: white;
-  border-right: 1px solid white;
-  margin-left: 10px;
-  margin-right: 10px; }
-
-/* line 35, ../sass/sport-omega.header.scss */
-.supersport-event-header-title {
-  color: white;
-  font-size: 150%;
-  font-weight: bold; }
-
-/* line 42, ../sass/sport-omega.header.scss */
-.supersport-event-header-date {
-  float: right;
-  margin-top: 5px;
-  font-weight: bold;
-  color: #003366; }
-
-/* line 50, ../sass/sport-omega.header.scss */
-.supersport-event-header-date-status {
-  float: right;
-  text-transform: uppercase;
-  color: white;
-  padding: 5px 25px 5px 25px;
-  background-color: #f7970b; }
+.supersport-event-header {
+  padding: 1em;
+  background: #003366; }
+  /* line 8, ../sass/sport-omega.header.scss */
+  .supersport-event-header .supersport-event-header-left {
+    float: left; }
+  /* line 12, ../sass/sport-omega.header.scss */
+  .supersport-event-header .supersport-event-header-right {
+    float: right; }
+  /* line 18, ../sass/sport-omega.header.scss */
+  .supersport-event-header .supersport-event-header-breadcrumb-crumb a {
+    color: #f7970b;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 115%; }
+  /* line 25, ../sass/sport-omega.header.scss */
+  .supersport-event-header .supersport-event-header-breadcrumb-crumb a:hover {
+    color: darkorange;
+    text-decoration: underline; }
+  /* line 31, ../sass/sport-omega.header.scss */
+  .supersport-event-header .supersport-event-header-breadcrumb-separator {
+    color: white;
+    border-right: 1px solid white;
+    margin-left: 10px;
+    margin-right: 10px; }
+  /* line 41, ../sass/sport-omega.header.scss */
+  .supersport-event-header .supersport-event-header-title {
+    color: white;
+    font-size: 150%;
+    font-weight: bold; }
+  /* line 48, ../sass/sport-omega.header.scss */
+  .supersport-event-header .supersport-event-header-date {
+    float: right;
+    margin-top: 5px;
+    color: white;
+    text-transform: uppercase; }
+  /* line 57, ../sass/sport-omega.header.scss */
+  .supersport-event-header .supersport-event-header-date-status {
+    float: right;
+    text-transform: uppercase;
+    color: white;
+    padding: 5px 25px 5px 25px;
+    background-color: #f7970b; }
 
 /*# sourceMappingURL=sport-omega.header.css.map */

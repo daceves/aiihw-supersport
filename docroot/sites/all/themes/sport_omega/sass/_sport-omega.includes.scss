@@ -1,0 +1,51 @@
+// Base definitions
+$color-orange: #f7970b;
+$color-blue: #003366;
+
+///// /// // Use these below:
+
+// Color
+$color-font: white;
+$color-link: $color-orange;
+$color-link-hover: darkorange;
+$color-background: $color-blue;
+
+// Container padding
+$container-padding: 1em;
+
+// CSS for the event date status
+// Upcoming, live, and replay
+@mixin date-status-box {
+  text-transform: uppercase;
+  color: $color-font;
+
+  // Box look
+  padding: 5px 25px 5px 25px;
+  background-color: $color-link;
+}
+
+// CSS overlay
+@mixin date-status-overlay {
+  .field--type-entityreference:after {
+
+    @include date-status-box();
+
+    position: relative;
+    top: -2.5em;
+    left: 0.5em;
+  }
+
+  // Specific video entity styling
+  .field--name-field-pre-live-video:after {
+    content: "upcoming";
+  }
+
+  .field--name-field-post-live-video:after {
+    content: "replay";
+  }
+
+  .field--name-field-live-video:after {
+    content: "live";
+  }
+}
+

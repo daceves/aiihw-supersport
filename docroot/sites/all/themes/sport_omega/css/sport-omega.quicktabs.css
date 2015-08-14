@@ -1,14 +1,14 @@
-/* line 8, ../sass/sport-omega.quicktabs.scss */
+/* line 7, ../sass/sport-omega.quicktabs.scss */
 #quicktabs-upcoming_archived_quicktabs ul {
   padding: 0 0 1em 0;
   margin: 0; }
-  /* line 14, ../sass/sport-omega.quicktabs.scss */
+  /* line 13, ../sass/sport-omega.quicktabs.scss */
   #quicktabs-upcoming_archived_quicktabs ul li #quicktabs-tab-upcoming_archived_quicktabs-0 {
     float: left; }
-  /* line 18, ../sass/sport-omega.quicktabs.scss */
+  /* line 17, ../sass/sport-omega.quicktabs.scss */
   #quicktabs-upcoming_archived_quicktabs ul li #quicktabs-tab-upcoming_archived_quicktabs-1 {
     float: right; }
-  /* line 22, ../sass/sport-omega.quicktabs.scss */
+  /* line 21, ../sass/sport-omega.quicktabs.scss */
   #quicktabs-upcoming_archived_quicktabs ul li a {
     display: block;
     height: 100%;
@@ -19,37 +19,37 @@
     text-align: center;
     text-transform: uppercase;
     text-decoration: none; }
-  /* line 39, ../sass/sport-omega.quicktabs.scss */
+  /* line 38, ../sass/sport-omega.quicktabs.scss */
   #quicktabs-upcoming_archived_quicktabs ul li a:hover {
     text-decoration: underline; }
-  /* line 45, ../sass/sport-omega.quicktabs.scss */
+  /* line 44, ../sass/sport-omega.quicktabs.scss */
   #quicktabs-upcoming_archived_quicktabs ul li.active a {
     background-color: #003366; }
-/* line 52, ../sass/sport-omega.quicktabs.scss */
+/* line 51, ../sass/sport-omega.quicktabs.scss */
 #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs {
   padding: 0 1em 0 1em;
   background: #003366; }
-  /* line 58, ../sass/sport-omega.quicktabs.scss */
+  /* line 57, ../sass/sport-omega.quicktabs.scss */
   #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .field-content {
     font-size: 85%;
     text-transform: uppercase; }
-    /* line 62, ../sass/sport-omega.quicktabs.scss */
+    /* line 61, ../sass/sport-omega.quicktabs.scss */
     #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .field-content span {
       color: white; }
-    /* line 66, ../sass/sport-omega.quicktabs.scss */
+    /* line 65, ../sass/sport-omega.quicktabs.scss */
     #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .field-content a {
       color: #f7970b;
       font-weight: bold;
       text-decoration: none; }
-    /* line 73, ../sass/sport-omega.quicktabs.scss */
+    /* line 72, ../sass/sport-omega.quicktabs.scss */
     #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .field-content a:hover {
       color: darkorange;
       text-decoration: underline; }
-  /* line 79, ../sass/sport-omega.quicktabs.scss */
+  /* line 78, ../sass/sport-omega.quicktabs.scss */
   #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .view-content .views-row {
     padding-bottom: 1em;
     color: white; }
-    /* line 84, ../sass/sport-omega.quicktabs.scss */
+    /* line 83, ../sass/sport-omega.quicktabs.scss */
     #quicktabs-upcoming_archived_quicktabs #quicktabs-container-upcoming_archived_quicktabs .view-content .views-row span {
       color: white; }
 

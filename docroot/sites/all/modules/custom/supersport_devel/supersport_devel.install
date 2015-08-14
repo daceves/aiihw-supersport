@@ -205,9 +205,19 @@ function supersport_devel_update_7116() {
 }
 
 /**
- * Enables the exclude_node_title module for styling home and event pages.
+ * Applies supersport image styles
  */
 function supersport_devel_update_7117() {
+  $module_list = array(
+    'supersport_image_styles',
+  );
+  module_enable($module_list);
+}
+
+/**
+ * Enables the exclude_node_title module for styling home and event pages.
+ */
+function supersport_devel_update_7118() {
   $module = array('exclude_node_title');
   module_enable($module);
 }
