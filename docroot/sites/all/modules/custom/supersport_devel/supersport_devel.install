@@ -221,3 +221,11 @@ function supersport_devel_update_7118() {
   $module = array('exclude_node_title');
   module_enable($module);
 }
+
+/**
+ * Deletes duplicate field.
+ */
+function supersport_devel_update_7119() {
+  $field_to_delete = array('field_video');
+  field_delete_field($field_to_delete);
+}
