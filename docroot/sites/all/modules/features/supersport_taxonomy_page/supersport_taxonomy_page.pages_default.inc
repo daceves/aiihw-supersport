@@ -31,13 +31,16 @@ function supersport_taxonomy_page_default_page_manager_handlers() {
     'name' => 'taxonomy_term_panel',
   );
   $display = new panels_display();
-  $display->layout = 'flexible:event_node_flexible_layout';
+  $display->layout = 'flexible:supersport_three_row_layout';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'top_region' => NULL,
       'bottom_region' => NULL,
+      'supersport_three_region_one' => NULL,
+      'supersport_three_region_two' => NULL,
+      'supersport_three_region_three' => NULL,
     ),
   );
   $display->cache = array();
@@ -46,8 +49,31 @@ function supersport_taxonomy_page_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-e083182b-106c-4b3f-80d0-3086abe10cc7';
-    $pane->panel = 'bottom_region';
+    $pane->pid = 'new-8261dad1-0072-44f1-a5dc-1d7d38b657ff';
+    $pane->panel = 'supersport_three_region_one';
+    $pane->type = 'block';
+    $pane->subtype = 'supersport_event_header-ss_taxonomy_header';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '8261dad1-0072-44f1-a5dc-1d7d38b657ff';
+    $display->content['new-8261dad1-0072-44f1-a5dc-1d7d38b657ff'] = $pane;
+    $display->panels['supersport_three_region_one'][0] = 'new-8261dad1-0072-44f1-a5dc-1d7d38b657ff';
+    $pane = new stdClass();
+    $pane->pid = 'new-b32bd347-bb86-4609-9e57-a1c2cb0b2d7f';
+    $pane->panel = 'supersport_three_region_three';
     $pane->type = 'views';
     $pane->subtype = 'popular_sport_event_views';
     $pane->shown = TRUE;
@@ -73,39 +99,13 @@ function supersport_taxonomy_page_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'popular-sport-event-views-region',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'e083182b-106c-4b3f-80d0-3086abe10cc7';
-    $display->content['new-e083182b-106c-4b3f-80d0-3086abe10cc7'] = $pane;
-    $display->panels['bottom_region'][0] = 'new-e083182b-106c-4b3f-80d0-3086abe10cc7';
-    $pane = new stdClass();
-    $pane->pid = 'new-8261dad1-0072-44f1-a5dc-1d7d38b657ff';
-    $pane->panel = 'top_region';
-    $pane->type = 'block';
-    $pane->subtype = 'supersport_event_header-ss_taxonomy_header';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '8261dad1-0072-44f1-a5dc-1d7d38b657ff';
-    $display->content['new-8261dad1-0072-44f1-a5dc-1d7d38b657ff'] = $pane;
-    $display->panels['top_region'][0] = 'new-8261dad1-0072-44f1-a5dc-1d7d38b657ff';
+    $pane->uuid = 'b32bd347-bb86-4609-9e57-a1c2cb0b2d7f';
+    $display->content['new-b32bd347-bb86-4609-9e57-a1c2cb0b2d7f'] = $pane;
+    $display->panels['supersport_three_region_three'][0] = 'new-b32bd347-bb86-4609-9e57-a1c2cb0b2d7f';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
