@@ -284,7 +284,12 @@ function _supersport_markup_date($field_date, $field_pg_flag) {
       $date_content = date($pre, $date['start']);
       break;
     case DATE_LIVE;
-      $date_content = date($live, $date['start']) . ' - ' . date($live, $date['end']);
+      if ($date['start'] == $date['end']) {
+        $date_content = date($live, $date['start']);
+      }
+      else {
+        $date_content = date($live, $date['start']) . ' - ' . date($live, $date['end']);
+      }
       break;
     case DATE_POST;
       $date_content = date($post, $date['start']);
