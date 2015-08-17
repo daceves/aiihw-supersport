@@ -21,6 +21,7 @@
 @import "base/*";
 @import "components/*";
 
+@import "sport-omega.includes";
 
 .breadcrumb {
   // Remove base theme breadcrumbs
@@ -46,4 +47,22 @@ body{
       margin: 0;
   background-attachment: fixed;
   background-repeat: no-repeat;
+
+  .l-header {
+    margin-bottom: 0;
+  }
+
+  .site-name {
+    a {
+      color: $color-link;
+
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $color-link-hover;
+
+      text-decoration: underline;
+    }
+  }
 }
