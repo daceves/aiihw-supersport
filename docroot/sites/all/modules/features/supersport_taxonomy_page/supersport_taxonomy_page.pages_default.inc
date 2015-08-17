@@ -106,6 +106,44 @@ function supersport_taxonomy_page_default_page_manager_handlers() {
     $pane->uuid = 'b32bd347-bb86-4609-9e57-a1c2cb0b2d7f';
     $display->content['new-b32bd347-bb86-4609-9e57-a1c2cb0b2d7f'] = $pane;
     $display->panels['supersport_three_region_three'][0] = 'new-b32bd347-bb86-4609-9e57-a1c2cb0b2d7f';
+    $pane = new stdClass();
+    $pane->pid = 'new-a5a31f23-9f5a-46bd-b1a7-005c80649e27';
+    $pane->panel = 'supersport_three_region_two';
+    $pane->type = 'views';
+    $pane->subtype = 'taxonomy_view';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '9',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'default',
+      'context' => array(
+        0 => 'argument_term_1.tid',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a5a31f23-9f5a-46bd-b1a7-005c80649e27';
+    $display->content['new-a5a31f23-9f5a-46bd-b1a7-005c80649e27'] = $pane;
+    $display->panels['supersport_three_region_two'][0] = 'new-a5a31f23-9f5a-46bd-b1a7-005c80649e27';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
