@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Supersport Three Row Layout feature.
+ */
+
+include_once 'supersport_three_row_layout.features.inc';

@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * @file
+ * Code for the Supersport Taxonomy Logic Module.
+ */
+
+/**
+ * Implements hook_taxonomy_term_view().
+ */
+function supersport_taxonomy_logic_taxonomy_term_view($term, $view_mode, $langcode) {
+}

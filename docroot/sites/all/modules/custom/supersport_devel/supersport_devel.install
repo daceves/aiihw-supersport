@@ -213,3 +213,30 @@ function supersport_devel_update_7117() {
   );
   module_enable($module_list);
 }
+
+/**
+ * Enables the exclude_node_title module for styling home and event pages.
+ */
+function supersport_devel_update_7118() {
+  $module = array('exclude_node_title');
+  module_enable($module);
+}
+
+/**
+ * Deletes duplicate field.
+ */
+function supersport_devel_update_7119() {
+  $field_to_delete = array('field_video');
+  field_delete_field($field_to_delete);
+}
+
+/**
+ * Enables three row layout
+ */
+function supersport_devel_update_7120() {
+  $module_list = array(
+    'supersport_three_row_layout',
+    'supersport_taxonomy_page',
+  );
+  module_enable($module_list);
+}

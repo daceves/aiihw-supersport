@@ -31,8 +31,6 @@ scripts[] = js/behavior.js
 ; ========================================
 ; Regions
 ; ========================================
-regions[branding] = Branding
-regions[header] = Header
 regions[navigation] = Navigation
 regions[content] = Content
 regions[footer] = Footer
@@ -72,8 +70,6 @@ settings[omega_livereload_script] = http://localhost:35729/livereload.js
 settings[omega_livereload_host] = localhost
 settings[omega_livereload_port] = 35729
 settings[omega_demo_regions] = 1
-settings[omega_demo_regions_list][branding] = branding
-settings[omega_demo_regions_list][header] = header
 settings[omega_demo_regions_list][navigation] = navigation
 settings[omega_demo_regions_list][content] = content
 settings[omega_demo_regions_list][footer] = footer
