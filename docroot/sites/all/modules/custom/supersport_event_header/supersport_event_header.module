@@ -9,6 +9,7 @@
 
 // Block constants
 define('SS_HEADER', 'ss_header');
+define('SS_TAXONOMY_HEADER', 'ss_taxonomy_header');
 
 // Date status constants
 define('DATE_PRE', 0);
@@ -21,6 +22,10 @@ define('DATE_POST', 2);
 function supersport_event_header_block_info() {
   $blocks[SS_HEADER] = array(
     'info' => t('Event Header'),
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+  );
+  $blocks[SS_TAXONOMY_HEADER] = array(
+    'info' => t('Taxonomy Header'),
     'cache' => DRUPAL_CACHE_PER_ROLE,
   );
 
@@ -40,6 +45,12 @@ function supersport_event_header_block_view($delta = '') {
         '#theme' => 'event_header',
       );
       break;
+    case SS_TAXONOMY_HEADER:
+      $block['subject'] = NULL;
+      $block['content'] = array(
+        '#theme' => 'taxonomy_header',
+      );
+      break;
   }
 
   return $block;
@@ -52,12 +63,17 @@ function supersport_event_header_theme() {
   return array(
     'event_header' => array(
       'variables' => array('items' => NULL),
+    ),
+    'taxonomy_header' => array(
+      'variables' => array('items' => NULL),
     )
   );
 }
 
 /**
  * Implements theme_hook().
+ *
+ * Event header
  */
 function theme_event_header($variables = NULL) {
 
@@ -78,7 +94,8 @@ function theme_event_header($variables = NULL) {
 
     // Parse date from node
     $field_date = field_get_items('node', $node, 'field_date');
-    $date = _supersport_markup_date($field_date);
+    $field_pg_flag = field_get_items('node', $node, 'field_post_game_flag');
+    $date = _supersport_markup_date($field_date, $field_pg_flag);
 
     $output .= '<div class="supersport-event-header-left">';
     $output .= $breadcrumb;
@@ -99,6 +116,36 @@ function theme_event_header($variables = NULL) {
   else {
     $output .= '';
   }
+
+  $output .= '</div>';
+
+  return $output;
+}
+
+/**
+ * Implements theme_hook().
+ *
+ * Taxonomy header
+ */
+function theme_taxonomy_header($variables = NULL) {
+
+  $tid = arg(2);
+  $term = taxonomy_term_load($tid);
+
+  $output = '<div class="supersport-event-header">';
+
+  $breadcrumb = _supersport_markup_breadcrumb($tid);
+
+  // Only on: league or team page
+  if ($breadcrumb) {
+    $output .= $breadcrumb;
+
+    $output .= '<br>';
+  }
+
+  $output .= '<span class="supersport-event-header-title">';
+  $output .= $term->name;
+  $output .= '</span>';
 
   $output .= '</div>';
 
@@ -209,18 +256,20 @@ function _supersport_build_trail($tid_current) {
  *
  * @param $field_date
  *  Date array from field_get_items()
+ * @param $field_pg_flag
+ *  Post-game flag
  * @return array
  *  Formatted array of date information
  *    'date' of the event
  *    'status' - upcoming, live or replay (past)
  */
-function _supersport_markup_date($field_date) {
+function _supersport_markup_date($field_date, $field_pg_flag) {
   $markup = array();
 
   $date = _supersport_date_parse($field_date);
 
   // Date status array: 'code', 'string'
-  $status = _supersport_date_status($date);
+  $status = _supersport_date_status($date, $field_pg_flag);
 
   // Text formats
   $pre = 'd M';
@@ -251,12 +300,14 @@ function _supersport_markup_date($field_date) {
 /**
  * @param $date
  *  Date array _date_parse()
+ * @param $field_pg_flag
+ *  Post-game flag
  * @return array
  *  Status information of the date
  *    'code' - status code using constants DATE_PRE, DATE_LIVE, DATE_POST
  *    'string' - formatted string of the date
  */
-function _supersport_date_status($date) {
+function _supersport_date_status($date, $field_pg_flag) {
   // Get dates
   $start = $date['start'];
   $today = $date['today'];
@@ -269,18 +320,27 @@ function _supersport_date_status($date) {
 
   $status = array();
 
-  // Date status logic
-  if ($today < $start) {
-    $status['code'] = DATE_PRE;
-    $status['string'] = $pre;
-  }
-  else if ($start != $end and $today > $end) {
+  $is_post_game = $field_pg_flag[0]['value'];
+
+  // Post game flag toggled on
+  if ($is_post_game) {
     $status['code'] = DATE_POST;
     $status['string'] = $post;
   }
   else {
-    $status['code'] = DATE_LIVE;
-    $status['string'] = $live;
+    // Date status logic
+    if ($today < $start) {
+      $status['code'] = DATE_PRE;
+      $status['string'] = $pre;
+    }
+    else if ($start != $end and $today > $end) {
+      $status['code'] = DATE_POST;
+      $status['string'] = $post;
+    }
+    else {
+      $status['code'] = DATE_LIVE;
+      $status['string'] = $live;
+    }
   }
 
   return $status;

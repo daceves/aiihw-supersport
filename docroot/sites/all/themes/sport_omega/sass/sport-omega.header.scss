@@ -1,9 +1,30 @@
 @import 'sport-omega.includes';
 
-.supersport-event-header {
-
+// Container styling
+@mixin container-style() {
   padding: $container-padding;
   background: $color-background;
+}
+
+// Header title formatting
+@mixin header-title() {
+  color: $color-font;
+
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.supersport-taxonomy-header {
+  @include container-style();
+
+  .supersport-taxonomy-header-title {
+    @include header-title();
+  }
+}
+
+.supersport-event-header {
+  @include container-style();
+
 
   .supersport-event-header-left {
     float: left;
@@ -39,10 +60,7 @@
   }
 
   .supersport-event-header-title {
-    color: $color-font;
-
-    font-size: 150%;
-    font-weight: bold;
+    @include header-title();
   }
 
   .supersport-event-header-date {
