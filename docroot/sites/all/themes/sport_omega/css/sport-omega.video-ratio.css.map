@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAAA,KAAK;EACJ,KAAK,EAAE,eAAe;EACtB,MAAM,EAAE,IAAI;;;;;;;AAQZ,sCAAmB;EAClB,OAAO,EAAE,IAAI;;AAGd,2DAAwC;EACvC,OAAO,EAAE,IAAI;;AAGd,sFAAkE;EACjE,OAAO,EAAE,IAAI",
+"sources": ["../sass/sport-omega.video-ratio.scss"],
+"names": [],
+"file": "sport-omega.video-ratio.css"
+}
