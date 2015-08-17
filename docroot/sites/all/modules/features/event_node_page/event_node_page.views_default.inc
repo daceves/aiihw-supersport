@@ -32,7 +32,7 @@ function event_node_page_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'entity';
-  /* Field: Content: Live-video */
+  /* Field: Content: Live Video */
   $handler->display->display_options['fields']['field_live_video']['id'] = 'field_live_video';
   $handler->display->display_options['fields']['field_live_video']['table'] = 'field_data_field_live_video';
   $handler->display->display_options['fields']['field_live_video']['field'] = 'field_live_video';
@@ -43,7 +43,7 @@ function event_node_page_views_default_views() {
     'view_mode' => 'default',
     'links' => 0,
   );
-  /* Field: Content: post-live-video */
+  /* Field: Content: Post-live Video */
   $handler->display->display_options['fields']['field_post_live_video']['id'] = 'field_post_live_video';
   $handler->display->display_options['fields']['field_post_live_video']['table'] = 'field_data_field_post_live_video';
   $handler->display->display_options['fields']['field_post_live_video']['field'] = 'field_post_live_video';
@@ -54,7 +54,7 @@ function event_node_page_views_default_views() {
     'view_mode' => 'default',
     'links' => 0,
   );
-  /* Field: Content: Pre-live-video */
+  /* Field: Content: Pre-live Video */
   $handler->display->display_options['fields']['field_pre_live_video']['id'] = 'field_pre_live_video';
   $handler->display->display_options['fields']['field_pre_live_video']['table'] = 'field_data_field_pre_live_video';
   $handler->display->display_options['fields']['field_pre_live_video']['field'] = 'field_pre_live_video';
