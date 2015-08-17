@@ -1,0 +1,11 @@
+name = Supersport Three Row Layout
+description = A three vertical rows layout 
+core = 7.x
+package = Features
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = panels
+features[ctools][] = panels:layouts:1
+features[features_api][] = api:2
+features[panels_layout][] = supersport_three_row_layout
+project path = sites/all/modules/features

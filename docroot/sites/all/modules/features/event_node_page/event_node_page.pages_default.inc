@@ -47,13 +47,16 @@ function event_node_page_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'flexible:event_node_flexible_layout';
+  $display->layout = 'flexible:supersport_three_row_layout';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'top_region' => NULL,
       'bottom_region' => NULL,
+      'supersport_three_region_one' => NULL,
+      'supersport_three_region_two' => NULL,
+      'supersport_three_region_three' => NULL,
     ),
   );
   $display->cache = array();
@@ -62,34 +65,31 @@ function event_node_page_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-d584bb6f-ee64-4e4a-b131-00407711c7cf';
-    $pane->panel = 'bottom_region';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'event_node_view-panel_pane_1';
+    $pane->pid = 'new-79073162-d88c-45b0-b2ae-053f82e67577';
+    $pane->panel = 'supersport_three_region_one';
+    $pane->type = 'block';
+    $pane->subtype = 'supersport_event_header-ss_header';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => 'supersport-event-node-page',
-      'css_class' => '',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'd584bb6f-ee64-4e4a-b131-00407711c7cf';
-    $display->content['new-d584bb6f-ee64-4e4a-b131-00407711c7cf'] = $pane;
-    $display->panels['bottom_region'][0] = 'new-d584bb6f-ee64-4e4a-b131-00407711c7cf';
+    $pane->uuid = '79073162-d88c-45b0-b2ae-053f82e67577';
+    $display->content['new-79073162-d88c-45b0-b2ae-053f82e67577'] = $pane;
+    $display->panels['supersport_three_region_one'][0] = 'new-79073162-d88c-45b0-b2ae-053f82e67577';
     $pane = new stdClass();
-    $pane->pid = 'new-fb710167-eb6f-41b9-803a-779d472d36cd';
-    $pane->panel = 'bottom_region';
+    $pane->pid = 'new-c46e87e0-e103-4067-81d1-f4551554e1ce';
+    $pane->panel = 'supersport_three_region_three';
     $pane->type = 'views';
     $pane->subtype = 'popular_sport_event_views';
     $pane->shown = TRUE;
@@ -115,40 +115,40 @@ function event_node_page_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => 'supersport-popular-view',
-      'css_class' => '',
-    );
+    $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'fb710167-eb6f-41b9-803a-779d472d36cd';
-    $display->content['new-fb710167-eb6f-41b9-803a-779d472d36cd'] = $pane;
-    $display->panels['bottom_region'][1] = 'new-fb710167-eb6f-41b9-803a-779d472d36cd';
+    $pane->uuid = 'c46e87e0-e103-4067-81d1-f4551554e1ce';
+    $display->content['new-c46e87e0-e103-4067-81d1-f4551554e1ce'] = $pane;
+    $display->panels['supersport_three_region_three'][0] = 'new-c46e87e0-e103-4067-81d1-f4551554e1ce';
     $pane = new stdClass();
-    $pane->pid = 'new-79073162-d88c-45b0-b2ae-053f82e67577';
-    $pane->panel = 'top_region';
-    $pane->type = 'block';
-    $pane->subtype = 'supersport_event_header-ss_header';
+    $pane->pid = 'new-d584bb6f-ee64-4e4a-b131-00407711c7cf';
+    $pane->panel = 'supersport_three_region_two';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'event_node_view-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'supersport-event-node-page',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '79073162-d88c-45b0-b2ae-053f82e67577';
-    $display->content['new-79073162-d88c-45b0-b2ae-053f82e67577'] = $pane;
-    $display->panels['top_region'][0] = 'new-79073162-d88c-45b0-b2ae-053f82e67577';
-  $display->hide_title = PANELS_TITLE_FIXED;
+    $pane->uuid = 'd584bb6f-ee64-4e4a-b131-00407711c7cf';
+    $display->content['new-d584bb6f-ee64-4e4a-b131-00407711c7cf'] = $pane;
+    $display->panels['supersport_three_region_two'][0] = 'new-d584bb6f-ee64-4e4a-b131-00407711c7cf';
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-79073162-d88c-45b0-b2ae-053f82e67577';
   $handler->conf['display'] = $display;
   $export['node_view__event_node_page'] = $handler;

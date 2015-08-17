@@ -48,10 +48,12 @@ body{
   background-attachment: fixed;
   background-repeat: no-repeat;
 
+  // Remove margin between superfish menu and content
   .l-header {
     margin-bottom: 0;
   }
 
+  // Site name styling
   .site-name {
     a {
       color: $color-link;
@@ -63,6 +65,44 @@ body{
       color: $color-link-hover;
 
       text-decoration: underline;
+    }
+  }
+
+  // Nodequeue options styling
+  .nodequeue-ajax-toggle {
+
+    margin: 2px 0 0 0;
+    padding: 0;
+
+    a {
+      display: block;
+
+      // Following admin menu color
+      background: #911;
+      color: white;
+
+      border: 1px none;
+      $radius: 20px;
+      -webkit-border-radius: $radius;
+      -moz-border-radius: $radius;
+      border-radius: $radius;
+
+      margin: 0;
+      padding: 2px 4px 2px 4px;
+
+      text-transform: uppercase;
+      font-size: 60%;
+
+      font-weight: bold;
+
+      text-decoration: none;
+
+      vertical-align: middle;
+    }
+
+    a:hover {
+      color: black;
+      background: white;
     }
   }
 }
