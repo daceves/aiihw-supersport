@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Supersport Taxonomy Page feature.
+ */
+
+include_once 'supersport_taxonomy_page.features.inc';

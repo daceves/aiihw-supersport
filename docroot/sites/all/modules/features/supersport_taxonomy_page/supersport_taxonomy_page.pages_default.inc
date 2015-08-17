@@ -1,25 +1,25 @@
 <?php
 /**
  * @file
- * event_node_page.pages_default.inc
+ * supersport_taxonomy_page.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_handlers().
  */
-function event_node_page_default_page_manager_handlers() {
+function supersport_taxonomy_page_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_view__event_node_page';
-  $handler->task = 'node_view';
+  $handler->name = 'term_view__taxonomy_term_panel';
+  $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Event Node Page',
+    'title' => 'Taxonomy Term Panel',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -28,23 +28,7 @@ function event_node_page_default_page_manager_handlers() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
-    'name' => 'event_node_page',
-    'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'node_type',
-          'settings' => array(
-            'type' => array(
-              'event' => 'event',
-              'video' => 'video',
-            ),
-          ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'or',
-    ),
+    'name' => 'taxonomy_term_panel',
   );
   $display = new panels_display();
   $display->layout = 'flexible:supersport_three_row_layout';
@@ -61,14 +45,14 @@ function event_node_page_default_page_manager_handlers() {
   );
   $display->cache = array();
   $display->title = '';
-  $display->uuid = 'feeed729-8cb2-4a8a-92e2-03be7e4ee70a';
+  $display->uuid = '1f04e98d-e377-4c8c-9b39-24a2eb6a008b';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-79073162-d88c-45b0-b2ae-053f82e67577';
+    $pane->pid = 'new-8261dad1-0072-44f1-a5dc-1d7d38b657ff';
     $pane->panel = 'supersport_three_region_one';
     $pane->type = 'block';
-    $pane->subtype = 'supersport_event_header-ss_header';
+    $pane->subtype = 'supersport_event_header-ss_taxonomy_header';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -84,11 +68,11 @@ function event_node_page_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '79073162-d88c-45b0-b2ae-053f82e67577';
-    $display->content['new-79073162-d88c-45b0-b2ae-053f82e67577'] = $pane;
-    $display->panels['supersport_three_region_one'][0] = 'new-79073162-d88c-45b0-b2ae-053f82e67577';
+    $pane->uuid = '8261dad1-0072-44f1-a5dc-1d7d38b657ff';
+    $display->content['new-8261dad1-0072-44f1-a5dc-1d7d38b657ff'] = $pane;
+    $display->panels['supersport_three_region_one'][0] = 'new-8261dad1-0072-44f1-a5dc-1d7d38b657ff';
     $pane = new stdClass();
-    $pane->pid = 'new-c46e87e0-e103-4067-81d1-f4551554e1ce';
+    $pane->pid = 'new-b32bd347-bb86-4609-9e57-a1c2cb0b2d7f';
     $pane->panel = 'supersport_three_region_three';
     $pane->type = 'views';
     $pane->subtype = 'popular_sport_event_views';
@@ -119,39 +103,13 @@ function event_node_page_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'c46e87e0-e103-4067-81d1-f4551554e1ce';
-    $display->content['new-c46e87e0-e103-4067-81d1-f4551554e1ce'] = $pane;
-    $display->panels['supersport_three_region_three'][0] = 'new-c46e87e0-e103-4067-81d1-f4551554e1ce';
-    $pane = new stdClass();
-    $pane->pid = 'new-d584bb6f-ee64-4e4a-b131-00407711c7cf';
-    $pane->panel = 'supersport_three_region_two';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'event_node_view-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'supersport-event-node-page',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'd584bb6f-ee64-4e4a-b131-00407711c7cf';
-    $display->content['new-d584bb6f-ee64-4e4a-b131-00407711c7cf'] = $pane;
-    $display->panels['supersport_three_region_two'][0] = 'new-d584bb6f-ee64-4e4a-b131-00407711c7cf';
+    $pane->uuid = 'b32bd347-bb86-4609-9e57-a1c2cb0b2d7f';
+    $display->content['new-b32bd347-bb86-4609-9e57-a1c2cb0b2d7f'] = $pane;
+    $display->panels['supersport_three_region_three'][0] = 'new-b32bd347-bb86-4609-9e57-a1c2cb0b2d7f';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-79073162-d88c-45b0-b2ae-053f82e67577';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['node_view__event_node_page'] = $handler;
+  $export['term_view__taxonomy_term_panel'] = $handler;
 
   return $export;
 }

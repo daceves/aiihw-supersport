@@ -3,12 +3,11 @@
 @import 'sport-omega.includes';
 
 // Background color
-.panels-flexible-homepage_flexible_layout {
-  .panels-flexible-region-homepage_flexible_layout-bottom_region {
-    background: $color-background;
+.panels-flexible-region-supersport_three_row_layout-supersport_three_region_three,
+.panels-flexible-region-homepage_flexible_layout-bottom_region {
+  background: $color-background;
 
-    padding: $container-padding;
-  }
+  padding: $container-padding !important;
 }
 
 // Everything under popular view

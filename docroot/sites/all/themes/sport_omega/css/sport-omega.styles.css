@@ -3,12 +3,12 @@
 img, media {
   max-width: 100%; }
 
-/* line 25, ../sass/sport-omega.styles.scss */
+/* line 26, ../sass/sport-omega.styles.scss */
 .breadcrumb {
   display: none; }
 
 /* Gradient background following the eversport.tv theme */
-/* line 32, ../sass/sport-omega.styles.scss */
+/* line 33, ../sass/sport-omega.styles.scss */
 body {
   /* For Safari 5.1 to 6.0 */
   background: -webkit-linear-gradient(black, #353e66);
@@ -22,5 +22,40 @@ body {
   margin: 0;
   background-attachment: fixed;
   background-repeat: no-repeat; }
+  /* line 52, ../sass/sport-omega.styles.scss */
+  body .l-header {
+    margin-bottom: 0; }
+  /* line 58, ../sass/sport-omega.styles.scss */
+  body .site-name a {
+    color: #f7970b;
+    text-decoration: none; }
+  /* line 64, ../sass/sport-omega.styles.scss */
+  body .site-name a:hover {
+    color: darkorange;
+    text-decoration: underline; }
+  /* line 72, ../sass/sport-omega.styles.scss */
+  body .nodequeue-ajax-toggle {
+    margin: 2px 0 0 0;
+    padding: 0; }
+    /* line 77, ../sass/sport-omega.styles.scss */
+    body .nodequeue-ajax-toggle a {
+      display: block;
+      background: #911;
+      color: white;
+      border: 1px none;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      border-radius: 20px;
+      margin: 0;
+      padding: 2px 4px 2px 4px;
+      text-transform: uppercase;
+      font-size: 60%;
+      font-weight: bold;
+      text-decoration: none;
+      vertical-align: middle; }
+    /* line 103, ../sass/sport-omega.styles.scss */
+    body .nodequeue-ajax-toggle a:hover {
+      color: black;
+      background: white; }
 
 /*# sourceMappingURL=sport-omega.styles.css.map */
