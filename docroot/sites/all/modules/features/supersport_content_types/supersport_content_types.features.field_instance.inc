@@ -736,48 +736,6 @@ function supersport_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video-field_video'
-  $field_instances['node-video-field_video'] = array(
-    'bundle' => 'video',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_video',
-    'label' => 'Video',
-    'required' => 0,
-    'settings' => array(
-      'description_field' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'txt',
-      'max_filesize' => '100 MB',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'file',
-      'settings' => array(
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'file_generic',
-      'weight' => 34,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
@@ -792,7 +750,6 @@ function supersport_content_types_field_default_field_instances() {
   t('Sport');
   t('Sport Video');
   t('Teams');
-  t('Video');
 
   return $field_instances;
 }
