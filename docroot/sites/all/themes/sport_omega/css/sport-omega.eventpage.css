@@ -67,4 +67,9 @@
     #supersport-event-node-page .node__content .field--name-field-image .field__label {
       display: none; }
 
+/* line 93, ../sass/sport-omega.eventpage.scss */
+#supersport-p {
+  padding: 1em;
+  background: #003366; }
+
 /*# sourceMappingURL=sport-omega.eventpage.css.map */
