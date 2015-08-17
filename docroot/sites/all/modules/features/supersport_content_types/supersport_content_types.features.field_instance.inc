@@ -77,7 +77,7 @@ function supersport_content_types_field_default_field_instances() {
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'above',
@@ -102,6 +102,7 @@ function supersport_content_types_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -148,7 +149,7 @@ function supersport_content_types_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'above',
@@ -195,7 +196,7 @@ function supersport_content_types_field_default_field_instances() {
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 10,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -261,7 +262,7 @@ function supersport_content_types_field_default_field_instances() {
         'module' => 'location_cck',
         'settings' => array(),
         'type' => 'location_default',
-        'weight' => 14,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'above',
@@ -311,7 +312,7 @@ function supersport_content_types_field_default_field_instances() {
           'prefix_suffix' => TRUE,
         ),
         'type' => 'number_boolean',
-        'weight' => 7,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'above',
@@ -371,7 +372,7 @@ function supersport_content_types_field_default_field_instances() {
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 12,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -439,7 +440,7 @@ function supersport_content_types_field_default_field_instances() {
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 11,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -505,7 +506,7 @@ function supersport_content_types_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'above',
@@ -550,7 +551,7 @@ function supersport_content_types_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'above',
@@ -637,7 +638,7 @@ function supersport_content_types_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'event_node_page_image',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -647,7 +648,7 @@ function supersport_content_types_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'event_node_page_image',
         ),
         'type' => 'image',
         'weight' => 0,

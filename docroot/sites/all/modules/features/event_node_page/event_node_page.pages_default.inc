@@ -88,6 +88,44 @@ function event_node_page_default_page_manager_handlers() {
     $display->content['new-d584bb6f-ee64-4e4a-b131-00407711c7cf'] = $pane;
     $display->panels['bottom_region'][0] = 'new-d584bb6f-ee64-4e4a-b131-00407711c7cf';
     $pane = new stdClass();
+    $pane->pid = 'new-fb710167-eb6f-41b9-803a-779d472d36cd';
+    $pane->panel = 'bottom_region';
+    $pane->type = 'views';
+    $pane->subtype = 'popular_sport_event_views';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '10',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'default',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'supersport-popular-view',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'fb710167-eb6f-41b9-803a-779d472d36cd';
+    $display->content['new-fb710167-eb6f-41b9-803a-779d472d36cd'] = $pane;
+    $display->panels['bottom_region'][1] = 'new-fb710167-eb6f-41b9-803a-779d472d36cd';
+    $pane = new stdClass();
     $pane->pid = 'new-79073162-d88c-45b0-b2ae-053f82e67577';
     $pane->panel = 'top_region';
     $pane->type = 'block';

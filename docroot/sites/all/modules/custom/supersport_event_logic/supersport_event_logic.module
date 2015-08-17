@@ -44,6 +44,10 @@ function _supersport_event_logic_select_event(&$event, $home_page_flag) {
     $event_time = field_get_items('node', $event, 'field_date');
     $event_end_time = strtotime($event_time[0]['value2']);
     $event_start_time = strtotime($event_time[0]['value']);
+    //make event end time infinity if there is user does not select end date.
+    if ($event_end_time == $event_start_time) {
+      $event_end_time = PHP_INT_MAX;
+    }
     // Upcoming events
     if ($event_start_time > $current_time) {
       $event->content['field_live_video'] = array();
