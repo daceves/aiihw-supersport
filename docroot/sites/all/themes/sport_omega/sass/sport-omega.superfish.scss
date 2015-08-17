@@ -1,22 +1,21 @@
-#superfish-1 {
+@import "sport-omega.includes";
 
-  $color_blue: #003366;
-  $color_orange: #f7970b;
+#superfish-1 {
 
   a,
   span {
     text-transform: uppercase;
     text-decoration: none;
 
-    background-color: $color_blue;
+    background-color: $color-background;
   }
 
   a:hover {
     text-decoration: underline;
-    color: $color_orange;
+    color: $color-link;
   }
 
   span:hover {
-    color: white;
+    color: $color-link-hover;
   }
 }
