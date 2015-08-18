@@ -272,9 +272,9 @@ function _supersport_markup_date($field_date, $field_pg_flag) {
   $status = _supersport_date_status($date, $field_pg_flag);
 
   // Text formats
-  $pre = 'd M';
-  $live = 'd M';
-  $post = 'd M h:iA T';
+  $pre = 'd M h:ia T';
+  $live = 'd M h:ia T';
+  $post = 'd M h:ia T';
 
   $date_content = '';
 
