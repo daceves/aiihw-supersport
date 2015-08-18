@@ -25,19 +25,22 @@ body {
   /* line 52, ../sass/sport-omega.styles.scss */
   body .l-header {
     margin-bottom: 0; }
-  /* line 58, ../sass/sport-omega.styles.scss */
-  body .site-name a {
-    color: #f7970b;
-    text-decoration: none; }
-  /* line 64, ../sass/sport-omega.styles.scss */
-  body .site-name a:hover {
-    color: darkorange;
-    text-decoration: underline; }
-  /* line 72, ../sass/sport-omega.styles.scss */
+  /* line 57, ../sass/sport-omega.styles.scss */
+  body .site-name {
+    margin-bottom: 10px; }
+    /* line 60, ../sass/sport-omega.styles.scss */
+    body .site-name a {
+      color: #f7970b;
+      text-decoration: none; }
+    /* line 66, ../sass/sport-omega.styles.scss */
+    body .site-name a:hover {
+      color: darkorange;
+      text-decoration: underline; }
+  /* line 74, ../sass/sport-omega.styles.scss */
   body .nodequeue-ajax-toggle {
     margin: 2px 0 0 0;
     padding: 0; }
-    /* line 77, ../sass/sport-omega.styles.scss */
+    /* line 79, ../sass/sport-omega.styles.scss */
     body .nodequeue-ajax-toggle a {
       display: block;
       background: #911;
@@ -53,7 +56,7 @@ body {
       font-weight: bold;
       text-decoration: none;
       vertical-align: middle; }
-    /* line 103, ../sass/sport-omega.styles.scss */
+    /* line 105, ../sass/sport-omega.styles.scss */
     body .nodequeue-ajax-toggle a:hover {
       color: black;
       background: white; }
