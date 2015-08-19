@@ -18,12 +18,15 @@ stylesheets[all][] = css/sport-omega.main-content.css
 stylesheets[all][] = css/sport-omega.eventpage.css
 stylesheets[all][] = css/sport-omega.superfish.css
 stylesheets[all][] = css/sport-omega.popular-view.css
-
+stylesheets[all][] = css/switchery.css
+stylesheets[all][] = css/sport-omega.video-ratio.css
 
 ; ========================================
 ; Scripts
 ; ========================================
 scripts[] = js/sport-omega.behaviors.js
+scripts[] = js/switchery.js
+scripts[] = js/behavior.js
 
 ; ========================================
 ; Regions

@@ -1,0 +1,22 @@
+video{
+	width: 100% !important;
+	height: auto;
+}
+
+/**
+ * Removes headers for the taxonomy 
+ * page
+ */
+.page-taxonomy-term {
+	p.submitted > span {
+		display: none;
+	}
+
+	.node__content > .field > .field__label {
+		display: none;
+	}
+
+	.taxonomy-term__content > .field--name-field-sport > .field__label{
+		display: none;
+	}
+}

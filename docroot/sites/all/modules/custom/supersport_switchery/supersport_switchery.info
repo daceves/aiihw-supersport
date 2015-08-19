@@ -1,0 +1,5 @@
+name = Supersport Switchery
+description = Replaces the checkbox with iphone switch widget
+core = 7.x
+package = Features
+version = 7.x-1.0

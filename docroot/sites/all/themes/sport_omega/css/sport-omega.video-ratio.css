@@ -1,0 +1,20 @@
+/* line 1, ../sass/sport-omega.video-ratio.scss */
+video {
+  width: 100% !important;
+  height: auto; }
+
+/**
+ * Removes headers for the taxonomy 
+ * page
+ */
+/* line 11, ../sass/sport-omega.video-ratio.scss */
+.page-taxonomy-term p.submitted > span {
+  display: none; }
+/* line 15, ../sass/sport-omega.video-ratio.scss */
+.page-taxonomy-term .node__content > .field > .field__label {
+  display: none; }
+/* line 19, ../sass/sport-omega.video-ratio.scss */
+.page-taxonomy-term .taxonomy-term__content > .field--name-field-sport > .field__label {
+  display: none; }
+
+/*# sourceMappingURL=sport-omega.video-ratio.css.map */

@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * Implements hook_libraries_info().
+ */
+function supersport_switchery_libraries_info() {
+  $libraries = array();
+  $libraries['switchery'] = array(
+    'name' => 'Switchery',
+    'vendor url' => 'http://abpetkov.github.io/switchery/',
+    'download url' => 'https://github.com/abpetkov/switchery',
+    'version callback' => 'short_circuit_version',
+    'files' => array(
+      'js' => array(
+        'switchery.js',
+        'require.js',
+      ),
+      'css' => array(
+        'switchery.css',
+      ),
+    ),
+  );
+
+  $libraries['require'] = array(
+    'name' => 'require',
+    'vendor url' => 'http://abpetkov.github.io/switchery/',
+    'download url' => 'https://github.com/abpetkov/switchery',
+    'version callback' => 'short_circuit_version',
+    'files' => array(
+      'js' => array(
+        'require.js',
+      ),
+    ),
+  );
+ 
+  return $libraries;
+}
+
+/**
+ * Short-circuit the version argument.
+ * TODO: 
+*/
+function short_circuit_version() { 
+  return TRUE;
+}
+
+function supersport_switchery_field_widget_form_alter(&$element, &$form_state, $context) {
+  // Add a css class to widget form elements for all fields of type mytype.
+  if ($context['field']['field_name'] == 'field_post_game_flag') {
+    // Be sure not to overwrite existing attributes.
+    $element['value']['#attributes']['checked'][] = '';
+    $element['value']['#attributes']['class'][] = 'js-switch';
+
+    return $element;
+  }
+}
