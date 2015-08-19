@@ -142,14 +142,7 @@
         }
       }
 
-      .field--type-entityreference:after {
-
-        @include date-status-box();
-
-        position: relative;
-        top: -2.5em;
-        left: 0.5em;
-      }
+      @include date-status-overlay();
 
       // Specific video entity styling
       .field--name-field-pre-live-video:after {

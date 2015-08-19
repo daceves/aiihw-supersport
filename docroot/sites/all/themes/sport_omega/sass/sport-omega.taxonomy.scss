@@ -1,0 +1,135 @@
+@import "sport-omega.includes";
+
+@mixin ssf-display() {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;
+}
+
+@mixin ssf-direction($direction) {
+  $direction: column;
+  flex-direction: $direction;
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+}
+
+@mixin ssf-wrap() {
+  $wrap: wrap;
+  flex-wrap: $wrap;
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+}
+
+@mixin ssf-setting() {
+  @include ssf-display();
+  @include ssf-wrap();
+}
+
+@mixin ssf-order($number) {
+  order: $number;
+  -webkit-order: $number;
+  -moz-order: $number;
+  -ms-order: $number;
+}
+
+// Taxonomy page container
+.page-taxonomy-term {
+
+  // Container holding taxonomy view
+  .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two {
+    background: $color-background;
+
+    padding: 0.5em $container-padding 0 $container-padding;
+
+    .view-content {
+      @include ssf-setting();
+
+      width: 100%;
+
+      $content-font-size: 0.85em;
+
+      .views-row {
+        width: 33.3%;
+
+        padding: 0 0.5em $container-padding 0.5em;
+
+        .node__title {
+          padding: 0;
+          margin: 0;
+
+          position: relative;
+          top: 0.5em;
+
+          a {
+            color: $color-font;
+            font-size: $content-font-size;
+
+            text-decoration: none;
+            text-transform: uppercase;
+          }
+
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .node__content {
+
+          @include date-status-overlay();
+
+          .node__title,
+          .field--name-field-teams {
+            display: none;
+          }
+
+          .field--name-field-sport,
+          .field--name-field-league {
+
+            display: inline-block;
+
+            .field__label {
+              display: none;
+            }
+
+            a {
+              color: $color-link;
+
+              font-weight: bold;
+              text-transform: uppercase;
+              text-decoration: none;
+
+              font-size: $content-font-size;
+            }
+
+            a:hover {
+              text-decoration: underline;
+            }
+          }
+
+          // Make dividers
+          .field--name-field-league {
+            border-left: 1px solid $color-font;
+
+            padding: 0 0.5em 0 0.5em;
+            margin: 0 0.5em 0 0.5em;
+          }
+
+          .field--name-field-date span {
+            font-size: $content-font-size;
+
+            color: $color-font;
+            text-transform: uppercase;
+          }
+        }
+
+        .node-readmore {
+          display: none;
+        }
+      }
+    }
+  }
+}
