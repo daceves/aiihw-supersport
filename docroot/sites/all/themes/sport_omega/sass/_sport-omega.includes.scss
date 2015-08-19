@@ -26,12 +26,13 @@ $container-padding: 1em;
 
 // CSS overlay
 @mixin date-status-overlay {
+
   .field--type-entityreference:after {
 
     @include date-status-box();
 
     position: relative;
-    top: -2.5em;
+    top: -3.5em;
     left: 0.5em;
   }
 

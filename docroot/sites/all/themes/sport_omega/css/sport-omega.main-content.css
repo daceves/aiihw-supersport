@@ -51,22 +51,22 @@
 /* line 87, ../sass/sport-omega.main-content.scss */
 .view-id-main_feature_hero .field--type-entityreference article.node header {
   display: none; }
-/* line 93, ../sass/sport-omega.main-content.scss */
+/* line 30, ../sass/_sport-omega.includes.scss */
 .view-id-main_feature_hero .field--type-entityreference:after {
   text-transform: uppercase;
   color: white;
   padding: 5px 25px 5px 25px;
   background-color: #f7970b;
   position: relative;
-  top: -2.5em;
+  top: -3.5em;
   left: 0.5em; }
-/* line 104, ../sass/sport-omega.main-content.scss */
+/* line 40, ../sass/_sport-omega.includes.scss */
 .view-id-main_feature_hero .field--name-field-pre-live-video:after {
   content: "upcoming"; }
-/* line 108, ../sass/sport-omega.main-content.scss */
+/* line 44, ../sass/_sport-omega.includes.scss */
 .view-id-main_feature_hero .field--name-field-post-live-video:after {
   content: "replay"; }
-/* line 112, ../sass/sport-omega.main-content.scss */
+/* line 48, ../sass/_sport-omega.includes.scss */
 .view-id-main_feature_hero .field--name-field-live-video:after {
   content: "live"; }
 

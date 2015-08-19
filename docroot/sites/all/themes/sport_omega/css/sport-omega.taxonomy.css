@@ -1,11 +1,96 @@
-/*
--webkit-
--moz-
--ms-
-*/
 /* line 43, ../sass/sport-omega.taxonomy.scss */
 .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two {
   background: #003366;
-  padding: 1em; }
+  padding: 0.5em 1em 0 1em; }
+  /* line 48, ../sass/sport-omega.taxonomy.scss */
+  .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    width: 100%; }
+    /* line 55, ../sass/sport-omega.taxonomy.scss */
+    .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row {
+      width: 33.3%;
+      padding: 0 0.5em 1em 0.5em; }
+      /* line 60, ../sass/sport-omega.taxonomy.scss */
+      .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__title {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        top: 0.5em; }
+        /* line 67, ../sass/sport-omega.taxonomy.scss */
+        .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__title a {
+          color: white;
+          font-size: 0.85em;
+          text-decoration: none;
+          text-transform: uppercase; }
+        /* line 75, ../sass/sport-omega.taxonomy.scss */
+        .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__title a:hover {
+          text-decoration: underline; }
+      /* line 30, ../sass/_sport-omega.includes.scss */
+      .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--type-entityreference:after {
+        text-transform: uppercase;
+        color: white;
+        padding: 5px 25px 5px 25px;
+        background-color: #f7970b;
+        position: relative;
+        top: -3.5em;
+        left: 0.5em; }
+      /* line 40, ../sass/_sport-omega.includes.scss */
+      .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-pre-live-video:after {
+        content: "upcoming"; }
+      /* line 44, ../sass/_sport-omega.includes.scss */
+      .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-post-live-video:after {
+        content: "replay"; }
+      /* line 48, ../sass/_sport-omega.includes.scss */
+      .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-live-video:after {
+        content: "live"; }
+      /* line 84, ../sass/sport-omega.taxonomy.scss */
+      .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .node__title,
+      .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-teams {
+        display: none; }
+      /* line 89, ../sass/sport-omega.taxonomy.scss */
+      .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-sport,
+      .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-league {
+        display: inline-block; }
+        /* line 94, ../sass/sport-omega.taxonomy.scss */
+        .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-sport .field__label,
+        .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-league .field__label {
+          display: none; }
+        /* line 98, ../sass/sport-omega.taxonomy.scss */
+        .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-sport a,
+        .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-league a {
+          color: #f7970b;
+          font-weight: bold;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-size: 0.85em; }
+        /* line 108, ../sass/sport-omega.taxonomy.scss */
+        .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-sport a:hover,
+        .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-league a:hover {
+          text-decoration: underline; }
+      /* line 114, ../sass/sport-omega.taxonomy.scss */
+      .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-league {
+        border-left: 1px solid white;
+        padding: 0 0.5em 0 0.5em;
+        margin: 0 0.5em 0 0.5em; }
+      /* line 121, ../sass/sport-omega.taxonomy.scss */
+      .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node__content .field--name-field-date span {
+        font-size: 0.85em;
+        color: white;
+        text-transform: uppercase; }
+      /* line 129, ../sass/sport-omega.taxonomy.scss */
+      .page-taxonomy-term .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two .view-content .views-row .node-readmore {
+        display: none; }
 
 /*# sourceMappingURL=sport-omega.taxonomy.css.map */

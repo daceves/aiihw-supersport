@@ -90,26 +90,5 @@
     }
   }
 
-  .field--type-entityreference:after {
-
-    @include date-status-box();
-
-    // Positioning
-    position: relative;
-    top: -2.5em;
-    left: 0.5em;
-  }
-
-  // Specific video entity styling
-  .field--name-field-pre-live-video:after {
-    content: "upcoming";
-  }
-
-  .field--name-field-post-live-video:after {
-    content: "replay";
-  }
-
-  .field--name-field-live-video:after {
-    content: "live";
-  }
+  @include date-status-overlay();
 }
