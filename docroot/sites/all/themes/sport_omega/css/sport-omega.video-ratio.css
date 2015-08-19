@@ -3,17 +3,30 @@ video {
   width: 100% !important;
   height: auto; }
 
+/* line 6, ../sass/sport-omega.video-ratio.scss */
+.field--type-entityreference {
+  width: 100%; }
+  /* line 10, ../sass/sport-omega.video-ratio.scss */
+  .field--type-entityreference .mediaelement-video {
+    background-color: black; }
+  /* line 14, ../sass/sport-omega.video-ratio.scss */
+  .field--type-entityreference div,
+  .field--type-entityreference .field__items,
+  .field--type-entityreference .field__item,
+  .field--type-entityreference .field--type-file {
+    width: 100%; }
+
 /**
  * Removes headers for the taxonomy 
  * page
  */
-/* line 11, ../sass/sport-omega.video-ratio.scss */
+/* line 27, ../sass/sport-omega.video-ratio.scss */
 .page-taxonomy-term p.submitted > span {
   display: none; }
-/* line 15, ../sass/sport-omega.video-ratio.scss */
+/* line 31, ../sass/sport-omega.video-ratio.scss */
 .page-taxonomy-term .node__content > .field > .field__label {
   display: none; }
-/* line 19, ../sass/sport-omega.video-ratio.scss */
+/* line 35, ../sass/sport-omega.video-ratio.scss */
 .page-taxonomy-term .taxonomy-term__content > .field--name-field-sport > .field__label {
   display: none; }
 

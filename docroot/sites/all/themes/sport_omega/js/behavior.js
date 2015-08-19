@@ -3,13 +3,18 @@
  * to have a 16:9 ratio
  */
 (function($) {
-	$(window).resize(function() {
-		var width = $('video').width();
-		var height = $('video').height();
 
-		$("video").css({
-			"width": '100%',
-			"height": width*(9/16)
-		});
-	}).resize();
+  $(window).resize(function() {
+
+    $("video").each(function() {
+
+      var width = $(this).width();
+
+      $(this).css({
+        "height": width * (9 / 16),
+      });
+    });
+
+  }).resize();
+
 })(jQuery);
