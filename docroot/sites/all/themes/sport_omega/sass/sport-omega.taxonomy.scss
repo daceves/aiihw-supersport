@@ -1,0 +1,50 @@
+@import "sport-omega.includes";
+
+/*
+-webkit-
+-moz-
+-ms-
+*/
+
+@mixin ssf-display() {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+}
+
+@mixin ssf-direction() {
+  $direction: row;
+  flex-direction: $direction;
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+}
+
+@mixin ssf-wrap() {
+  $wrap: wrap;
+  flex-wrap: $wrap;
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+}
+
+@mixin ssf-order($number) {
+  order: $number;
+  -webkit-order: $number;
+  -moz-order: $number;
+  -ms-order: $number;
+}
+
+// Taxonomy page container
+.page-taxonomy-term {
+
+  // Container holding taxonomy view
+  .panels-flexible-region-supersport_three_row_layout-supersport_three_region_two {
+    background: $color-background;
+
+    padding: $container-padding;
+  }
+
+
+}

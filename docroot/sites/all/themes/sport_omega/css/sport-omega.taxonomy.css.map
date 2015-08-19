@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";;;;;;AA0CE,mGAAgF;EAC9E,UAAU,ECjCK,OAAW;EDmC1B,OAAO,EChCS,GAAG",
+"sources": ["../sass/sport-omega.taxonomy.scss","../sass/_sport-omega.includes.scss"],
+"names": [],
+"file": "sport-omega.taxonomy.css"
+}
