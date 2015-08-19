@@ -3,6 +3,22 @@ video{
 	height: auto;
 }
 
+.field--type-entityreference {
+
+  width: 100%;
+
+  .mediaelement-video {
+    background-color: black;
+  }
+
+  div,
+  .field__items,
+  .field__item,
+  .field--type-file {
+	width: 100%;
+  }
+}
+
 /**
  * Removes headers for the taxonomy 
  * page

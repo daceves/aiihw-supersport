@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": ";AAAA,KAAK;EACJ,KAAK,EAAE,eAAe;EACtB,MAAM,EAAE,IAAI;;;;;;;AAQZ,sCAAmB;EAClB,OAAO,EAAE,IAAI;;AAGd,2DAAwC;EACvC,OAAO,EAAE,IAAI;;AAGd,sFAAkE;EACjE,OAAO,EAAE,IAAI",
+"mappings": ";AAAA,KAAK;EACJ,KAAK,EAAE,eAAe;EACtB,MAAM,EAAE,IAAI;;;AAGb,4BAA6B;EAE3B,KAAK,EAAE,IAAI;;EAEX,gDAAoB;IAClB,gBAAgB,EAAE,KAAK;;EAGzB;;;gDAGkB;IACnB,KAAK,EAAE,IAAI;;;;;;;AASX,sCAAmB;EAClB,OAAO,EAAE,IAAI;;AAGd,2DAAwC;EACvC,OAAO,EAAE,IAAI;;AAGd,sFAAkE;EACjE,OAAO,EAAE,IAAI",
 "sources": ["../sass/sport-omega.video-ratio.scss"],
 "names": [],
 "file": "sport-omega.video-ratio.css"
