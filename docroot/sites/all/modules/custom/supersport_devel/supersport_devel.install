@@ -240,3 +240,8 @@ function supersport_devel_update_7120() {
   );
   module_enable($module_list);
 }
+
+function supersport_devel_update_7121() {
+  $module_list = array('supersport_taxonomy_view');
+  module_enable($module_list);
+}
