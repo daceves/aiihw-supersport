@@ -1,0 +1,22 @@
+@import "sport-omega.includes";
+
+// User page body container
+body.page-user {
+
+  .l-content {
+    background: $color-background;
+
+    padding: $container-padding;
+
+    color: $color-font;
+
+    h1 {
+      margin-top: 0;
+    }
+
+    input {
+      color: black;
+    }
+  }
+
+}
