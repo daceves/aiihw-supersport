@@ -245,3 +245,11 @@ function supersport_devel_update_7121() {
   $module_list = array('supersport_taxonomy_view');
   module_enable($module_list);
 }
+
+/**
+ * Permanently deletes duplicate field.
+ */
+function supersport_devel_update_7122() {
+  $field_to_delete = array('field_video');
+  field_delete_field($field_to_delete);
+}
